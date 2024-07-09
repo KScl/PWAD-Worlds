@@ -1,0 +1,16 @@
+__pycache__
+
+# Exclude most things in the ap_gen_tool folder that aren't data
+
+# Copyrighted WADs
+ap_gen_tool/*.wad
+ap_gen_tool/*.WAD
+
+# Builds of ap_gen_tool
+ap_gen_tool/*.exe
+ap_gen_tool/ap_gen_tool
+
+# Other data
+ap_gen_tool/*.ini
+ap_gen_tool/output/
+ap_gen_tool/assets/

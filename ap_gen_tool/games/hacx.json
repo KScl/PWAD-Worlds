@@ -1,0 +1,386 @@
+{
+    "name": "HacX",
+    "world": "hacx",
+    "codename": "hacx",
+    "classname": "HacX",
+    "iwad": "HACX.WAD",
+    "load_order": ["HACX.WAD", "APHACX.WAD"],
+    "item_ids": 364000,
+    "loc_ids": 365000,
+    "settings":{
+        "extended_names": true
+    },
+
+    "map_info": [
+        [
+            {"lump": "MAP01", "name": "GenEmp Corp. (MAP01)"},
+            {"lump": "MAP02", "name": "Tunnel Town (MAP02)"},
+            {"lump": "MAP03", "name": "Lava Annex (MAP03)"},
+            {"lump": "MAP04", "name": "Alcatraz (MAP04)"},
+            {"lump": "MAP05", "name": "Cyber Circus (MAP05)"},
+            {"lump": "MAP06", "name": "Digi-Ota (MAP06)"}
+        ],
+        [
+            {"lump": "MAP07", "name": "The Great Wall (MAP07)"},
+            {"lump": "MAP08", "name": "Garden of Delight (MAP08)"},
+            {"lump": "MAP09", "name": "Hidden Fortress (MAP09)"},
+            {"lump": "MAP10", "name": "Anarchist Dream (MAP10)"},
+            {"lump": "MAP11", "name": "Notus Us! (MAP11)"}
+        ],
+        [
+            {"lump": "MAP12", "name": "Gothik Gauntlet (MAP12)"},
+            {"lump": "MAP13", "name": "The Sewers (MAP13)"},
+            {"lump": "MAP14", "name": "'Trode Wars (MAP14)"},
+            {"lump": "MAP15", "name": "Twilight of EnKs (MAP15)"}
+        ],
+        [
+            {"lump": "MAP31", "name": "Desiccant Room (MAP31)"},
+            {"lump": "MAP16", "name": "Protean Cybex (MAP16)"},
+            {"lump": "MAP17", "name": "River of Blood (MAP17)"},
+            {"lump": "MAP18", "name": "Bizarro (MAP18)"},
+            {"lump": "MAP19", "name": "The War Rooms (MAP19)"},
+            {"lump": "MAP20", "name": "Intruder Alert! (MAP20)"}
+        ]
+    ],
+    "game_info": {
+        "ammo": [
+            {"name": "Rounds", "max": 100},
+            {"name": "Cartridges", "max": 50},
+            {"name": "Molecules", "max": 50},
+            {"name": "Torpedoes", "max": 300}
+        ],
+        "weapons": [
+            {"name": "Kick"},
+            {"name": "Pistol", "ammo_type": "Rounds", "starting_ammo": 50},
+            {"name": "Tazer", "ammo_type": "Cartridges", "starting_ammo": 30},
+            {"name": "Uzi", "ammo_type": "Rounds"},
+            {"name": "Photon 'zooka", "ammo_type": "Torpedoes", "starting_ammo": 20},
+            {"name": "Stick", "ammo_type": "Molecules", "starting_ammo": 200},
+            {"name": "Nuker", "ammo_type": "Molecules", "starting_ammo": 200},
+            {"name": "HOIG Reznator"},
+            {"name": "Cryogun", "ammo_type": "Cartridges", "starting_ammo": 30}
+        ],
+        "starting_health": 100,
+        "starting_armor": 50,
+
+        "hint_auto_complete":{
+            "KEYCARD": "Keycard",
+            "C-KEY": "C-key",
+            "CKEY": "C-key",
+            "PASSWORD": "Password",
+            "BLUE": ["Keycard", "Blue Z-key"],
+            "YELLOW": ["C-key", "Yellow Z-key"],
+            "RED": ["Password", "Red Z-key"],
+            "MAP": "SI array",
+            "SI": "SI array"
+        }
+    },
+    "map_tweaks": {
+        // GenEmp Corp. (MAP01)
+        "MAP01": {
+            "things": {
+                // Move a kevlar vest off of the starting point.
+                "230": {"x": -1192, "y":-2448}
+            },
+            "sidedefs": {
+                // Display the password-locked keypad texture, for the anti-softlock change
+                "2758": {"middle": "SW1BRCOM", "y": 32}
+            },
+            "linedefs": {
+                // Anti-softlock: Make the password room require the password both ways
+                "562": {"special": 110, "tag": 75},
+                "1840": {"special": 134},
+                "1846": {"special": 114}
+
+            }
+        },
+
+        // Tunnel Town (MAP02)
+        "MAP02": {
+            "sidedefs": {
+                // Quality of life: show the correct password-locked keypad texture
+                "2688": {"y": 32}
+            }
+        },
+
+        // Lava Annex (MAP03)
+        "MAP03": {
+            "linedefs": {
+                // Prevent path blocking doors from coming down.
+                "780": {"special": 0}, // Bars behind elevator, from keycard room
+                "1032": {"special": 0} // Door behind, from password room
+            }
+        },
+
+        // Cyber Circus (MAP05)
+        "MAP05": {
+            "things": {
+                // Turn a random player start into a teleporter landing.
+                "96": {"type": 14, "angle": 180, "x": -2592, "y": 1984}
+            },
+            "sectors": {
+                // Tag the sector we put the teleporter landing in...
+                "1": {"tag": 690}
+            },
+            "linedefs": {
+                // ... and make the back wall of cyberspace teleport you out, back to the room the hub is in.
+                "130": {"special": 97, "tag": 690}
+            }
+        },
+
+        // Garden of Delight (MAP08)
+        "MAP08": {
+            "linedefs": {
+                // Quality of life: Stop crushers when you move too far away.
+                // This is MAP08, so the sound distance behavior that was carried over from Doom 1 applies here.
+                "1954": {"special": 74, "tag": 46},
+                "1959": {"special": 74, "tag": 45},
+                "1985": {"special": 74, "tag": 44}
+            }
+        },
+
+        // Hidden Fortress (MAP09)
+        "MAP09": {
+            "things": {
+                // Create a teleport landing from a player start
+                "60": {"type": 14, "x": 104, "y": -424, "angle": 0}
+            },
+            "sectors": {
+                // Tag sector for teleport landings
+                "36": {"tag": 690}
+            },
+            "linedefs": {
+                // Teleport out of the fortress
+                "1230": {"special": 97, "tag": 690}
+            }
+        },
+
+        // Anarchist Dream (MAP10)
+        "MAP10": {
+            // Allow retriggering the starting lift from the top position, to return to hub
+            "linedefs": {
+                "8": {"special": 62, "tag": 1}
+            },
+            "sidedefs": {
+                "11": {"middle": "BROWNPIP"}
+            }
+        },
+
+        // Notus Us! (MAP11)
+        "MAP11": {
+            "sidedefs": {
+                // Quality of life: show the correct password-locked keypad texture
+                "1848": {"y": 64},
+                "2775": {"y": 64}
+            }
+        },
+
+        // Gothik Gauntlet (MAP12)
+        "MAP12": {
+            "linedefs": {
+                // Remove impassible from a random wall in a damaging pit that traps you in
+                "50": {"flags": 4},
+
+                // Move elevator in two-story building down, when approaching its front door (anti-softlock)
+                "997": {"special": 82, "tag": 10},
+
+                // Fix getting trapped in a west city room if you back off the elevator by letting you open the door out
+                "1652": {"special": 1}
+            }
+        },
+
+        // 'Trode Wars (MAP14)
+        "MAP14": {
+            "linedefs": {
+                // Keep the door out of the starting room open so the hub remains accessible
+                "21": {"special": 103}
+            }
+        },
+
+        // Twilight of EnKs (MAP15)
+        "MAP15": {
+            "linedefs": {
+                // Make the required "secret" exit normal.
+                "372": {"special": 52},
+                "373": {"special": 52},
+                "374": {"special": 52},
+                "375": {"special": 52},
+
+                // Unlock a door that normally requires a Blue Z-key to open
+                // The room that it leads to is normally reachable without any keys anyway
+                "1423": {"special": 1},
+                "1815": {"special": 1},
+                "1816": {"special": 1}
+            },
+            "sidedefs": {
+                // Remove the appearance of a blue key requirement for the above change
+                "2065": {"upper": "HW513"},
+                "2686": {"upper": "HW513"}
+            }
+        },
+
+        // Protean Cybex (MAP16)
+        "MAP16": {
+            // Move the hub back a bit, so it's not sitting right on top of the exit switch
+            "hub": {"x": 352, "y": 1024}
+        },
+
+        // River of Blood (MAP17)
+        "MAP17": {
+            // Move the hub into the waterfall area so it can be reached
+            "hub": {"x": -1200, "y": 448},
+
+            "linedefs": {
+                // Fix possible softlock from trap door
+                "629": {"special": 118}
+            }
+        },
+
+        // Intruder Alert! (MAP20)
+        "MAP20": {
+            "things": {
+                // Turn a random player start into a teleporter landing.
+                "7": {"type": 14, "angle": 180, "x": -2592, "y": 1984}
+            },
+            "sectors": {
+                // Tag the sector we put the teleporter landing in...
+                "1": {"tag": 690}
+            },
+            "linedefs": {
+                // ... and give the "teeth" in the Teeth room a teleport out if you backtrack.
+                // This is legitimately the best we can do with the map layout. Yeesh...
+                "223": {"special": 97, "tag": 690},
+                "247": {"special": 97, "tag": 690}
+            }
+        }
+    },
+    "level_select":{
+        "defaults":{
+            "map_name_position": "individual",
+            "maps":{
+                "x": 28,
+                "cursor": {"graphic": "M_SKULL1", "x": -26, "y": -9},
+                "map_name": {"x": 8, "y": -5},
+                "keys": {"relative_to": "map-name-right", "x": 20, "y": 6, "spacing_x": 10},
+                "checks": {"relative_to": "keys-last", "x": 16, "y": 2}
+            }
+        },
+        "episodes":[
+            {
+                "background_image": "LEVELBG1",
+                "maps":[
+                    { "y":  89, "map_name": {"graphic": "CWILV00"} },
+                    { "y": 108, "map_name": {"graphic": "CWILV01"} },
+                    { "y": 127, "map_name": {"graphic": "CWILV02"} },
+                    { "y": 146, "map_name": {"graphic": "CWILV03"}, "checks": {"x": 8} },
+                    { "y": 165, "map_name": {"graphic": "CWILV04"} },
+                    { "y": 184, "map_name": {"graphic": "CWILV05"} }
+                ]
+            },
+            {
+                "background_image": "LEVELBG2",
+                "maps":[
+                    { "y": 108, "map_name": {"graphic": "CWILV06"} },
+                    { "y": 127, "map_name": {"graphic": "CWILV07"}, "checks": {"x": 8} },
+                    { "y": 146, "map_name": {"graphic": "CWILV08"} },
+                    { "y": 165, "map_name": {"graphic": "CWILV09"}, "checks": {"x": 8} },
+                    { "y": 184, "map_name": {"graphic": "CWILV10"} }
+                ]
+            },
+            {
+                "background_image": "LEVELBG3",
+                "maps":[
+                    { "y": 127, "map_name": {"graphic": "CWILV11"} },
+                    { "y": 146, "map_name": {"graphic": "CWILV12"} },
+                    { "y": 165, "map_name": {"graphic": "CWILV13"} },
+                    { "y": 184, "map_name": {"graphic": "CWILV14"}, "keys": {"x": 17}, "checks": {"x": 13}  }
+                ]
+            },
+            {
+                "background_image": "LEVELBG4",
+                "maps":[
+                    { "y":  89, "map_name": {"graphic": "CWILV30"} },
+                    { "y": 108, "map_name": {"graphic": "CWILV15"}, "checks": {"x": 8} },
+                    { "y": 127, "map_name": {"graphic": "CWILV16"}, "checks": {"x": 8} },
+                    { "y": 146, "map_name": {"graphic": "CWILV17"} },
+                    { "y": 165, "map_name": {"graphic": "CWILV18"}, "checks": {"x": 8} },
+                    { "y": 184, "map_name": {"graphic": "CWILV19"} }
+                ]
+            }
+        ]
+    },
+
+    "location_doom_types": {
+        "5": "Keycard",
+        "6": "C-key",
+        "13": "Password",
+        "40": "Blue Z-key",
+        "39": "Yellow Z-key",
+        "38": "Red Z-key",
+        "2018": "Kevlar vest",
+        "8": "Valise",
+        "2019": "Super kevlar vest",
+        "2023": "007Microtel",
+        "2022": "Force field",
+        "2024": "EnK blinder",
+        "2013": "Centrophenoxine",
+        "2006": "Nuker",
+        "2002": "Uzi",
+        "2005": "HOIG Reznator",
+        "2004": "Stick",
+        "2003": "Photon 'zooka",
+        "2001": "Tazer",
+        "2026": "SI array",
+        "82": "Cryogun",
+        "83": "Body armor"
+    },
+    "extra_connection_requirements": [
+        {"doom_type": -1, "name": "deathlogic", "sprite": "STFDEAD0" },
+        {"doom_type": -2, "name": "pro", "sprite": "STFGOD0" }
+    ],
+    "progressions": [
+        {"doom_type": 2001, "name": "Tazer", "group": "Weapons", "sprite": "SHOTA0"},
+        {"doom_type": 2003, "name": "Photon 'zooka", "group": "Weapons", "sprite": "LAUNA0"},
+        {"doom_type": 2004, "name": "Stick", "group": "Weapons", "sprite": "PLASA0"},
+        {"doom_type": 2005, "name": "HOIG Reznator", "group": "Weapons", "sprite": "CSAWA0"},
+        {"doom_type": 2002, "name": "Uzi", "group": "Weapons", "sprite": "MGUNA0"},
+        {"doom_type": 2006, "name": "Nuker", "group": "Weapons", "sprite": "BFUGA0"},
+        {"doom_type": 82, "name": "Cryogun", "group": "Weapons", "sprite": "SGN2A0"}
+    ],
+    "fillers": [
+        {"doom_type": 2018, "name": "Kevlar vest", "group": "Powerups", "sprite": "ARM1A0"},
+        {"doom_type": 2019, "name": "Super kevlar vest", "group": "Powerups", "sprite": "ARM2A0"},
+        {"doom_type": 2023, "name": "007Microtel", "group": "Powerups", "sprite": "PSTRA0"},
+        {"doom_type": 2022, "name": "Force field", "group": "Powerups", "sprite": "PINVA0"},
+        {"doom_type": 2024, "name": "EnK blinder", "group": "Powerups", "sprite": "PINSA0"},
+        {"doom_type": 2013, "name": "Centrophenoxine", "group": "Powerups", "sprite": "SOULD0"},
+        {"doom_type": 83, "name": "Body armor", "group": "Powerups", "sprite": "MEGAC0"},
+        {"doom_type": 2012, "name": "Hypo", "group": "", "sprite": "MEDIA0"},
+        {"doom_type": 2048, "name": "Case of rounds", "group": "Ammos", "sprite": "AMMOA0"},
+        {"doom_type": 2046, "name": "Case of torpedoes", "group": "Ammos", "sprite": "BROKA0"},
+        {"doom_type": 2049, "name": "Case of cartridges", "group": "Ammos", "sprite": "SBOXA0"},
+        {"doom_type": 17, "name": "Molecule tank", "group": "Ammos", "sprite": "CELPA0"}
+    ],
+    "unique_progressions": [
+    ],
+    "unique_fillers": [
+        {"doom_type": 2026, "name": "SI array", "group": "SI arrays", "sprite": "PMAPA0"}
+    ],
+    "capacity_upgrades": [
+        {"doom_type": 8, "name": "Valise", "group": "", "sprite": "BPAKA0"},
+        {"doom_type": 65001, "name": "Round capacity", "group": "", "sprite": "BPAKA0"},
+        {"doom_type": 65002, "name": "Cartridge capacity", "group": "", "sprite": "BPAKA0"},
+        {"doom_type": 65003, "name": "Molecule capacity", "group": "", "sprite": "BPAKA0"},
+        {"doom_type": 65004, "name": "Torpedo capacity", "group": "", "sprite": "BPAKA0"}
+    ],
+    "keys": [
+        {"doom_type": 5, "name": "Keycard", "group": "Keys", "key": 0, "use_skull": false, "region_name": "Blue", "color": [0, 0, 1], "sprite": "BKEYA0"},
+        {"doom_type": 6, "name": "C-key", "group": "Keys", "key": 1, "use_skull": false, "region_name": "Yellow", "color": [1, 1, 0], "sprite": "YKEYA1"},
+        {"doom_type": 13, "name": "Password", "group": "Keys", "key": 2, "use_skull": false, "region_name": "Red", "color": [1, 0, 0], "sprite": "RKEYA0"},
+        {"doom_type": 40, "name": "Blue Z-key", "group": "Keys", "key": 0, "use_skull": true, "region_name": "Blue", "color": [0, 0, 1], "sprite": "BSKUB0"},
+        {"doom_type": 39, "name": "Yellow Z-key", "group": "Keys", "key": 1, "use_skull": true, "region_name": "Yellow", "color": [1, 1, 0], "sprite": "YSKUB0"},
+        {"doom_type": 38, "name": "Red Z-key", "group": "Keys", "key": 2, "use_skull": true, "region_name": "Red", "color": [1, 0, 0], "sprite": "RSKUB0"}
+    ],
+    "loc_remap": {},
+    "item_remap": {}
+}

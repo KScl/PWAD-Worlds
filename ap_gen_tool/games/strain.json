@@ -1,0 +1,466 @@
+{
+    "name": "Doom II - STRAIN",
+    "world": "pwad_strain",
+    "codename": "strain",
+    "classname": "DOOM2STRAIN",
+    "iwad": "DOOM2.WAD",
+    "pwad": "strain.wad",
+    "load_order": ["DOOM2.WAD", "strain.wad", "Strain_Jive.wad", "APDOOM.WAD", "APSTRAIN.WAD"],
+    "item_ids": 362000,
+    "loc_ids": 363000,
+    "settings":{
+        "extended_names": true
+    },
+
+    "map_info": [
+        [
+            {"lump": "MAP01", "name": "Barracks (MAP01)"},
+            {"lump": "MAP02", "name": "Outskirts (MAP02)"},
+            {"lump": "MAP03", "name": "Downtown (MAP03)"},
+            {"lump": "MAP04", "name": "Industrial Zone (MAP04)"},
+            {"lump": "MAP05", "name": "Depot (MAP05)"},
+            {"lump": "MAP06", "name": "Launch Control (MAP06)"},
+            {"lump": "MAP07", "name": "En Route (MAP07)"},
+            {"lump": "MAP08", "name": "Hangar (MAP08)"},
+            {"lump": "MAP09", "name": "Cargo Bay (MAP09)"},
+            {"lump": "MAP10", "name": "Entryway (MAP10)"},
+            {"lump": "MAP11", "name": "Command Control (MAP11)"}
+        ],
+        [
+            {"lump": "MAP12", "name": "Power Station (MAP12)"},
+            {"lump": "MAP13", "name": "Ruins (MAP13)"},
+            {"lump": "MAP14", "name": "Engineering (MAP14)"},
+            {"lump": "MAP15", "name": "Subsidiary Power (MAP15)"},
+            {"lump": "MAP16", "name": "Living Quarters (MAP16)"},
+            {"lump": "MAP17", "name": "Promenade (MAP17)"},
+            {"lump": "MAP18", "name": "Relay Station (MAP18)"},
+            {"lump": "MAP19", "name": "Waste Processing (MAP19)"},
+            {"lump": "MAP20", "name": "Reactor (MAP20)"}
+        ],
+        [
+            {"lump": "MAP21", "name": "Maintenance (MAP21)"},
+            {"lump": "MAP22", "name": "Specimen Storage (MAP22)"},
+            {"lump": "MAP23", "name": "Dispensary Alpha (MAP23)"},
+            {"lump": "MAP24", "name": "Sub-Laboratory (MAP24)"},
+            {"lump": "MAP25", "name": "Main Laboratory (MAP25)"},
+            {"lump": "MAP26", "name": "Main Laboratory II (MAP26)"},
+            {"lump": "MAP27", "name": "Dispensary Beta (MAP27)"},
+            {"lump": "MAP28", "name": "Unknown (MAP28)"},
+            {"lump": "MAP29", "name": "Self-Destruct (MAP29)"},
+            {"lump": "MAP30", "name": "Boss (MAP30)"}
+        ],
+        [
+            {"lump": "MAP31", "name": "Secret (MAP31)"},
+            {"lump": "MAP32", "name": "Super-Secret (MAP32)"}
+        ]
+    ],
+    "game_info":{
+        "ammo": [
+            {"name": "Bullets", "max": 200},
+            {"name": "Shells", "max": 50},
+            {"name": "Batteries", "max": 50},
+            {"name": "Rockets", "max": 50}
+        ],
+        "weapons": [
+            {"name": "Double Punch"},
+            {"name": "Pistol", "ammo_type": "Bullets"},
+            {"name": "Sawed-off shotgun", "ammo_type": "Shells", "starting_ammo": 20},
+            {"name": "Chaingun", "ammo_type": "Bullets", "starting_ammo": 100},
+            {"name": "Rocket launcher", "ammo_type": "Rockets", "starting_ammo": 20},
+            {"name": "NFG", "ammo_type": "Batteries", "starting_ammo": 20},
+            {"name": "Psychic blaster", "ammo_type": "Rockets", "starting_ammo": 30},
+            {"name": "Chainsaw"},
+            {"name": "Super shotgun", "ammo_type": "Shells", "starting_ammo": 30}
+        ],
+        "pausepic": "TITLEPIC",
+
+        "hint_auto_complete":{
+            "BLUE": ["Blue keycard", "Blue skull key"],
+            "YELLOW": ["Yellow keycard", "Yellow skull key"],
+            "RED": ["Red keycard", "Red skull key"],
+            "MAP": "Computer area map"
+        }
+    },
+    "map_tweaks":{
+        // Outskirts (MAP02)
+        "MAP02":{
+            // Move the hub out of the start room, so it's always accessible.
+            "hub":{"x":-320,"y":-2304},
+
+            "sidedefs":{
+                // Mark the switch we're changing to require the blue key.
+                "1329":{"middle":"DOORBLU"},
+                "1330":{"middle":"DOORBLU"}
+            },
+            "linedefs":{
+                // Remove a platform raise that blocks you from returning permanently
+                "5":{"special":0},
+
+                // Require blue key to advance the map early on, as anti-softlock
+                "845":{"special":133}
+            },
+            "things":{
+                // Move the backup blue key in a bit to make it easier to grab
+                "433":{"x":-1440,"y":-2024}
+            }
+        },
+
+        // Depot (MAP05)
+        "MAP05":{
+            // Move the hub out of the way of a door
+            "hub":{"x":-224,"y":-184}
+        },
+
+        // En Route (MAP07)
+        "MAP07":{
+            // Move the hub out of the way of the exit
+            "hub":{"x":-112,"y":-2064}
+        },
+
+        // Entryway (MAP10)
+        "MAP10":{
+            "sectors":{
+                // Do *not* require the red key to return to start
+                "92":{"tag":0},
+                "93":{"tag":0},
+                "94":{"tag":0},
+                "95":{"tag":0},
+                "101":{"tag":0}
+            },
+            "linedefs":{
+                // Do *not* require the red key to return to start
+                "678":{"special":31},
+
+                // Do *not* require the blue key to get out of the central star
+                // We cannot make this a two-way keydoor because the linedefs on the other side are oriented wrong
+                "940":{"special":31},
+                "944":{"special":31}
+            }
+        },
+
+        // Power Station (MAP12)
+        "MAP12":{
+            "things":{
+                // Move the blue key off of spawn
+                "342":{"x":322,"y":736}
+            }
+        },
+
+        // Ruins (MAP13)
+        "MAP13":{
+            "linedefs":{
+                // Allow opening the bar that locks you in the vile trap, from behind
+                "1520":{"special":118}
+            }
+        },
+
+        // Living Quarters (MAP16)
+        "MAP16":{
+            "sectors":{
+                // Tag rails of blue key door room so they can act as a lift
+                "59":{"tag":690},
+                "134":{"tag":690}
+            },
+            "linedefs":{
+                // Give lift special to the rails of the blue key door room (anti-softlock)
+                "644":{"special":62,"tag":690},
+                "645":{"special":62,"tag":690}
+            }
+        },
+
+        // Promenade (MAP17)
+        "MAP17":{
+            "linedefs":{
+                // Gauntlet Hallway hackery
+                // Keep the switch open for the first door so it can be opened again
+                "780": {"special": 0},
+                "797": {"special": 115},
+
+                // These triggers to close doors behind you have no other recourse if respawns are on
+                // so they need to be disabled
+                "2417": {"special": 0},
+                "2418": {"special": 0}
+            }
+        },
+
+        // Relay Station (MAP18)
+        "MAP18":{
+            "linedefs":{
+                // Allow opening the door in the final area that closes in on you, from behind
+                "2502":{"special":117}
+            }
+        },
+
+        // Waste Processing (MAP19)
+        "MAP19":{
+            "linedefs":{
+                // Allow opening the wall that traps you in with imps, from behind
+                "1511":{"special":31}
+            }
+        },
+
+        // Maintenance (MAP21)
+        "MAP21":{
+            // The hub on this level is inaccessible after you leave the opening room, but
+            // because this level is trivially exitable, we don't bother to move it.
+            "linedefs":{
+                // Fix the exit teleporter to use W1 instead of S1
+                "2187":{"special":52}
+            }
+        },
+
+        // Specimen Storage (MAP22)
+        "MAP22":{
+            "linedefs":{
+                // Two-way key lock the boss rush room door
+                "700":{"special":26},
+
+                // Lower the bookshelf blocking the danger room if approached from behind
+                // (due to having the blue key earlier than intended)
+                "884":{"special":19, "tag": 7}
+            }
+        },
+
+        // Sub-Laboratory (MAP24)
+        "MAP24":{
+            // Move the hub into the room you teleport into.
+            "hub":{"x":-384,"y":-128},
+            "linedefs":{
+                // Allow opening the blue key trap room from behind, if it gets shut on you.
+                "638":{"special":31},
+
+                // Allow exiting the blue key trap room if you wait it out.
+                // The blue key just allows you to exit it early.
+                // Done this way because the door *starts* open
+                "857":{"special":86,"tag":12},
+                "858":{"special":86,"tag":12},
+                "859":{"special":86,"tag":12},
+                "860":{"special":86,"tag":12}
+            }
+        },
+
+        // Main Laboratory (MAP25)
+        "MAP25":{
+            "linedefs":{
+                // Set up lift to let you return to the start room.
+                "2790":{"special":62,"tag":4},
+                "2880":{"special":62,"tag":4},
+                "2881":{"special":62,"tag":4},
+                "2882":{"special":62,"tag":4}
+            }
+        },
+
+        // Unknown (MAP28)
+        "MAP28":{
+            // Move the hub so it remains reachable after leaving the starting rooms.
+            "hub":{"x":-640,"y":-3232}
+        },
+
+        // Boss (MAP30)
+        "MAP30":{
+            "things":{
+                // Angle the player start better, since we're skipping the lift.
+                "0": {"angle": 135}
+            },
+            "sectors":{
+                // Skip the lift, have it pre-lowered.
+                "49": {"floor": 0}
+            },
+            "linedefs":{
+                // Fix all teleporters to go to consistent locations.
+                // We do this to quarter the total check count.
+                "42":{"tag":23},
+                "519":{"tag":37},
+                "578":{"tag":37},
+                "585":{"tag":37},
+                "703":{"tag":37},
+                "832":{"tag":37},
+                "834":{"tag":37},
+                "835":{"tag":37},
+                "849":{"tag":37},
+                "852":{"tag":37},
+                "908":{"tag":23},
+                "915":{"tag":23},
+                "916":{"tag":23},
+                "917":{"tag":23},
+                "918":{"tag":23},
+                "932":{"tag":37},
+                "933":{"tag":37},
+                "934":{"tag":37},
+                "939":{"tag":37},
+                "940":{"tag":37},
+                "942":{"tag":37},
+                "947":{"tag":37},
+                "948":{"tag":37},
+                "950":{"tag":37},
+                "955":{"tag":37},
+                "957":{"tag":37},
+                "958":{"tag":37},
+                "964":{"tag":37},
+                "965":{"tag":37},
+                "966":{"tag":37}
+            }
+        },
+
+        // Secret (MAP31)
+        "MAP31":{
+            // Move the hub out of the way of the door behind it.
+            "hub":{"x":148,"y":-292}
+        }
+    },
+    "level_select":{
+        "defaults":{
+            "map_name_position": "individual",
+            "maps":{
+                "x": 30,
+                "cursor": {"graphic": "M_SKULL1", "x": -30, "y": -11},
+                "map_name": {"x": 10, "y": -5},
+                "keys": {"relative_to": "map-name-right", "x": 3, "y": 2, "spacing_x": 12},
+                "checks": {"relative_to": "keys-last", "x": 8, "y": 2}
+            }
+        },
+        "episodes":[
+            {
+                "background_image": "INTERPIC",
+                "maps":[
+                    { "y":  15, "map_name": {"graphic": "CWILV00"} },
+                    { "y":  32, "map_name": {"graphic": "CWILV01"} },
+                    { "y":  49, "map_name": {"graphic": "CWILV02"} },
+                    { "y":  66, "map_name": {"graphic": "CWILV03"} },
+                    { "y":  83, "map_name": {"graphic": "CWILV04"} },
+                    { "y": 100, "map_name": {"graphic": "CWILV05"} },
+                    { "y": 117, "map_name": {"graphic": "CWILV06"} },
+                    { "y": 134, "map_name": {"graphic": "CWILV07"} },
+                    { "y": 151, "map_name": {"graphic": "CWILV08"} },
+                    { "y": 168, "map_name": {"graphic": "CWILV09", "y": -4}, "keys":{"y": 1} },
+                    { "y": 185, "map_name": {"graphic": "CWILV10"} }
+                ]
+            },
+            {
+                "background_image": "INTERPIC",
+                "maps":[
+                    { "y":  15, "map_name": {"graphic": "CWILV11"} },
+                    { "y":  36, "map_name": {"graphic": "CWILV12"} },
+                    { "y":  57, "map_name": {"graphic": "CWILV13"} },
+                    { "y":  78, "map_name": {"graphic": "CWILV14"} },
+                    { "y":  99, "map_name": {"graphic": "CWILV15"} },
+                    { "y": 120, "map_name": {"graphic": "CWILV16"} },
+                    { "y": 141, "map_name": {"graphic": "CWILV17"} },
+                    { "y": 162, "map_name": {"graphic": "CWILV18"} },
+                    { "y": 183, "map_name": {"graphic": "CWILV19"} }
+                ]
+            },
+            {
+                "background_image": "INTERPIC",
+                "maps":[
+                    { "y":  15, "map_name": {"graphic": "CWILV20"} },
+                    { "y":  33, "map_name": {"graphic": "CWILV21"} },
+                    { "y":  51, "map_name": {"graphic": "CWILV22"} },
+                    { "y":  69, "map_name": {"graphic": "CWILV23"} },
+                    { "y":  87, "map_name": {"graphic": "CWILV24"} },
+                    { "y": 105, "map_name": {"graphic": "CWILV25"} },
+                    { "y": 123, "map_name": {"graphic": "CWILV26"} },
+                    { "y": 141, "map_name": {"graphic": "CWILV27"} },
+                    { "y": 159, "map_name": {"graphic": "CWILV28"} },
+                    { "y": 177, "map_name": {"graphic": "CWILV29"} }
+                ]
+            },
+            {
+                "map_name_position": "top",
+                "background_image": "INTERPIC",
+                "maps":[
+                    {
+                        "x": 226,
+                        "y":  65,
+                        "map_name": {"graphic": "CWILV30"},
+                        "cursor": {"graphic":"WIURH1", "x":-2, "y":-5},
+                        "keys": {"relative_to": "map", "x": 31, "y": -1},
+                        "checks": {"x": -10, "y": -8}
+                    },
+                    {
+                        "x":  93,
+                        "y": 144,
+                        "map_name": {"graphic": "CWILV31"},
+                        "cursor": {"graphic":"WIURH2", "x": 2, "y":10},
+                        "keys": {"relative_to": "map", "x": -40, "y": -7},
+                        "checks": {"x": -10, "y": 12}
+                    }
+                ]
+            }
+        ]
+    },
+
+    "location_doom_types": {
+        "5": "Blue keycard",
+        "40": "Blue skull key",
+        "6": "Yellow keycard",
+        "39": "Yellow skull key",
+        "13": "Red keycard",
+        "38": "Red skull key",
+        "2018": "Armor",
+        "8": "Backpack",
+        "2019": "Mega Armor",
+        "2023": "Berserk",
+        "2022": "Invulnerability",
+        "2024": "Partial invisibility",
+        "2013": "Supercharge",
+        "2006": "Psychic blaster",
+        "2002": "Chaingun",
+        "2005": "Chainsaw",
+        "2004": "NFG",
+        "2003": "Rocket launcher",
+        "2001": "Sawed-off shotgun",
+        "2026": "Computer area map",
+        "82": "Super Shotgun",
+        "83": "Megasphere"
+    },
+    "extra_connection_requirements": [
+        {"doom_type": -1, "name": "deathlogic", "sprite": "STFKILL3" },
+        {"doom_type": -2, "name": "pro", "sprite": "STFGOD0" }
+    ],
+    "progressions": [
+        {"doom_type": 2001, "name": "Sawed-off shotgun", "group": "Weapons", "sprite": "SGN3A0"},
+        {"doom_type": 2003, "name": "Rocket launcher", "group": "Weapons", "sprite": "LAUNA0"},
+        {"doom_type": 2004, "name": "NFG", "group": "Weapons", "sprite": "FFGLA3A7"},
+        {"doom_type": 2005, "name": "Chainsaw", "group": "Weapons", "sprite": "CSAWA0"},
+        {"doom_type": 2002, "name": "Chaingun", "group": "Weapons", "sprite": "MGUNA0"},
+        {"doom_type": 2006, "name": "Psychic blaster", "group": "Weapons", "sprite": "PSYGA0"},
+        {"doom_type": 82, "name": "Super shotgun", "group": "Weapons", "sprite": "SGN2A0"}
+    ],
+    "fillers": [
+        {"doom_type": 2018, "name": "Armor", "group": "Powerups", "sprite": "ARM1A0"},
+        {"doom_type": 2019, "name": "Mega Armor", "group": "Powerups", "sprite": "ARM3A0"},
+        {"doom_type": 2023, "name": "Berserk", "group": "Powerups", "sprite": "PSTRA0"},
+        {"doom_type": 2022, "name": "Invulnerability", "group": "Powerups", "sprite": "PINVA0"},
+        {"doom_type": 2024, "name": "Partial invisibility", "group": "Powerups", "sprite": "PINSA0"},
+        {"doom_type": 2013, "name": "Supercharge", "group": "Powerups", "sprite": "SOULA0"},
+        {"doom_type": 83, "name": "Megasphere", "group": "Powerups", "sprite": "MEGAD0"},
+        {"doom_type": 2012, "name": "Medikit", "group": "", "sprite": "MEDIA0"},
+        {"doom_type": 2048, "name": "Box of bullets", "group": "Ammos", "sprite": "AMMOA0"},
+        {"doom_type": 2046, "name": "Box of rockets", "group": "Ammos", "sprite": "BROKA0"},
+        {"doom_type": 2049, "name": "Box of shotgun shells", "group": "Ammos", "sprite": "SBOXA0"},
+        {"doom_type": 17, "name": "Battery", "group": "Ammos", "sprite": "BATPA0"}
+    ],
+    "unique_progressions": [
+    ],
+    "unique_fillers": [
+        {"doom_type": 2026, "name": "Computer area map", "group": "Computer area maps", "sprite": "PMAPA0"}
+    ],
+    "capacity_upgrades": [
+        {"doom_type": 8, "name": "Backpack", "group": "", "sprite": "BPAKA0"},
+        {"doom_type": 65001, "name": "Bullet capacity", "group": "", "sprite": "BPAKA0"},
+        {"doom_type": 65002, "name": "Shell capacity", "group": "", "sprite": "BPAKA0"},
+        {"doom_type": 65003, "name": "Battery capacity", "group": "", "sprite": "BPAKA0"},
+        {"doom_type": 65004, "name": "Rocket capacity", "group": "", "sprite": "BPAKA0"}
+    ],
+    "keys": [
+        {"doom_type": 5, "name": "Blue keycard", "group": "Keys", "key": 0, "use_skull": false, "region_name": "Blue", "color": [0, 0, 1], "sprite": "BKEYB0"},
+        {"doom_type": 40, "name": "Blue skull key", "group": "Keys", "key": 0, "use_skull": true, "region_name": "Blue", "color": [0, 0, 1], "sprite": "BSKUB0"},
+        {"doom_type": 6, "name": "Yellow keycard", "group": "Keys", "key": 1, "use_skull": false, "region_name": "Yellow", "color": [1, 1, 0], "sprite": "YKEYB0"},
+        {"doom_type": 39, "name": "Yellow skull key", "group": "Keys", "key": 1, "use_skull": true, "region_name": "Yellow", "color": [1, 1, 0], "sprite": "YSKUB0"},
+        {"doom_type": 13, "name": "Red keycard", "group": "Keys", "key": 2, "use_skull": false, "region_name": "Red", "color": [1, 0, 0], "sprite": "RKEYB0"},
+        {"doom_type": 38, "name": "Red skull key", "group": "Keys", "key": 2, "use_skull": true, "region_name": "Red", "color": [1, 0, 0], "sprite": "RSKUB0"}
+    ],
+    "loc_remap": {},
+    "item_remap": {}
+}
