@@ -15,5 +15,4 @@ Each subfolder contains the following:
 
 ## Currently supported PWADs
 - For Doom II:
-  - [STRAIN](http://www.doomwadstation.net/main/strain.html) (Download the fixed version, extract "strain.wad" and "Strain_Jive.wad")
-
+  - [STRAIN](https://www.doomworld.com/idgames/levels/doom2/megawads/strain)

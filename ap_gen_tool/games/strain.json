@@ -5,7 +5,7 @@
     "classname": "DOOM2STRAIN",
     "iwad": "DOOM2.WAD",
     "pwad": "strain.wad",
-    "load_order": ["DOOM2.WAD", "strain.wad", "Strain_Jive.wad", "APDOOM.WAD", "APSTRAIN.WAD"],
+    "load_order": ["DOOM2.WAD", "STRAIN.WAD", "STRAIN.DEH", "APDOOM.WAD", "APSTRAIN.WAD"],
     "item_ids": 362000,
     "loc_ids": 363000,
     "settings":{
