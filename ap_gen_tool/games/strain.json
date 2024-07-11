@@ -4,7 +4,7 @@
     "codename": "strain",
     "classname": "DOOM2STRAIN",
     "iwad": "DOOM2.WAD",
-    "pwad": "strain.wad",
+    "pwad": "STRAIN.WAD",
     "load_order": ["DOOM2.WAD", "STRAIN.WAD", "STRAIN.DEH", "APDOOM.WAD", "APSTRAIN.WAD"],
     "item_ids": 362000,
     "loc_ids": 363000,
@@ -113,6 +113,10 @@
 
         // En Route (MAP07)
         "MAP07":{
+            // Remove normal Doom II MAP07 hacks, as this map doesn't use them
+            // (this allows enemy rando freely on this map)
+            "meta":{"behaves_as": "NORMAL"},
+
             // Move the hub out of the way of the exit
             "hub":{"x":-112,"y":-2064}
         },
