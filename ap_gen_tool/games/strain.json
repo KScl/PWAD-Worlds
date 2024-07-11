@@ -115,7 +115,7 @@
         "MAP07":{
             // Remove normal Doom II MAP07 hacks, as this map doesn't use them
             // (this allows enemy rando freely on this map)
-            "meta":{"behaves_as": "NORMAL"},
+            "metadata":{"behaves_as": "NORMAL"},
 
             // Move the hub out of the way of the exit
             "hub":{"x":-112,"y":-2064}
