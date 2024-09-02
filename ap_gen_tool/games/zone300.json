@@ -1,0 +1,286 @@
+{
+    "name": "Doom II - Zone 300",
+    "world": "pwad-zone300",
+    "codename": "zone300",
+    "classname": "DOOM2Zone300",
+	"iwad": "DOOM2.WAD",
+	"pwad": "zone300.wad",
+    "load_order": ["DOOM2.WAD", "zone300.wad", "APDOOM.WAD", "APZ300.WAD"],
+    "item_ids": 360000,
+    "loc_ids": 361000,
+    "settings": {},
+
+    "map_info": [
+        [
+            {"lump": "MAP01", "name": "The Spaceport (MAP01)"},
+            {"lump": "MAP02", "name": "Control Facility (MAP02)"},
+            {"lump": "MAP03", "name": "The Alleyway (MAP03)"},
+            {"lump": "MAP04", "name": "Canyon Hub (MAP04)"},
+            {"lump": "MAP05", "name": "Skybase 300 (MAP05)"},
+            {"lump": "MAP06", "name": "Whispering Corridor (MAP06)"},
+            {"lump": "MAP07", "name": "Heavyweight (MAP07)"},
+            {"lump": "MAP08", "name": "Waste Disposal Plant (MAP08)"},
+            {"lump": "MAP09", "name": "Nuclear Power Station (MAP09)"},
+            {"lump": "MAP10", "name": "Cargo Bay (MAP10)"}
+        ],
+        [
+            {"lump": "MAP11", "name": "Simbattle (MAP11)"},
+            {"lump": "MAP12", "name": "Villa of Pain (MAP12)"},
+            {"lump": "MAP13", "name": "Dark Crypt (MAP13)"},
+            {"lump": "MAP14", "name": "The Circle (MAP14)"},
+            {"lump": "MAP15", "name": "Trouble Town (MAP15)"},
+            {"lump": "MAP16", "name": "Bruiser Fortress (MAP16)"},
+            {"lump": "MAP17", "name": "Constriction (MAP17)"},
+            {"lump": "MAP18", "name": "Zombie Hideout (MAP18)"},
+            {"lump": "MAP19", "name": "The Invasion (MAP19)"},
+            {"lump": "MAP20", "name": "Death Row (MAP20)"}
+        ],
+        [
+            {"lump": "MAP21", "name": "Blood Lust (MAP21)"},
+            {"lump": "MAP22", "name": "Firestorm Tomb (MAP22)"},
+            {"lump": "MAP23", "name": "Dungeon of Inferno (MAP23)"},
+            {"lump": "MAP24", "name": "Cavern of the Evil Spirit (MAP24)"},
+            {"lump": "MAP25", "name": "Hellucination (MAP25)"},
+            {"lump": "MAP26", "name": "Valley of Brimstone (MAP26)"},
+            {"lump": "MAP27", "name": "Dissect (MAP27)"},
+            {"lump": "MAP28", "name": "Unholy Demise (MAP28)"},
+            {"lump": "MAP29", "name": "Den of Torture (MAP29)"},
+            {"lump": "MAP30", "name": "Eternal Core (MAP30)"}
+        ],
+        [
+            {"lump": "MAP31", "name": "Creepy (MAP31)"},
+            {"lump": "MAP32", "name": "Condemnation (MAP32)"},
+            {"lump": "MAP33", "name": "Zerstorung (MAP33)"}
+        ]
+    ],
+
+    "game_info":{
+        "ammo": [
+            {"name": "Bullets", "max": 200},
+            {"name": "Shells", "max": 50},
+            {"name": "Cells", "max": 300},
+            {"name": "Rockets", "max": 50}
+        ],
+        "weapons": [
+            {"name": "Fist"},
+            {"name": "Pistol", "ammo_type": "Bullets", "starting_ammo": 50},
+            {"name": "Shotgun", "ammo_type": "Shells", "starting_ammo": 30},
+            {"name": "Chaingun", "ammo_type": "Bullets"},
+            {"name": "Rocket launcher", "ammo_type": "Rockets", "starting_ammo": 10},
+            {"name": "Plasma gun", "ammo_type": "Cells", "starting_ammo": 150},
+            {"name": "BFG9000", "ammo_type": "Cells", "starting_ammo": 150},
+            {"name": "Chainsaw"},
+            {"name": "Super shotgun", "ammo_type": "Shells"}
+        ],
+        "monsters": {
+            "small": [
+                {"doomednum":3004, "health":20, "radius":20, "height":56, "frequency": 290}, // Zombieman
+                {"doomednum":   9, "health":30, "radius":20, "height":56, "frequency": 483}, // Sergeant - Shotgunner
+                {"doomednum":3001, "health":60, "radius":20, "height":56, "frequency":1223}, // Imp
+                {"doomednum":  84, "health":50, "radius":20, "height":56, "frequency": 156}, // Wolfenstein SS
+                {"doomednum":  65, "health":70, "radius":20, "height":56, "frequency": 273}  // Commando - Chaingunner
+            ],
+            "medium": [
+                {"doomednum":3002, "health":150, "radius":30, "height":56, "frequency":331}, // Demon
+                {"doomednum":  58, "health":150, "radius":30, "height":56, "frequency":175}, // Spectre
+                {"doomednum":3006, "health":100, "radius":16, "height":56, "frequency":197}, // Lost soul
+                {"doomednum":3005, "health":400, "radius":31, "height":56, "frequency":188}, // Cacodemon
+                {"doomednum":  71, "health":400, "radius":31, "height":56, "frequency": 64}, // Pain Elemental
+                {"doomednum":  67, "health":600, "radius":48, "height":64, "frequency": 68}, // Mancubus
+                {"doomednum":  68, "health":500, "radius":64, "height":64, "frequency": 65}, // Arachnotron
+                {"doomednum":  66, "health":300, "radius":20, "height":56, "frequency": 90}  // Revenant
+            ],
+            "big": [
+                {"doomednum":3003, "health":1000, "radius":24, "height":64, "frequency":31}, // Baron of Hell
+                {"doomednum":  64, "health": 700, "radius":20, "height":56, "frequency":17}, // Arch-Vile
+                {"doomednum":  69, "health": 500, "radius":24, "height":64, "frequency":75}  // Hell Knight
+            ],
+            "boss": [
+                {"doomednum":16, "health":4000, "radius": 40, "height":110, "frequency":12}, // Cyberdemon
+                {"doomednum": 7, "health":3000, "radius":128, "height":100, "frequency": 6}  // Spider Mastermind
+            ]
+        },
+        "pickups": {
+            "mini": [2015, 2014], // Armor and Health bonuses
+            "small": [2011, 2008, 2007, 2047, 2010], // Stimpack, shells, clip, cell, rocket
+            "big": [2048, 2046, 2049, 17, 2012] // Bullets, rockets, shell box, cell pack, medikit
+        },
+
+        "pausepic": "INTERPIC",
+
+        "hint_auto_complete":{
+            "BLUE": ["Blue keycard", "Blue skull key"],
+            "YELLOW": ["Yellow keycard", "Yellow skull key"],
+            "RED": ["Red keycard", "Red skull key"],
+            "MAP": "Computer area map"
+        }
+    },
+    "map_tweaks":{
+        // Nuclear Power Station (MAP09)
+        "MAP09":{
+            "sectors":{
+                // Create a lift to return to the start area
+                "11":{"tag": 690, "floor_pic": "STEP1"}
+            },
+            "linedefs":{
+                // Create a lift to return to the start area
+                "22":{"special": 62, "tag": 690},
+                "23":{"special": 62, "tag": 690}
+            },
+            "sidedefs":{
+                // Texture changes to accomodate the lift
+                "32":{"lower": "PLAT1"},
+                "34":{"lower": "PLAT1"},
+                "100":{"lower": "SILVER2"},
+                "102":{"lower": "SILVER1"}
+            }
+        },
+
+        // Cavern of the Evil Spirit (MAP24)
+        "MAP24":{
+            // Move the hub so it doesn't get propped up on the ledge when the secret lift moves.
+            "hub":{"x":-312, "y":504}
+        }
+    },
+    "level_select":{
+        "defaults":{
+            "map_name_position": "individual",
+            "maps":{
+                "x": 30,
+                "cursor": {"graphic": "M_SKULL1", "x": -30, "y": -11},
+                "map_name": {"x": 10, "y": -7},
+                "keys": {"x": 10, "y": 5, "spacing_x": 12},
+                "checks": {"relative_to": "keys-last", "x": 8, "y": 1}
+            }
+        },
+        "episodes":[
+            {
+                "background_image": "INTERPIC",
+                "maps":[
+                    { "y":  10, "map_name": {"graphic": "CWILV00"} },
+                    { "y":  30, "map_name": {"graphic": "CWILV01"} },
+                    { "y":  50, "map_name": {"graphic": "CWILV02"} },
+                    { "y":  70, "map_name": {"graphic": "CWILV03"} },
+                    { "y":  90, "map_name": {"graphic": "CWILV04"} },
+                    { "y": 110, "map_name": {"graphic": "CWILV05"} },
+                    { "y": 130, "map_name": {"graphic": "CWILV06"} },
+                    { "y": 150, "map_name": {"graphic": "CWILV07"} },
+                    { "y": 170, "map_name": {"graphic": "CWILV08"} },
+                    { "y": 190, "map_name": {"graphic": "CWILV09"} }
+                ]
+            },
+            {
+                "background_image": "INTERPIC",
+                "maps":[
+                    { "y":  15, "map_name": {"graphic": "CWILV10"} },
+                    { "y":  33, "map_name": {"graphic": "CWILV11"} },
+                    { "y":  51, "map_name": {"graphic": "CWILV12"} },
+                    { "y":  69, "map_name": {"graphic": "CWILV13"} },
+                    { "y":  87, "map_name": {"graphic": "CWILV14"} },
+                    { "y": 105, "map_name": {"graphic": "CWILV15"} },
+                    { "y": 123, "map_name": {"graphic": "CWILV16"} },
+                    { "y": 141, "map_name": {"graphic": "CWILV17"} },
+                    { "y": 159, "map_name": {"graphic": "CWILV18"} },
+                    { "y": 177, "map_name": {"graphic": "CWILV19"} }
+                ]
+            },
+            {
+                "background_image": "INTERPIC",
+                "maps":[
+                    { "y":  15, "map_name": {"graphic": "CWILV20"} },
+                    { "y":  33, "map_name": {"graphic": "CWILV21"} },
+                    { "y":  51, "map_name": {"graphic": "CWILV22"} },
+                    { "y":  69, "map_name": {"graphic": "CWILV23"} },
+                    { "y":  87, "map_name": {"graphic": "CWILV24"} },
+                    { "y": 105, "map_name": {"graphic": "CWILV25"} },
+                    { "y": 123, "map_name": {"graphic": "CWILV26"} },
+                    { "y": 141, "map_name": {"graphic": "CWILV27"} },
+                    { "y": 159, "map_name": {"graphic": "CWILV28"} },
+                    { "y": 177, "map_name": {"graphic": "CWILV29"} }
+                ]
+            },
+            {
+                "background_image": "INTERPIC",
+                "maps":[
+                    { "x": 60, "y":  40, "map_name": {"graphic": "CWILV30"} },
+                    { "x": 60, "y":  80, "map_name": {"graphic": "CWILV31"} },
+                    { "x": 60, "y": 120, "map_name": {"graphic": "CWILV32"} }
+                ]
+            }
+        ]
+    },
+
+    "location_doom_types": {
+        "5": "Blue keycard",
+        "40": "Blue skull key",
+        "6": "Yellow keycard",
+        "39": "Yellow skull key",
+        "13": "Red keycard",
+        "38": "Red skull key",
+        "2018": "Armor",
+        "8": "Backpack",
+        "2019": "Mega Armor",
+        "2023": "Berserk",
+        "2022": "Invulnerability",
+        "2024": "Partial invisibility",
+        "2013": "Supercharge",
+        "2006": "BFG9000",
+        "2002": "Chaingun",
+        "2005": "Chainsaw",
+        "2004": "Plasma gun",
+        "2003": "Rocket launcher",
+        "2001": "Shotgun",
+        "2026": "Computer area map",
+        "82": "Super Shotgun",
+        "83": "Megasphere"
+    },
+    "extra_connection_requirements": [
+        {"doom_type": -1, "name": "deathlogic", "sprite": "STFDEAD0" },
+        {"doom_type": -2, "name": "pro", "sprite": "STFGOD0" }
+    ],
+    "progressions": [
+        {"doom_type": 2001, "name": "Shotgun", "group": "Weapons", "sprite": "SHOTA0"},
+        {"doom_type": 2003, "name": "Rocket launcher", "group": "Weapons", "sprite": "LAUNA0"},
+        {"doom_type": 2004, "name": "Plasma gun", "group": "Weapons", "sprite": "PLASA0"},
+        {"doom_type": 2005, "name": "Chainsaw", "group": "Weapons", "sprite": "CSAWA0"},
+        {"doom_type": 2002, "name": "Chaingun", "group": "Weapons", "sprite": "MGUNA0"},
+        {"doom_type": 2006, "name": "BFG9000", "group": "Weapons", "sprite": "BFUGA0"},
+        {"doom_type": 82, "name": "Super Shotgun", "group": "Weapons", "sprite": "SGN2A0"}
+    ],
+    "fillers": [
+        {"doom_type": 2018, "name": "Armor", "group": "Powerups", "sprite": "ARM1A0"},
+        {"doom_type": 2019, "name": "Mega Armor", "group": "Powerups", "sprite": "ARM2A0"},
+        {"doom_type": 2023, "name": "Berserk", "group": "Powerups", "sprite": "PSTRA0"},
+        {"doom_type": 2022, "name": "Invulnerability", "group": "Powerups", "sprite": "PINVA0"},
+        {"doom_type": 2024, "name": "Partial invisibility", "group": "Powerups", "sprite": "PINSA0"},
+        {"doom_type": 2013, "name": "Supercharge", "group": "Powerups", "sprite": "SOULA0"},
+        {"doom_type": 83, "name": "Megasphere", "group": "Powerups", "sprite": "MEGAD0"},
+        {"doom_type": 2012, "name": "Medikit", "group": "", "sprite": "MEDIA0"},
+        {"doom_type": 2048, "name": "Box of bullets", "group": "Ammos", "sprite": "AMMOA0"},
+        {"doom_type": 2046, "name": "Box of rockets", "group": "Ammos", "sprite": "BROKA0"},
+        {"doom_type": 2049, "name": "Box of shotgun shells", "group": "Ammos", "sprite": "SBOXA0"},
+        {"doom_type": 17, "name": "Energy cell pack", "group": "Ammos", "sprite": "CELPA0"}
+    ],
+    "unique_progressions": [
+    ],
+    "unique_fillers": [
+        {"doom_type": 2026, "name": "Computer area map", "group": "Computer area maps", "sprite": "PMAPA0"}
+    ],
+    "capacity_upgrades": [
+        {"doom_type": 8, "name": "Backpack", "group": "", "sprite": "BPAKA0"},
+        {"doom_type": 65001, "name": "Bullet capacity", "group": "", "sprite": "BPAKA0"},
+        {"doom_type": 65002, "name": "Shell capacity", "group": "", "sprite": "BPAKA0"},
+        {"doom_type": 65003, "name": "Energy cell capacity", "group": "", "sprite": "BPAKA0"},
+        {"doom_type": 65004, "name": "Rocket capacity", "group": "", "sprite": "BPAKA0"}
+    ],
+    "keys": [
+        {"doom_type": 5, "name": "Blue keycard", "group": "Keys", "key": 0, "use_skull": false, "region_name": "Blue", "color": [0, 0, 1], "sprite": "BKEYB0"},
+        {"doom_type": 40, "name": "Blue skull key", "group": "Keys", "key": 0, "use_skull": true, "region_name": "Blue", "color": [0, 0, 1], "sprite": "BSKUB0"},
+        {"doom_type": 6, "name": "Yellow keycard", "group": "Keys", "key": 1, "use_skull": false, "region_name": "Yellow", "color": [1, 1, 0], "sprite": "YKEYB0"},
+        {"doom_type": 39, "name": "Yellow skull key", "group": "Keys", "key": 1, "use_skull": true, "region_name": "Yellow", "color": [1, 1, 0], "sprite": "YSKUB0"},
+        {"doom_type": 13, "name": "Red keycard", "group": "Keys", "key": 2, "use_skull": false, "region_name": "Red", "color": [1, 0, 0], "sprite": "RKEYB0"},
+        {"doom_type": 38, "name": "Red skull key", "group": "Keys", "key": 2, "use_skull": true, "region_name": "Red", "color": [1, 0, 0], "sprite": "RSKUB0"}
+    ],
+    "loc_remap": {},
+    "item_remap": {}
+}
