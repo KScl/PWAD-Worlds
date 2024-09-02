@@ -486,7 +486,9 @@ regions:List[RegionDict] = [
     {"name":"Condemnation (MAP32) Blue",
      "connects_to_hub":False,
      "episode":4,
-     "connections":[{"target":"Condemnation (MAP32) Yellow","pro":False}]},
+     "connections":[
+        {"target":"Condemnation (MAP32) Red","pro":False},
+        {"target":"Condemnation (MAP32) Main","pro":False}]},
     {"name":"Condemnation (MAP32) Yellow",
      "connects_to_hub":False,
      "episode":4,
@@ -494,7 +496,9 @@ regions:List[RegionDict] = [
     {"name":"Condemnation (MAP32) Red",
      "connects_to_hub":False,
      "episode":4,
-     "connections":[]},
+     "connections":[
+        {"target":"Condemnation (MAP32) Yellow","pro":False},
+        {"target":"Condemnation (MAP32) Blue","pro":False}]},
 
     # Zerstorung (MAP33)
     {"name":"Zerstorung (MAP33) Start",

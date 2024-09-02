@@ -311,7 +311,8 @@ def set_episode3_rules(player, multiworld, pro):
         state.has("Chainsaw", player, 1) and
         state.has("Chaingun", player, 1))
     set_rule(multiworld.get_entrance("Hellucination (MAP25) Main -> Hellucination (MAP25) Yellow", player), lambda state:
-        state.has("Hellucination (MAP25) - Yellow skull key", player, 1))
+        state.has("Hellucination (MAP25) - Yellow skull key", player, 1) and
+        state.has("BFG9000", player, 1))
     set_rule(multiworld.get_entrance("Hellucination (MAP25) Main -> Hellucination (MAP25) Red", player), lambda state:
         state.has("Hellucination (MAP25) - Red skull key", player, 1))
     set_rule(multiworld.get_entrance("Hellucination (MAP25) Main -> Hellucination (MAP25) Blue", player), lambda state:
@@ -397,7 +398,19 @@ def set_episode4_rules(player, multiworld, pro):
 
     # Condemnation (MAP32)
     set_rule(multiworld.get_entrance("Hub -> Condemnation (MAP32) Main", player), lambda state:
-        state.has("Condemnation (MAP32)", player, 1))
+        state.has("Condemnation (MAP32)", player, 1) and
+        state.has("Shotgun", player, 1) and
+        state.has("Super Shotgun", player, 1) and
+        state.has("Chaingun", player, 1) and
+        state.has("Rocket launcher", player, 1) and
+        state.has("Chainsaw", player, 1))
+    set_rule(multiworld.get_entrance("Condemnation (MAP32) Main -> Condemnation (MAP32) Blue", player), lambda state:
+        state.has("Condemnation (MAP32) - Blue skull key", player, 1))
+    set_rule(multiworld.get_entrance("Condemnation (MAP32) Blue -> Condemnation (MAP32) Red", player), lambda state:
+        state.has("Condemnation (MAP32) - Red skull key", player, 1))
+    set_rule(multiworld.get_entrance("Condemnation (MAP32) Red -> Condemnation (MAP32) Yellow", player), lambda state:
+        state.has("BFG9000", player, 1) and
+        state.has("Condemnation (MAP32) - Yellow skull key", player, 1))
 
     # Zerstorung (MAP33)
     set_rule(multiworld.get_entrance("Hub -> Zerstorung (MAP33) Start", player), lambda state:

@@ -1782,7 +1782,7 @@ location_table: Dict[int, LocationDict] = {
              'map': 2,
              'index': -1,
              'doom_type': -1,
-             'region': "Condemnation (MAP32) Red"},
+             'region': "Condemnation (MAP32) Yellow"},
     361295: {'name': 'Zerstorung (MAP33) - Blue skull key',
              'episode': 4,
              'map': 3,
