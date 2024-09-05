@@ -138,8 +138,10 @@ def set_episode2_rules(player, multiworld, pro):
         state.has("Villa of Pain (MAP12)", player, 1) and
         state.has("Chaingun", player, 1))
     set_rule(multiworld.get_entrance("Villa of Pain (MAP12) Main -> Villa of Pain (MAP12) Yellow", player), lambda state:
-       (state.has("Villa of Pain (MAP12) - Yellow skull key", player, 1)) and       (state.has("Rocket launcher", player, 1) or
-        state.has("Super Shotgun", player, 1)))
+       (state.has("Super Shotgun", player, 1) and
+        state.has("Villa of Pain (MAP12) - Yellow skull key", player, 1)) and       (state.has("Rocket launcher", player, 1) or
+        state.has("Plasma gun", player, 1) or
+        state.has("BFG9000", player, 1)))
     set_rule(multiworld.get_entrance("Villa of Pain (MAP12) Yellow -> Villa of Pain (MAP12) Red", player), lambda state:
         state.has("Villa of Pain (MAP12) - Red skull key", player, 1))
 
