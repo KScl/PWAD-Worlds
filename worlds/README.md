@@ -8,11 +8,12 @@ Each subfolder contains the following:
 - For PWADs, a "wads" folder may be present, containing additional wad files that must be downloaded to play the game.
 
 ## Currently supported IWADs
-- Doom (1993)
-- Doom II
-- Heretic
-- HacX
+- [Doom (1993)](https://store.steampowered.com/app/2280/DOOM__DOOM_II/)
+- [Doom II](https://store.steampowered.com/app/2280/DOOM__DOOM_II/)
+- [HacX](https://www.doomworld.com/idgames/themes/hacx/hacx12)
+- [Heretic](https://store.steampowered.com/app/2390/Heretic_Shadow_of_the_Serpent_Riders/)
 
 ## Currently supported PWADs
 - For Doom II:
   - [STRAIN](https://www.doomworld.com/idgames/levels/doom2/megawads/strain)
+  - [Zone 300](https://www.doomworld.com/idgames/levels/doom2/megawads/zone300)
