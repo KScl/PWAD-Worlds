@@ -108,13 +108,18 @@ class DOOM2STRAINWorld(World):
             if region_dict["connects_to_hub"]:
                 main_regions.append(region_name)
 
-            region = Region(region_name, self.player, self.multiworld)
-            region.add_locations({
-                loc["name"]: loc_id
-                for loc_id, loc in Locations.location_table.items()
-                if loc["region"] == region_name and self.included_episodes[loc["episode"] - 1]
-            }, DOOM2STRAINLocation)
+            # Hacky workaround: MAP23 Wallrun Access is a pro-only section of the map
+            if not pro and region_name == "Dispensary Alpha (MAP23) Wallrun Access":
+                region_locations = {}
+            else:
+                region_locations = {
+                    loc["name"]: loc_id
+                    for loc_id, loc in Locations.location_table.items()
+                    if loc["region"] == region_name and self.included_episodes[loc["episode"] - 1]
+                }
 
+            region = Region(region_name, self.player, self.multiworld)
+            region.add_locations(region_locations, DOOM2STRAINLocation)
             self.multiworld.regions.append(region)
 
             for connection_dict in region_dict["connections"]:
@@ -278,5 +283,8 @@ class DOOM2STRAINWorld(World):
         slot_data["ammo2add"] = self.options.added_ammo_shells.value
         slot_data["ammo3add"] = self.options.added_ammo_batteries.value
         slot_data["ammo4add"] = self.options.added_ammo_rockets.value
+
+        # We use "checksanity" for pro-only locations
+        slot_data["check_sanity"] = self.options.pro.value
 
         return slot_data

@@ -72,6 +72,39 @@
             {"name": "Chainsaw"},
             {"name": "Super shotgun", "ammo_type": "Shells", "starting_ammo": 30}
         ],
+        "monsters": {
+            "small": [
+                {"doomednum":3004, "health":20, "radius":20, "height":56, "frequency": 290}, // Zombieman
+                {"doomednum":   9, "health":30, "radius":20, "height":56, "frequency": 483}, // Sergeant - Shotgunner
+                {"doomednum":3001, "health":60, "radius":20, "height":56, "frequency":1223}, // Imp
+                {"doomednum":  68, "health":60, "radius":20, "height":56, "frequency":   0}, // Class II Imp
+                {"doomednum":  65, "health":70, "radius":20, "height":56, "frequency": 273}  // Commando - Chaingunner
+            ],
+            "medium": [
+                {"doomednum":3002, "health":217, "radius":30, "height":56, "frequency":  0}, // Skinless Demon
+                {"doomednum":  71, "health":200, "radius":31, "height":56, "frequency":  0}, // Holobot
+                {"doomednum":  66, "health":200, "radius":31, "height":56, "frequency":  0}, // Invisible Holobot
+                {"doomednum":3006, "health":100, "radius":16, "height":48, "frequency":  0}, // Doppelganger
+                {"doomednum":3005, "health":400, "radius":31, "height":56, "frequency":188}, // Cacodemon
+                {"doomednum":  58, "health": 20, "radius":20, "height":56, "frequency":  0}  // BFG Trooper
+            ],
+            "big": [
+                {"doomednum":   7, "health": 160, "radius":18, "height":30, "frequency": 0}, // Polydrone
+                {"doomednum":  69, "health": 500, "radius":24, "height":64, "frequency":75}, // Hell Knight
+                {"doomednum":3003, "health":1000, "radius":24, "height":64, "frequency":31}, // Baron of Hell
+                {"doomednum":  64, "health": 700, "radius":20, "height":56, "frequency":17}, // Arch-Vile
+                {"doomednum":  16, "health": 300, "radius":20, "height":55, "frequency": 0}  // Minister of Hate
+            ],
+            "boss": [
+                {"doomednum":  67, "health":1400, "radius":24, "height":64, "frequency":0}  // Demon Lord
+            ]
+        },
+        "pickups": {
+            "small": [2015, 2014], // Armor and Health bonuses
+            "medium": [2011, 2008, 2007, 2047, 2010], // Stimpack, shells, clip, cell, rocket
+            "big": [2048, 2046, 2049, 17, 2012] // Bullets, rockets, shell box, cell pack, medikit
+        },
+
         "pausepic": "TITLEPIC",
 
         "hint_auto_complete":{
@@ -99,9 +132,13 @@
                 // Require blue key to advance the map early on, as anti-softlock
                 "845":{"special":133}
             },
+            "sectors":{
+                // Open the backup key from the start.
+                "393":{"ceiling":44}
+            },
             "things":{
-                // Move the backup blue key in a bit to make it easier to grab
-                "433":{"x":-1440,"y":-2024}
+                // Move the backup blue key item out a bit, to make it easier to grab
+                "433":{"x":-1440,"y":-2026}
             }
         },
 
@@ -139,14 +176,6 @@
                 // We cannot make this a two-way keydoor because the linedefs on the other side are oriented wrong
                 "940":{"special":31},
                 "944":{"special":31}
-            }
-        },
-
-        // Power Station (MAP12)
-        "MAP12":{
-            "things":{
-                // Move the blue key off of spawn
-                "342":{"x":322,"y":736}
             }
         },
 
@@ -228,7 +257,8 @@
         // Sub-Laboratory (MAP24)
         "MAP24":{
             // Move the hub into the room you teleport into.
-            "hub":{"x":-384,"y":-128},
+            "hub":{"x":-384,"y":-128, "angle":0},
+
             "linedefs":{
                 // Allow opening the blue key trap room from behind, if it gets shut on you.
                 "638":{"special":31},
@@ -258,6 +288,15 @@
         "MAP28":{
             // Move the hub so it remains reachable after leaving the starting rooms.
             "hub":{"x":-640,"y":-3232}
+        },
+
+        // Self-Destruct (MAP29)
+        "MAP29":{
+            "linedefs":{
+                // Fix a vanilla softlock from raising platforms too fast, by making all repeatable.
+                "1268":{"special":132},
+                "1323":{"special":132}
+            }
         },
 
         // Boss (MAP30)

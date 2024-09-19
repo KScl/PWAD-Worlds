@@ -56,7 +56,9 @@ def set_episode1_rules(player, multiworld, pro):
         state.has("Depot (MAP05)", player, 1))
     set_rule(multiworld.get_entrance("Depot (MAP05) Main -> Depot (MAP05) Red", player), lambda state:
        (state.has("Depot (MAP05) - Red keycard", player, 1)) and       (state.has("Chainsaw", player, 1) or
-        state.has("Chaingun", player, 1)))
+        state.has("Chaingun", player, 1) or
+        state.has("Rocket launcher", player, 1) or
+        state.has("Sawed-off shotgun", player, 1)))
 
     # Launch Control (MAP06)
     set_rule(multiworld.get_entrance("Hub -> Launch Control (MAP06) Main", player), lambda state:
@@ -112,10 +114,9 @@ def set_episode1_rules(player, multiworld, pro):
     set_rule(multiworld.get_entrance("Cargo Bay (MAP09) Main -> Cargo Bay (MAP09) Red", player), lambda state:
         state.has("Cargo Bay (MAP09) - Red skull key", player, 1))
     set_rule(multiworld.get_entrance("Cargo Bay (MAP09) Main -> Cargo Bay (MAP09) Yellow", player), lambda state:
-       (state.has("Cargo Bay (MAP09) - Yellow keycard", player, 1) and
-        state.has("Super shotgun", player, 1)) and       (state.has("Rocket launcher", player, 1) or
-        state.has("NFG", player, 1) or
-        state.has("Psychic blaster", player, 1)))
+        state.has("Cargo Bay (MAP09) - Yellow keycard", player, 1) and
+        state.has("Super shotgun", player, 1) and
+        state.has("Chaingun", player, 1))
     set_rule(multiworld.get_entrance("Cargo Bay (MAP09) Main -> Cargo Bay (MAP09) Blue", player), lambda state:
         state.has("Cargo Bay (MAP09) - Blue keycard", player, 1))
     set_rule(multiworld.get_entrance("Cargo Bay (MAP09) Red -> Cargo Bay (MAP09) Main", player), lambda state:
@@ -273,15 +274,16 @@ def set_episode2_rules(player, multiworld, pro):
 
     # Promenade (MAP17)
     set_rule(multiworld.get_entrance("Hub -> Promenade (MAP17) Main", player), lambda state:
-        state.has("Promenade (MAP17)", player, 1) and
+       (state.has("Promenade (MAP17)", player, 1) and
         state.has("Sawed-off shotgun", player, 1) and
-        state.has("Super shotgun", player, 1) and
-        state.has("Chainsaw", player, 1))
+        state.has("Super shotgun", player, 1)) and
+       (state.has("Chainsaw", player, 1) or
+        state.has("Chaingun", player, 1)))
     set_rule(multiworld.get_entrance("Promenade (MAP17) Main -> Promenade (MAP17) Blue", player), lambda state:
        (state.has("Chaingun", player, 1) and
-        state.has("Promenade (MAP17) - Blue keycard", player, 1)) and       (state.has("Rocket launcher", player, 1) or
-        state.has("Psychic blaster", player, 1) or
-        state.has("NFG", player, 1)))
+        state.has("Promenade (MAP17) - Blue keycard", player, 1) and
+        state.has("NFG", player, 1)) and       (state.has("Rocket launcher", player, 1) or
+        state.has("Psychic blaster", player, 1)))
     set_rule(multiworld.get_entrance("Promenade (MAP17) Blue -> Promenade (MAP17) Main", player), lambda state:
         state.has("Promenade (MAP17) - Blue keycard", player, 1))
     set_rule(multiworld.get_entrance("Promenade (MAP17) Blue -> Promenade (MAP17) Red", player), lambda state:
@@ -358,7 +360,8 @@ def set_episode3_rules(player, multiworld, pro):
         state.has("NFG", player, 1) or
         state.has("Chaingun", player, 1) or
         state.has("Psychic blaster", player, 1) or
-        state.has("Super shotgun", player, 1))
+        state.has("Super shotgun", player, 1) or
+        state.has("Chainsaw", player, 1))
 
     # Specimen Storage (MAP22)
     set_rule(multiworld.get_entrance("Hub -> Specimen Storage (MAP22) Start", player), lambda state:
@@ -383,13 +386,16 @@ def set_episode3_rules(player, multiworld, pro):
 
     # Dispensary Alpha (MAP23)
     set_rule(multiworld.get_entrance("Hub -> Dispensary Alpha (MAP23) Entry", player), lambda state:
-        state.has("Dispensary Alpha (MAP23)", player, 1) and
-        state.has("Sawed-off shotgun", player, 1))
+       (state.has("Dispensary Alpha (MAP23)", player, 1)) and
+       (state.has("Sawed-off shotgun", player, 1) or
+        state.has("Chaingun", player, 1) or
+        state.has("Super shotgun", player, 1)))
     set_rule(multiworld.get_entrance("Dispensary Alpha (MAP23) Entry -> Dispensary Alpha (MAP23) Main", player), lambda state:
        (state.has("Super shotgun", player, 1) and
         state.has("NFG", player, 1) and
         state.has("Chainsaw", player, 1) and
-        state.has("Chaingun", player, 1)) and       (state.has("Rocket launcher", player, 1) or
+        state.has("Chaingun", player, 1) and
+        state.has("Sawed-off shotgun", player, 1)) and       (state.has("Rocket launcher", player, 1) or
         state.has("Psychic blaster", player, 1)))
     set_rule(multiworld.get_entrance("Dispensary Alpha (MAP23) Main -> Dispensary Alpha (MAP23) Yellow", player), lambda state:
         state.has("Dispensary Alpha (MAP23) - Yellow keycard", player, 1))
@@ -493,8 +499,12 @@ def set_episode3_rules(player, multiworld, pro):
         state.has("NFG", player, 1) and
         state.has("Chainsaw", player, 1) and
         state.has("Chaingun", player, 1) and
-        state.has("Psychic blaster", player, 1) and
         state.has("Super shotgun", player, 1))
+    set_rule(multiworld.get_entrance("Unknown (MAP28) Main -> Unknown (MAP28) Red", player), lambda state:
+        state.has("Unknown (MAP28) - Red skull key", player, 1))
+    set_rule(multiworld.get_entrance("Unknown (MAP28) Red -> Unknown (MAP28) Lords", player), lambda state:
+        state.has("Unknown (MAP28) - Yellow skull key", player, 1) or
+        state.has("Psychic blaster", player, 1))
 
     # Self-Destruct (MAP29)
     set_rule(multiworld.get_entrance("Hub -> Self-Destruct (MAP29) Main", player), lambda state:
