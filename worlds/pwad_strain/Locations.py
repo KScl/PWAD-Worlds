@@ -1080,7 +1080,7 @@ location_table: Dict[int, LocationDict] = {
              'map': 4,
              'index': -1,
              'doom_type': -1,
-             'region': "Subsidiary Power (MAP15) Red"},
+             'region': "Subsidiary Power (MAP15) Final"},
     363178: {'name': 'Living Quarters (MAP16) - Blue skull key (East Water)',
              'episode': 2,
              'map': 5,

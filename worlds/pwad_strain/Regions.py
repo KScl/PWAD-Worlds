@@ -309,7 +309,8 @@ regions:List[RegionDict] = [
      "episode":2,
      "connections":[
         {"target":"Subsidiary Power (MAP15) Yellow","pro":False},
-        {"target":"Subsidiary Power (MAP15) Blue","pro":False}]},
+        {"target":"Subsidiary Power (MAP15) Blue","pro":False},
+        {"target":"Subsidiary Power (MAP15) Final","pro":True}]},
     {"name":"Subsidiary Power (MAP15) Yellow",
      "connects_to_hub":False,
      "episode":2,
@@ -323,7 +324,13 @@ regions:List[RegionDict] = [
     {"name":"Subsidiary Power (MAP15) Red",
      "connects_to_hub":False,
      "episode":2,
-     "connections":[{"target":"Subsidiary Power (MAP15) Blue","pro":False}]},
+     "connections":[
+        {"target":"Subsidiary Power (MAP15) Blue","pro":False},
+        {"target":"Subsidiary Power (MAP15) Final","pro":False}]},
+    {"name":"Subsidiary Power (MAP15) Final",
+     "connects_to_hub":False,
+     "episode":2,
+     "connections":[]},
 
     # Living Quarters (MAP16)
     {"name":"Living Quarters (MAP16) Main",
