@@ -6,9 +6,9 @@ from dataclasses import dataclass
 
 class Difficulty(Choice):
     """
-    Choose the difficulty option. Those match DOOM's difficulty options.
-    baby (I'm too young to die.) double ammos, half damage, less monsters or strength.
-    easy (Hey, not too rough.) less monsters or strength.
+    Choose the game difficulty. These options match DOOM's skill levels.
+    baby (I'm too young to die.) Same as easy, with double ammo pickups and half damage taken.
+    easy (Hey, not too rough.) Less monsters or strength.
     medium (Hurt me plenty.) Default.
     hard (Ultra-Violence.) More monsters or strength.
     nightmare (Nightmare!) Monsters attack more rapidly and respawn.
@@ -19,6 +19,11 @@ class Difficulty(Choice):
     option_medium = 2
     option_hard = 3
     option_nightmare = 4
+    alias_itytd = 0
+    alias_hntr = 1
+    alias_hmp = 2
+    alias_uv = 3
+    alias_nm = 4
     default = 2
 
 
@@ -92,7 +97,9 @@ class AllowDeathLogic(Toggle):
     
 class Pro(Toggle):
     """Include difficult tricks into rules. Mostly employed by speed runners.
-    i.e.: Leaps across to a locked area, trigger a switch behind a window at the right angle, etc."""
+    i.e.: Leaps across to a locked area, trigger a switch behind a window at the right angle, etc.
+
+    Note: In STRAIN, this adds six additional Pro-exclusive locations in Dispensary Alpha (MAP23)."""
     display_name = "Pro Doom"
 
 
@@ -104,29 +111,29 @@ class StartWithComputerAreaMaps(Toggle):
 class ResetLevelOnDeath(DefaultOnToggle):
     """When dying, levels are reset and monsters respawned. But inventory and checks are kept.
     Turning this setting off is considered easy mode. Good for new players that don't know the levels well."""
-    display_name = "Reset level on death"
+    display_name = "Reset Level on Death"
 
 
 class Episode1(DefaultOnToggle):
-    """Base, Starships.
+    """Military Base and Starships (MAP01 - MAP11)
     If none of the episodes are chosen, Episode 1 will be chosen by default."""
     display_name = "Episode 1"
 
 
 class Episode2(DefaultOnToggle):
-    """Station Daro.
+    """Approaching Station Daro (MAP12 - MAP20)
     If none of the episodes are chosen, Episode 1 will be chosen by default."""
     display_name = "Episode 2"
 
 
 class Episode3(DefaultOnToggle):
-    """Daro Laboratories and Command Center.
+    """Station Daro Laboratories and Command Center (MAP21 - MAP30)
     If none of the episodes are chosen, Episode 1 will be chosen by default."""
     display_name = "Episode 3"
 
 
 class SecretLevels(Toggle):
-    """Secret levels.
+    """Secret levels (MAP31 - MAP32)
     This is too short to be an episode. It's additive.
     Another episode will have to be selected along with this one.
     Otherwise episode 1 will be added."""

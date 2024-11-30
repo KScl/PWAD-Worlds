@@ -1,5 +1,9 @@
 __pycache__
 
+# Exclude random backup files and works-in-progress
+*.bak
+wip/
+
 # Exclude most things in the ap_gen_tool folder that aren't data
 
 # Copyrighted WADs
