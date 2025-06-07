@@ -56,15 +56,15 @@ regions:List[RegionDict] = [
      "connects_to_hub":False,
      "episode":1,
      "connections":[
-        {"target":"Lava Annex (MAP03) Keycard","pro":False},
+        {"target":"Lava Annex (MAP03) Z Blue","pro":False},
         {"target":"Lava Annex (MAP03) Opening","pro":False}]},
-    {"name":"Lava Annex (MAP03) Keycard",
+    {"name":"Lava Annex (MAP03) Z Blue",
      "connects_to_hub":False,
      "episode":1,
      "connections":[
-        {"target":"Lava Annex (MAP03) Password","pro":False},
+        {"target":"Lava Annex (MAP03) Z Red","pro":False},
         {"target":"Lava Annex (MAP03) Main","pro":False}]},
-    {"name":"Lava Annex (MAP03) Password",
+    {"name":"Lava Annex (MAP03) Z Red",
      "connects_to_hub":False,
      "episode":1,
      "connections":[{"target":"Lava Annex (MAP03) Main","pro":False}]},
@@ -95,19 +95,25 @@ regions:List[RegionDict] = [
 
     # Digi-Ota (MAP06)
     {"name":"Digi-Ota (MAP06) Main",
-     "connects_to_hub":True,
-     "episode":1,
-     "connections":[{"target":"Digi-Ota (MAP06) Password","pro":False}]},
+     "connects_to_hub":False,
+     "episode":2,
+     "connections":[
+        {"target":"Digi-Ota (MAP06) Password","pro":False},
+        {"target":"Digi-Ota (MAP06) Start","pro":False}]},
     {"name":"Digi-Ota (MAP06) Password",
      "connects_to_hub":False,
-     "episode":1,
+     "episode":2,
      "connections":[
-        {"target":"Digi-Ota (MAP06) Keycard","pro":False},
+        {"target":"Digi-Ota (MAP06) Z Blue","pro":False},
         {"target":"Digi-Ota (MAP06) Main","pro":False}]},
-    {"name":"Digi-Ota (MAP06) Keycard",
+    {"name":"Digi-Ota (MAP06) Z Blue",
      "connects_to_hub":False,
-     "episode":1,
+     "episode":2,
      "connections":[{"target":"Digi-Ota (MAP06) Password","pro":False}]},
+    {"name":"Digi-Ota (MAP06) Start",
+     "connects_to_hub":True,
+     "episode":2,
+     "connections":[{"target":"Digi-Ota (MAP06) Main","pro":False}]},
 
     # The Great Wall (MAP07)
     {"name":"The Great Wall (MAP07) Opening",
@@ -157,19 +163,25 @@ regions:List[RegionDict] = [
 
     # Notus Us! (MAP11)
     {"name":"Notus Us! (MAP11) Main",
-     "connects_to_hub":True,
-     "episode":2,
-     "connections":[{"target":"Notus Us! (MAP11) Password","pro":False}]},
+     "connects_to_hub":False,
+     "episode":3,
+     "connections":[
+        {"target":"Notus Us! (MAP11) Password","pro":False},
+        {"target":"Notus Us! (MAP11) Early","pro":False}]},
     {"name":"Notus Us! (MAP11) Password",
      "connects_to_hub":False,
-     "episode":2,
+     "episode":3,
      "connections":[
         {"target":"Notus Us! (MAP11) Main","pro":False},
         {"target":"Notus Us! (MAP11) Keycard","pro":False}]},
     {"name":"Notus Us! (MAP11) Keycard",
      "connects_to_hub":False,
-     "episode":2,
+     "episode":3,
      "connections":[{"target":"Notus Us! (MAP11) Password","pro":False}]},
+    {"name":"Notus Us! (MAP11) Early",
+     "connects_to_hub":True,
+     "episode":3,
+     "connections":[{"target":"Notus Us! (MAP11) Main","pro":False}]},
 
     # Gothik Gauntlet (MAP12)
     {"name":"Gothik Gauntlet (MAP12) Start",

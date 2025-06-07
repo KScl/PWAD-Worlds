@@ -6,9 +6,9 @@ from dataclasses import dataclass
 
 class Difficulty(Choice):
     """
-    Choose the difficulty option. Those match HacX's difficulty options.
-    baby (Please don't shoot!) double ammos, half damage, less monsters or strength.
-    easy (Arrgh, I need health!) less monsters or strength.
+    Choose the game difficulty. These options match HacX's skill levels.
+    baby (Please don't shoot!) Same as easy, with double ammo pickups and half damage taken.
+    easy (Arrgh, I need health!) Less monsters or strength.
     medium (Let's rip them apart!) Default.
     hard (I am immortal) More monsters or strength.
     insanity (Insanity!) Monsters attack more rapidly and respawn.
@@ -19,6 +19,15 @@ class Difficulty(Choice):
     option_medium = 2
     option_hard = 3
     option_insanity = 4
+    alias_itytd = 0
+    alias_hntr = 1
+    alias_hmp = 2
+    alias_uv = 3
+    alias_nm = 4
+    alias_pds = 0
+    alias_ainh = 1
+    alias_lrta = 2
+    alias_iai = 3
     default = 2
 
 
@@ -108,25 +117,25 @@ class ResetLevelOnDeath(DefaultOnToggle):
 
 
 class Episode1(DefaultOnToggle):
-    """Episode 1 (MAP01 - MAP06)
+    """San Francisco (MAP01 - MAP05)
     If none of the episodes are chosen, Episode 1 will be chosen by default."""
     display_name = "Episode 1"
 
 
 class Episode2(DefaultOnToggle):
-    """Episode 2 (MAP07 - MAP11).
+    """Hong Kong (MAP06 - MAP10).
     If none of the episodes are chosen, Episode 1 will be chosen by default."""
     display_name = "Episode 2"
 
 
 class Episode3(DefaultOnToggle):
-    """Episode 3 (MAP12 - MAP15).
+    """Paris (MAP11 - MAP15).
     If none of the episodes are chosen, Episode 1 will be chosen by default."""
     display_name = "Episode 3"
 
 
 class Episode4(Toggle):
-    """Episode 4 (MAP31 - MAP20).
+    """Egypt + Washington, D.C. (MAP31 - MAP20).
     If none of the episodes are chosen, Episode 1 will be chosen by default."""
     display_name = "Episode 4"
 

@@ -35,12 +35,12 @@ def set_episode1_rules(player, multiworld, pro):
         state.has("Tazer", player, 1) or
         state.has("HOIG Reznator", player, 1) or
         state.has("Cryogun", player, 1))
-    set_rule(multiworld.get_entrance("Lava Annex (MAP03) Main -> Lava Annex (MAP03) Keycard", player), lambda state:
-       (state.has("Lava Annex (MAP03) - Keycard", player, 1)) and       (state.has("Tazer", player, 1) or
+    set_rule(multiworld.get_entrance("Lava Annex (MAP03) Main -> Lava Annex (MAP03) Z Blue", player), lambda state:
+       (state.has("Lava Annex (MAP03) - Blue Z-key", player, 1)) and       (state.has("Tazer", player, 1) or
         state.has("Cryogun", player, 1)))
-    set_rule(multiworld.get_entrance("Lava Annex (MAP03) Keycard -> Lava Annex (MAP03) Password", player), lambda state:
-        state.has("Lava Annex (MAP03) - Password", player, 1) and
-        state.has("Photon 'zooka", player, 1))
+    set_rule(multiworld.get_entrance("Lava Annex (MAP03) Z Blue -> Lava Annex (MAP03) Z Red", player), lambda state:
+        state.has("Photon 'zooka", player, 1) and
+        state.has("Lava Annex (MAP03) - Red Z-key", player, 1))
 
     # Alcatraz (MAP04)
     set_rule(multiworld.get_entrance("Hub -> Alcatraz (MAP04) Main", player), lambda state:
@@ -60,22 +60,25 @@ def set_episode1_rules(player, multiworld, pro):
     set_rule(multiworld.get_entrance("Cyber Circus (MAP05) Main -> Cyber Circus (MAP05) Sigma", player), lambda state:
         state.has("Cyber Circus (MAP05) - C-key", player, 1))
 
-    # Digi-Ota (MAP06)
-    set_rule(multiworld.get_entrance("Hub -> Digi-Ota (MAP06) Main", player), lambda state:
-       (state.has("Digi-Ota (MAP06)", player, 1) and
-        state.has("Tazer", player, 1) and
-        state.has("HOIG Reznator", player, 1)) and
-       (state.has("Uzi", player, 1) or
-        state.has("Cryogun", player, 1)))
-    set_rule(multiworld.get_entrance("Digi-Ota (MAP06) Main -> Digi-Ota (MAP06) Password", player), lambda state:
-        state.has("Digi-Ota (MAP06) - Password", player, 1))
-    set_rule(multiworld.get_entrance("Digi-Ota (MAP06) Password -> Digi-Ota (MAP06) Keycard", player), lambda state:
-        state.has("Digi-Ota (MAP06) - Keycard", player, 1) and
-        state.has("Uzi", player, 1) and
-        state.has("Photon 'zooka", player, 1))
-
 
 def set_episode2_rules(player, multiworld, pro):
+    # Digi-Ota (MAP06)
+    set_rule(multiworld.get_entrance("Digi-Ota (MAP06) Main -> Digi-Ota (MAP06) Password", player), lambda state:
+       (state.has("HOIG Reznator", player, 1) and
+        state.has("Tazer", player, 1) and
+        state.has("Digi-Ota (MAP06) - Password", player, 1)) and       (state.has("Uzi", player, 1) or
+        state.has("Cryogun", player, 1)))
+    set_rule(multiworld.get_entrance("Digi-Ota (MAP06) Password -> Digi-Ota (MAP06) Z Blue", player), lambda state:
+        state.has("Uzi", player, 1) and
+        state.has("Photon 'zooka", player, 1) and
+        state.has("Digi-Ota (MAP06) - Blue Z-key", player, 1))
+    set_rule(multiworld.get_entrance("Hub -> Digi-Ota (MAP06) Start", player), lambda state:
+        state.has("Digi-Ota (MAP06)", player, 1))
+    set_rule(multiworld.get_entrance("Digi-Ota (MAP06) Start -> Digi-Ota (MAP06) Main", player), lambda state:
+        state.has("Cryogun", player, 1) or
+        state.has("Uzi", player, 1) or
+        state.has("Tazer", player, 1))
+
     # The Great Wall (MAP07)
     set_rule(multiworld.get_entrance("Hub -> The Great Wall (MAP07) Opening", player), lambda state:
         state.has("The Great Wall (MAP07)", player, 1))
@@ -116,37 +119,34 @@ def set_episode2_rules(player, multiworld, pro):
        (state.has("Stick", player, 1) or
         state.has("Nuker", player, 1)))
 
-    # Notus Us! (MAP11)
-    set_rule(multiworld.get_entrance("Hub -> Notus Us! (MAP11) Main", player), lambda state:
-       (state.has("Notus Us! (MAP11)", player, 1) and
-        state.has("Tazer", player, 1) and
-        state.has("Uzi", player, 1) and
-        state.has("Cryogun", player, 1)) and
-       (state.has("Photon 'zooka", player, 1) or
-        state.has("Stick", player, 1) or
-        state.has("Nuker", player, 1)))
-    set_rule(multiworld.get_entrance("Notus Us! (MAP11) Main -> Notus Us! (MAP11) Password", player), lambda state:
-        state.has("Notus Us! (MAP11) - Password", player, 1))
-    set_rule(multiworld.get_entrance("Notus Us! (MAP11) Password -> Notus Us! (MAP11) Keycard", player), lambda state:
-        state.has("Notus Us! (MAP11) - Keycard", player, 1))
-
 
 def set_episode3_rules(player, multiworld, pro):
+    # Notus Us! (MAP11)
+    set_rule(multiworld.get_entrance("Notus Us! (MAP11) Main -> Notus Us! (MAP11) Password", player), lambda state:
+       (state.has("Notus Us! (MAP11) - Password", player, 1)) and       (state.has("Photon 'zooka", player, 1) or
+        state.has("Stick", player, 1) or
+        state.has("Nuker", player, 1)))
+    set_rule(multiworld.get_entrance("Notus Us! (MAP11) Password -> Notus Us! (MAP11) Keycard", player), lambda state:
+        state.has("Notus Us! (MAP11) - Keycard", player, 1))
+    set_rule(multiworld.get_entrance("Hub -> Notus Us! (MAP11) Early", player), lambda state:
+        state.has("Notus Us! (MAP11)", player, 1))
+    set_rule(multiworld.get_entrance("Notus Us! (MAP11) Early -> Notus Us! (MAP11) Main", player), lambda state:
+       (state.has("Tazer", player, 1)) and       (state.has("Uzi", player, 1) or
+        state.has("Cryogun", player, 1)))
+
     # Gothik Gauntlet (MAP12)
     set_rule(multiworld.get_entrance("Hub -> Gothik Gauntlet (MAP12) Start", player), lambda state:
-        state.has("Gothik Gauntlet (MAP12)", player, 1))
+       (state.has("Gothik Gauntlet (MAP12)", player, 1)) and
+       (state.has("Tazer", player, 1) or
+        state.has("Cryogun", player, 1)))
     set_rule(multiworld.get_entrance("Gothik Gauntlet (MAP12) Start -> Gothik Gauntlet (MAP12) Main", player), lambda state:
-        state.has("Tazer", player, 1))
-    set_rule(multiworld.get_entrance("Gothik Gauntlet (MAP12) Main -> Gothik Gauntlet (MAP12) West City", player), lambda state:
-        state.has("Photon 'zooka", player, 1) and
-        state.has("Uzi", player, 1))
+       (state.has("Uzi", player, 1)) and       (state.has("Photon 'zooka", player, 1) or
+        state.has("Stick", player, 1) or
+        state.has("Nuker", player, 1)))
     set_rule(multiworld.get_entrance("Gothik Gauntlet (MAP12) Main -> Gothik Gauntlet (MAP12) Password", player), lambda state:
-        state.has("Gothik Gauntlet (MAP12) - Password", player, 1) and
-        state.has("Uzi", player, 1))
+        state.has("Gothik Gauntlet (MAP12) - Password", player, 1))
     set_rule(multiworld.get_entrance("Gothik Gauntlet (MAP12) Main -> Gothik Gauntlet (MAP12) Keycard", player), lambda state:
         state.has("Gothik Gauntlet (MAP12) - Keycard", player, 1))
-    set_rule(multiworld.get_entrance("Gothik Gauntlet (MAP12) Lift Jump -> Gothik Gauntlet (MAP12) Password", player), lambda state:
-        state.has("Uzi", player, 1))
     set_rule(multiworld.get_entrance("Gothik Gauntlet (MAP12) Keycard -> Gothik Gauntlet (MAP12) Main", player), lambda state:
         state.has("Gothik Gauntlet (MAP12) - Keycard", player, 1))
 
@@ -155,7 +155,6 @@ def set_episode3_rules(player, multiworld, pro):
        (state.has("The Sewers (MAP13)", player, 1) and
         state.has("Tazer", player, 1) and
         state.has("Photon 'zooka", player, 1) and
-        state.has("HOIG Reznator", player, 1) and
         state.has("Uzi", player, 1)) and
        (state.has("Cryogun", player, 1) or
         state.has("Stick", player, 1)))
