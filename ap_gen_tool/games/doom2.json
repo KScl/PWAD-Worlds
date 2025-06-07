@@ -37,7 +37,7 @@
         [
             {"lump": "MAP21", "name": "Nirvana (MAP21)"},
             {"lump": "MAP22", "name": "The Catacombs (MAP22)"},
-            {"lump": "MAP23", "name": "Barrels o Fun (MAP23)"},
+            {"lump": "MAP23", "name": "Barrels o' Fun (MAP23)"},
             {"lump": "MAP24", "name": "The Chasm (MAP24)"},
             {"lump": "MAP25", "name": "Bloodfalls (MAP25)"},
             {"lump": "MAP26", "name": "The Abandoned Mines (MAP26)"},
@@ -47,10 +47,11 @@
             {"lump": "MAP30", "name": "Icon of Sin (MAP30)"}
         ],
         [
-            {"lump": "MAP31", "name": "Wolfenstein2 (MAP31)"},
-            {"lump": "MAP32", "name": "Grosse2 (MAP32)"}
+            {"lump": "MAP31", "name": "Wolfenstein (MAP31)"},
+            {"lump": "MAP32", "name": "Grosse (MAP32)"}
         ]
     ],
+
     "game_info":{
         "ammo": [
             {"name": "Bullets", "max": 200},
@@ -69,6 +70,40 @@
             {"name": "Chainsaw"},
             {"name": "Super shotgun", "ammo_type": "Shells"}
         ],
+        "monsters": {
+            "small": [
+                {"doomednum":3004, "health":20, "radius":20, "height":56, "frequency": 290}, // Zombieman
+                {"doomednum":   9, "health":30, "radius":20, "height":56, "frequency": 483}, // Sergeant - Shotgunner
+                {"doomednum":3001, "health":60, "radius":20, "height":56, "frequency":1223}, // Imp
+                {"doomednum":  84, "health":50, "radius":20, "height":56, "frequency": 156}, // Wolfenstein SS
+                {"doomednum":  65, "health":70, "radius":20, "height":56, "frequency": 273}  // Commando - Chaingunner
+            ],
+            "medium": [
+                {"doomednum":3002, "health":150, "radius":30, "height":56, "frequency":331}, // Demon
+                {"doomednum":  58, "health":150, "radius":30, "height":56, "frequency":175}, // Spectre
+                {"doomednum":3006, "health":100, "radius":16, "height":56, "frequency":197}, // Lost soul
+                {"doomednum":3005, "health":400, "radius":31, "height":56, "frequency":188}, // Cacodemon
+                {"doomednum":  71, "health":400, "radius":31, "height":56, "frequency": 64}, // Pain Elemental
+                {"doomednum":  67, "health":600, "radius":48, "height":64, "frequency": 68}, // Mancubus
+                {"doomednum":  68, "health":500, "radius":64, "height":64, "frequency": 65}, // Arachnotron
+                {"doomednum":  66, "health":300, "radius":20, "height":56, "frequency": 90}  // Revenant
+            ],
+            "big": [
+                {"doomednum":3003, "health":1000, "radius":24, "height":64, "frequency":31}, // Baron of Hell
+                {"doomednum":  64, "health": 700, "radius":20, "height":56, "frequency":17}, // Arch-Vile
+                {"doomednum":  69, "health": 500, "radius":24, "height":64, "frequency":75}  // Hell Knight
+            ],
+            "boss": [
+                {"doomednum":16, "health":4000, "radius": 40, "height":110, "frequency":12}, // Cyberdemon
+                {"doomednum": 7, "health":3000, "radius":128, "height":100, "frequency": 6}  // Spider Mastermind
+            ]
+        },
+        "pickups": {
+            "mini": [2015, 2014], // Armor and Health bonuses
+            "small": [2011, 2008, 2007, 2047, 2010], // Stimpack, shells, clip, cell, rocket
+            "big": [2048, 2046, 2049, 17, 2012] // Bullets, rockets, shell box, cell pack, medikit
+        },
+
         "pausepic": "INTERPIC",
 
         "hint_auto_complete":{
@@ -78,6 +113,7 @@
             "MAP": "Computer area map"
         }
     },
+
     "map_tweaks":{
         "MAP02":{
             // Exit the lower hallway without a blue key, if you drop down
@@ -101,8 +137,15 @@
                 "316":{"lower": "SUPPORT2"},
                 "366":{"lower": "SUPPORT2"}
             }
+        },
+        "MAP28":{
+            // Allow opening a wall that traps you in from behind
+            "linedefs":{
+                "554":{"special": 61, "tag": 7}
+            }
         }
     },
+
     "level_select":{
         "defaults":{
             "map_name_position": "individual",
@@ -194,52 +237,53 @@
         "82": "Super Shotgun",
         "83": "Megasphere"
     },
+
     "extra_connection_requirements": [
-        {"doom_type": -1, "name": "deathlogic", "sprite": "STFDEAD0" },
-        {"doom_type": -2, "name": "pro", "sprite": "STFGOD0" }
+        {"doom_type": -1, "name": "deathlogic", "sprite": "STFDEAD0"},
+        {"doom_type": -2, "name": "pro",        "sprite": "STFGOD0"}
     ],
     "progressions": [
-        {"doom_type": 2001, "name": "Shotgun", "group": "Weapons", "sprite": "SHOTA0"},
-        {"doom_type": 2003, "name": "Rocket launcher", "group": "Weapons", "sprite": "LAUNA0"},
-        {"doom_type": 2004, "name": "Plasma gun", "group": "Weapons", "sprite": "PLASA0"},
-        {"doom_type": 2005, "name": "Chainsaw", "group": "Weapons", "sprite": "CSAWA0"},
-        {"doom_type": 2002, "name": "Chaingun", "group": "Weapons", "sprite": "MGUNA0"},
-        {"doom_type": 2006, "name": "BFG9000", "group": "Weapons", "sprite": "BFUGA0"},
-        {"doom_type": 82, "name": "Super Shotgun", "group": "Weapons", "sprite": "SGN2A0"}
+        {"doom_type": 2001, "name": "Shotgun",         "group": ["Weapons"], "sprite": "SHOTA0"},
+        {"doom_type": 2003, "name": "Rocket launcher", "group": ["Weapons"], "sprite": "LAUNA0"},
+        {"doom_type": 2004, "name": "Plasma gun",      "group": ["Weapons"], "sprite": "PLASA0"},
+        {"doom_type": 2005, "name": "Chainsaw",        "group": ["Weapons"], "sprite": "CSAWA0"},
+        {"doom_type": 2002, "name": "Chaingun",        "group": ["Weapons"], "sprite": "MGUNA0"},
+        {"doom_type": 2006, "name": "BFG9000",         "group": ["Weapons"], "sprite": "BFUGA0"},
+        {"doom_type": 82,   "name": "Super Shotgun",   "group": ["Weapons"], "sprite": "SGN2A0"}
     ],
     "fillers": [
-        {"doom_type": 2018, "name": "Armor", "group": "Powerups", "sprite": "ARM1A0"},
-        {"doom_type": 2019, "name": "Mega Armor", "group": "Powerups", "sprite": "ARM2A0"},
-        {"doom_type": 2023, "name": "Berserk", "group": "Powerups", "sprite": "PSTRA0"},
-        {"doom_type": 2022, "name": "Invulnerability", "group": "Powerups", "sprite": "PINVA0"},
-        {"doom_type": 2024, "name": "Partial invisibility", "group": "Powerups", "sprite": "PINSA0"},
-        {"doom_type": 2013, "name": "Supercharge", "group": "Powerups", "sprite": "SOULA0"},
-        {"doom_type": 83, "name": "Megasphere", "group": "Powerups", "sprite": "MEGAD0"},
-        {"doom_type": 2012, "name": "Medikit", "group": "", "sprite": "MEDIA0"},
-        {"doom_type": 2048, "name": "Box of bullets", "group": "Ammos", "sprite": "AMMOA0"},
-        {"doom_type": 2046, "name": "Box of rockets", "group": "Ammos", "sprite": "BROKA0"},
-        {"doom_type": 2049, "name": "Box of shotgun shells", "group": "Ammos", "sprite": "SBOXA0"},
-        {"doom_type": 17, "name": "Energy cell pack", "group": "Ammos", "sprite": "CELPA0"}
+        {"doom_type": 2018, "name": "Armor",                 "group": ["Powerups"], "sprite": "ARM1A0"},
+        {"doom_type": 2019, "name": "Mega Armor",            "group": ["Powerups"], "sprite": "ARM2A0"},
+        {"doom_type": 2023, "name": "Berserk",               "group": ["Powerups"], "sprite": "PSTRA0"},
+        {"doom_type": 2022, "name": "Invulnerability",       "group": ["Powerups"], "sprite": "PINVA0"},
+        {"doom_type": 2024, "name": "Partial invisibility",  "group": ["Powerups"], "sprite": "PINSA0"},
+        {"doom_type": 2013, "name": "Supercharge",           "group": ["Powerups"], "sprite": "SOULA0"},
+        {"doom_type": 83,   "name": "Megasphere",            "group": ["Powerups"], "sprite": "MEGAD0"},
+        {"doom_type": 2012, "name": "Medikit",               "group": [],           "sprite": "MEDIA0"},
+        {"doom_type": 2048, "name": "Box of bullets",        "group": ["Ammos"],    "sprite": "AMMOA0"},
+        {"doom_type": 2046, "name": "Box of rockets",        "group": ["Ammos"],    "sprite": "BROKA0"},
+        {"doom_type": 2049, "name": "Box of shotgun shells", "group": ["Ammos"],    "sprite": "SBOXA0"},
+        {"doom_type": 17,   "name": "Energy cell pack",      "group": ["Ammos"],    "sprite": "CELPA0"}
     ],
     "unique_progressions": [
     ],
     "unique_fillers": [
-        {"doom_type": 2026, "name": "Computer area map", "group": "Computer area maps", "sprite": "PMAPA0"}
+        {"doom_type": 2026, "name": "Computer area map", "group": ["Computer area maps", "%MAP% Map"], "sprite": "PMAPA0"}
     ],
     "capacity_upgrades": [
-        {"doom_type": 8, "name": "Backpack", "group": "", "sprite": "BPAKA0"},
-        {"doom_type": 65001, "name": "Bullet capacity", "group": "", "sprite": "BPAKA0"},
-        {"doom_type": 65002, "name": "Shell capacity", "group": "", "sprite": "BPAKA0"},
-        {"doom_type": 65003, "name": "Energy cell capacity", "group": "", "sprite": "BPAKA0"},
-        {"doom_type": 65004, "name": "Rocket capacity", "group": "", "sprite": "BPAKA0"}
+        {"doom_type": 8,     "name": "Backpack",             "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
+        {"doom_type": 65001, "name": "Bullet capacity",      "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
+        {"doom_type": 65002, "name": "Shell capacity",       "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
+        {"doom_type": 65003, "name": "Energy cell capacity", "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
+        {"doom_type": 65004, "name": "Rocket capacity",      "group": ["Capacity upgrades"], "sprite": "BPAKA0"}
     ],
     "keys": [
-        {"doom_type": 5, "name": "Blue keycard", "group": "Keys", "key": 0, "use_skull": false, "region_name": "Blue", "color": [0, 0, 1], "sprite": "BKEYB0"},
-        {"doom_type": 40, "name": "Blue skull key", "group": "Keys", "key": 0, "use_skull": true, "region_name": "Blue", "color": [0, 0, 1], "sprite": "BSKUB0"},
-        {"doom_type": 6, "name": "Yellow keycard", "group": "Keys", "key": 1, "use_skull": false, "region_name": "Yellow", "color": [1, 1, 0], "sprite": "YKEYB0"},
-        {"doom_type": 39, "name": "Yellow skull key", "group": "Keys", "key": 1, "use_skull": true, "region_name": "Yellow", "color": [1, 1, 0], "sprite": "YSKUB0"},
-        {"doom_type": 13, "name": "Red keycard", "group": "Keys", "key": 2, "use_skull": false, "region_name": "Red", "color": [1, 0, 0], "sprite": "RKEYB0"},
-        {"doom_type": 38, "name": "Red skull key", "group": "Keys", "key": 2, "use_skull": true, "region_name": "Red", "color": [1, 0, 0], "sprite": "RSKUB0"}
+        {"doom_type": 5,  "name": "Blue keycard",     "group": ["Keys", "%MAP% Keys", "%MAP% Blue"],   "key": 0, "use_skull": false, "region_name": "Blue",   "color": [0, 0, 1], "sprite": "BKEYB0"},
+        {"doom_type": 40, "name": "Blue skull key",   "group": ["Keys", "%MAP% Keys", "%MAP% Blue"],   "key": 0, "use_skull": true,  "region_name": "Blue",   "color": [0, 0, 1], "sprite": "BSKUB0"},
+        {"doom_type": 6,  "name": "Yellow keycard",   "group": ["Keys", "%MAP% Keys", "%MAP% Yellow"], "key": 1, "use_skull": false, "region_name": "Yellow", "color": [1, 1, 0], "sprite": "YKEYB0"},
+        {"doom_type": 39, "name": "Yellow skull key", "group": ["Keys", "%MAP% Keys", "%MAP% Yellow"], "key": 1, "use_skull": true,  "region_name": "Yellow", "color": [1, 1, 0], "sprite": "YSKUB0"},
+        {"doom_type": 13, "name": "Red keycard",      "group": ["Keys", "%MAP% Keys", "%MAP% Red"],    "key": 2, "use_skull": false, "region_name": "Red",    "color": [1, 0, 0], "sprite": "RKEYB0"},
+        {"doom_type": 38, "name": "Red skull key",    "group": ["Keys", "%MAP% Keys", "%MAP% Red"],    "key": 2, "use_skull": true,  "region_name": "Red",    "color": [1, 0, 0], "sprite": "RSKUB0"}
     ],
     "loc_remap": {},
     "item_remap": {}
