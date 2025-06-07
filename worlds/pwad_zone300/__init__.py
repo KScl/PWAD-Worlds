@@ -36,8 +36,7 @@ class DOOM2Zone300World(World):
     options: DOOM2Zone300Options
     game = "Doom II - Zone 300"
     web = DOOM2Zone300Web()
-    data_version = 3
-    required_client_version = (0, 3, 9)
+    required_client_version = (0, 5, 0)  # 1.2.0-prerelease or higher
 
     item_name_to_id = {data["name"]: item_id for item_id, data in Items.item_table.items()}
     item_name_groups = Items.item_name_groups
@@ -45,11 +44,11 @@ class DOOM2Zone300World(World):
     location_name_to_id = {data["name"]: loc_id for loc_id, data in Locations.location_table.items()}
     location_name_groups = Locations.location_name_groups
 
-    starting_level_for_episode: List[str] = [
-        "The Spaceport (MAP01)",
-        "Simbattle (MAP11)",
-        "Blood Lust (MAP21)"
-    ]
+    starting_level_for_episode: Dict[int, str] = {
+        1: "The Spaceport (MAP01)",
+        2: "Simbattle (MAP11)",
+        3: "Blood Lust (MAP21)"
+    }
 
     # Item ratio that scales depending on episode count. These are the ratio for 3 episode.
     items_ratio: Dict[str, float] = {
@@ -70,6 +69,7 @@ class DOOM2Zone300World(World):
     def __init__(self, multiworld: MultiWorld, player: int):
         self.included_episodes = [1, 1, 1, 0]
         self.location_count = 0
+        self.starting_levels = []
 
         super().__init__(multiworld, player)
 
@@ -87,6 +87,9 @@ class DOOM2Zone300World(World):
         # If no episodes selected, select Episode 1
         if self.get_episode_count() == 0:
             self.included_episodes[0] = 1
+
+        self.starting_levels = [level_name for (episode, level_name) in self.starting_level_for_episode.items()
+                                if self.included_episodes[episode - 1]]
 
     def create_regions(self):
         pro = self.options.pro.value
@@ -186,7 +189,7 @@ class DOOM2Zone300World(World):
             if item["episode"] != -1 and not self.included_episodes[item["episode"] - 1]:
                 continue
 
-            count = item["count"] if item["name"] not in self.starting_level_for_episode else item["count"] - 1
+            count = item["count"] if item["name"] not in self.starting_levels else item["count"] - 1
             itempool += [self.create_item(item["name"]) for _ in range(count)]
 
         # Backpack(s) based on options
@@ -217,9 +220,8 @@ class DOOM2Zone300World(World):
             self.location_count -= 1
 
         # Give starting levels right away
-        for i in range(len(self.starting_level_for_episode)):
-            if self.included_episodes[i]:
-                self.multiworld.push_precollected(self.create_item(self.starting_level_for_episode[i]))
+        for map_name in self.starting_levels:
+            self.multiworld.push_precollected(self.create_item(map_name))
         
         # Give Computer area maps if option selected
         if start_with_computer_area_maps:
