@@ -1,14 +1,14 @@
 import typing
 
-from Options import Visibility, PerGameCommonOptions, Range, Choice, Toggle, DeathLink, DefaultOnToggle, StartInventoryPool
+from Options import PerGameCommonOptions, Range, Choice, Toggle, DeathLink, DefaultOnToggle, StartInventoryPool
 from dataclasses import dataclass
 
 
 class Difficulty(Choice):
     """
-    Choose the difficulty option. Those match DOOM's difficulty options.
-    baby (I'm too young to die.) double ammos, half damage, less monsters or strength.
-    easy (Hey, not too rough.) less monsters or strength.
+    Choose the game difficulty. These options match DOOM's skill levels.
+    baby (I'm too young to die.) Same as easy, with double ammo pickups and half damage taken.
+    easy (Hey, not too rough.) Less monsters or strength.
     medium (Hurt me plenty.) Default.
     hard (Ultra-Violence.) More monsters or strength.
     nightmare (Nightmare!) Monsters attack more rapidly and respawn.
@@ -19,6 +19,11 @@ class Difficulty(Choice):
     option_medium = 2
     option_hard = 3
     option_nightmare = 4
+    alias_itytd = 0
+    alias_hntr = 1
+    alias_hmp = 2
+    alias_uv = 3
+    alias_nm = 4
     default = 2
 
 
@@ -102,7 +107,7 @@ class StartWithComputerAreaMaps(Toggle):
 class ResetLevelOnDeath(DefaultOnToggle):
     """When dying, levels are reset and monsters respawned. But inventory and checks are kept.
     Turning this setting off is considered easy mode. Good for new players that don't know the levels well."""
-    display_name = "Reset level on death"
+    display_name = "Reset Level on Death"
 
 
 class Episode1(DefaultOnToggle):
@@ -148,7 +153,6 @@ class BackpackCount(Range):
 class MaxAmmoBullets(Range):
     """Set the starting ammo capacity for bullets."""
     display_name = "Max Ammo - Bullets"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 200
     range_end = 999
     default = 200
@@ -157,7 +161,6 @@ class MaxAmmoBullets(Range):
 class MaxAmmoShells(Range):
     """Set the starting ammo capacity for shotgun shells."""
     display_name = "Max Ammo - Shells"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 50
     range_end = 999
     default = 50
@@ -166,7 +169,6 @@ class MaxAmmoShells(Range):
 class MaxAmmoRockets(Range):
     """Set the starting ammo capacity for rockets."""
     display_name = "Max Ammo - Rockets"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 50
     range_end = 999
     default = 50
@@ -175,7 +177,6 @@ class MaxAmmoRockets(Range):
 class MaxAmmoEnergyCells(Range):
     """Set the starting ammo capacity for energy cells."""
     display_name = "Max Ammo - Energy Cells"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 300
     range_end = 999
     default = 300
@@ -184,7 +185,6 @@ class MaxAmmoEnergyCells(Range):
 class AddedAmmoBullets(Range):
     """Set the amount of bullet capacity added when collecting a backpack or capacity upgrade."""
     display_name = "Added Ammo - Bullets"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 20
     range_end = 999
     default = 200
@@ -193,7 +193,6 @@ class AddedAmmoBullets(Range):
 class AddedAmmoShells(Range):
     """Set the amount of shotgun shell capacity added when collecting a backpack or capacity upgrade."""
     display_name = "Added Ammo - Shells"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 5
     range_end = 999
     default = 50
@@ -202,7 +201,6 @@ class AddedAmmoShells(Range):
 class AddedAmmoRockets(Range):
     """Set the amount of rocket capacity added when collecting a backpack or capacity upgrade."""
     display_name = "Added Ammo - Rockets"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 5
     range_end = 999
     default = 50
@@ -211,7 +209,6 @@ class AddedAmmoRockets(Range):
 class AddedAmmoEnergyCells(Range):
     """Set the amount of energy cell capacity added when collecting a backpack or capacity upgrade."""
     display_name = "Added Ammo - Energy Cells"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 30
     range_end = 999
     default = 300

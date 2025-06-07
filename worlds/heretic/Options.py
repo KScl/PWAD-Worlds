@@ -1,4 +1,4 @@
-from Options import Visibility, PerGameCommonOptions, Range, Choice, Toggle, DeathLink, DefaultOnToggle, StartInventoryPool
+from Options import PerGameCommonOptions, Range, Choice, Toggle, DeathLink, DefaultOnToggle, StartInventoryPool
 from dataclasses import dataclass
 
 
@@ -16,14 +16,8 @@ class Goal(Choice):
 
 class Difficulty(Choice):
     """
-    Choose the difficulty option. Those match DOOM's difficulty options.
-    baby (I'm too young to die.) double ammos, half damage, less monsters or strength.
-    easy (Hey, not too rough.) less monsters or strength.
-    medium (Hurt me plenty.) Default.
-    hard (Ultra-Violence.) More monsters or strength.
-    nightmare (Nightmare!) Monsters attack more rapidly and respawn.
-
-    wet nurse (hou needeth a wet-nurse) - Fewer monsters and more items than medium. Damage taken is halved, and ammo pickups carry twice as much ammo. Any Quartz Flasks and Mystic Urns are automatically used when the player nears death.
+    Choose the game difficulty. These options match Heretic's skill levels.
+    wet nurse (Thou needeth a wet-nurse) - Fewer monsters and more items than medium. Damage taken is halved, and ammo pickups carry twice as much ammo. Any Quartz Flasks and Mystic Urns are automatically used when the player nears death.
     easy (Yellowbellies-r-us) - Fewer monsters and more items than medium.
     medium (Bringest them oneth) - Completely balanced, this is the standard difficulty level.
     hard (Thou art a smite-meister) - More monsters and fewer items than medium.
@@ -35,6 +29,11 @@ class Difficulty(Choice):
     option_medium = 2
     option_hard = 3
     option_black_plague = 4
+    alias_wn = 0
+    alias_yru = 1
+    alias_bto = 2
+    alias_sm = 3
+    alias_bp = 4
     default = 2
 
 
@@ -104,7 +103,7 @@ class StartWithMapScrolls(Toggle):
 class ResetLevelOnDeath(DefaultOnToggle):
     """When dying, levels are reset and monsters respawned. But inventory and checks are kept.
     Turning this setting off is considered easy mode. Good for new players that don't know the levels well."""
-    display_name = "Reset level on death"
+    display_name = "Reset Level on Death"
 
     
 class CheckSanity(Toggle):
@@ -162,7 +161,6 @@ class BagOfHoldingCount(Range):
 class MaxAmmoCrystals(Range):
     """Set the starting ammo capacity for crystals (Elven Wand ammo)."""
     display_name = "Max Ammo - Crystals"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 100
     range_end = 999
     default = 100
@@ -171,7 +169,6 @@ class MaxAmmoCrystals(Range):
 class MaxAmmoArrows(Range):
     """Set the starting ammo capacity for arrows (Ethereal Crossbow ammo)."""
     display_name = "Max Ammo - Arrows"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 50
     range_end = 999
     default = 50
@@ -180,7 +177,6 @@ class MaxAmmoArrows(Range):
 class MaxAmmoClawOrbs(Range):
     """Set the starting ammo capacity for claw orbs (Dragon Claw ammo)."""
     display_name = "Max Ammo - Claw Orbs"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 200
     range_end = 999
     default = 200
@@ -189,7 +185,6 @@ class MaxAmmoClawOrbs(Range):
 class MaxAmmoRunes(Range):
     """Set the starting ammo capacity for runes (Hellstaff ammo)."""
     display_name = "Max Ammo - Runes"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 200
     range_end = 999
     default = 200
@@ -198,7 +193,6 @@ class MaxAmmoRunes(Range):
 class MaxAmmoFlameOrbs(Range):
     """Set the starting ammo capacity for flame orbs (Phoenix Rod ammo)."""
     display_name = "Max Ammo - Flame Orbs"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 20
     range_end = 999
     default = 20
@@ -207,7 +201,6 @@ class MaxAmmoFlameOrbs(Range):
 class MaxAmmoSpheres(Range):
     """Set the starting ammo capacity for spheres (Firemace ammo)."""
     display_name = "Max Ammo - Spheres"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 150
     range_end = 999
     default = 150
@@ -216,7 +209,6 @@ class MaxAmmoSpheres(Range):
 class AddedAmmoCrystals(Range):
     """Set the amount of crystal capacity gained when collecting a bag of holding or a capacity upgrade."""
     display_name = "Added Ammo - Crystals"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 10
     range_end = 999
     default = 100
@@ -225,7 +217,6 @@ class AddedAmmoCrystals(Range):
 class AddedAmmoArrows(Range):
     """Set the amount of arrow capacity gained when collecting a bag of holding or a capacity upgrade."""
     display_name = "Added Ammo - Arrows"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 5
     range_end = 999
     default = 50
@@ -234,7 +225,6 @@ class AddedAmmoArrows(Range):
 class AddedAmmoClawOrbs(Range):
     """Set the amount of claw orb capacity gained when collecting a bag of holding or a capacity upgrade."""
     display_name = "Added Ammo - Claw Orbs"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 20
     range_end = 999
     default = 200
@@ -243,7 +233,6 @@ class AddedAmmoClawOrbs(Range):
 class AddedAmmoRunes(Range):
     """Set the amount of rune capacity gained when collecting a bag of holding or a capacity upgrade."""
     display_name = "Added Ammo - Runes"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 20
     range_end = 999
     default = 200
@@ -252,7 +241,6 @@ class AddedAmmoRunes(Range):
 class AddedAmmoFlameOrbs(Range):
     """Set the amount of flame orb capacity gained when collecting a bag of holding or a capacity upgrade."""
     display_name = "Added Ammo - Flame Orbs"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 2
     range_end = 999
     default = 20
@@ -261,7 +249,6 @@ class AddedAmmoFlameOrbs(Range):
 class AddedAmmoSpheres(Range):
     """Set the amount of sphere capacity gained when collecting a bag of holding or a capacity upgrade."""
     display_name = "Added Ammo - Spheres"
-    visibility = Visibility.all ^ Visibility.spoiler
     range_start = 15
     range_end = 999
     default = 150
