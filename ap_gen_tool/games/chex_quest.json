@@ -34,14 +34,7 @@
             {"name": "Phasing zorcher", "ammo_type": "Phasing", "starting_ammo": 150},
             {"name": "LAZ device", "ammo_type": "Phasing", "starting_ammo": 150},
             {"name": "Super bootspork"}
-        ],
-
-        "hint_auto_complete":{
-            "BLUE": "Blue key",
-            "YELLOW": "Yellow key",
-            "RED": "Red key",
-            "MAP": "Computer area map"
-        }
+        ]
     },
     "location_doom_types": {
         "5": "Blue key",

@@ -96,13 +96,6 @@
             "mini": [2015, 2014], // Armor and Health bonuses
             "small": [2011, 2008, 2007, 2047, 2010], // Stimpack, shells, clip, cell, rocket
             "big": [2048, 2046, 2049, 17, 2012] // Bullets, rockets, shell box, cell pack, medikit
-        },
-
-        "hint_auto_complete":{
-            "BLUE": ["Blue keycard", "Blue skull key"],
-            "YELLOW": ["Yellow keycard", "Yellow skull key"],
-            "RED": ["Red keycard", "Red skull key"],
-            "MAP": "Computer area map"
         }
     },
     "map_tweaks":{

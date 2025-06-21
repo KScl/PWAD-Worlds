@@ -87,14 +87,7 @@
             {"name": "Firemace", "ammo_type": "Spheres", "starting_ammo": 150},
             {"name": "Gauntlets of the Necromancer"},
             {"name": "Chicken's Beak"}
-        ],
-
-        "hint_auto_complete":{
-            "YELLOW": "Yellow key",
-            "GREEN": "Green key",
-            "BLUE": "Blue key",
-            "MAP": "Computer area map"
-        }
+        ]
     },
     "map_tweaks":{
         // The Crypts (E1M7)

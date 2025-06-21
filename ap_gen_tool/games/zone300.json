@@ -106,14 +106,7 @@
             "big": [2048, 2046, 2049, 17, 2012] // Bullets, rockets, shell box, cell pack, medikit
         },
 
-        "pausepic": "INTERPIC",
-
-        "hint_auto_complete":{
-            "BLUE": ["Blue keycard", "Blue skull key"],
-            "YELLOW": ["Yellow keycard", "Yellow skull key"],
-            "RED": ["Red keycard", "Red skull key"],
-            "MAP": "Computer area map"
-        }
+        "pausepic": "INTERPIC"
     },
     "map_tweaks":{
         // Nuclear Power Station (MAP09)
