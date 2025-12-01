@@ -1,60 +1,99 @@
 {
-    "name": "Doom II - STRAIN",
-    "world": "pwad_strain",
-    "codename": "strain",
-    "classname": "DOOM2STRAIN",
+    "full_name": "S.T.R.A.I.N.",
+    "short_name": "strain",
+    "ap_name": "DOOM II - S.T.R.A.I.N.",
+    "ap_world_name": "pwad_strain",
+
     "iwad": "DOOM2.WAD",
-    "pwad": "STRAIN.WAD",
-    "load_order": ["DOOM2.WAD", "STRAIN.WAD", "STRAIN.DEH", "APDOOM.WAD", "APSTRAIN.WAD"],
-    "item_ids": 362000,
-    "loc_ids": 363000,
+    "required_wads": ["STRAIN.WAD", "STRAIN.DEH"],
+    "included_wads": "data/wads/STRAIN_ExtraAPData.wad",
     "settings":{
         "extended_names": true
     },
 
-    "map_info": [
-        [
-            {"lump": "MAP01", "name": "Barracks (MAP01)"},
-            {"lump": "MAP02", "name": "Outskirts (MAP02)"},
-            {"lump": "MAP03", "name": "Downtown (MAP03)"},
-            {"lump": "MAP04", "name": "Industrial Zone (MAP04)"},
-            {"lump": "MAP05", "name": "Depot (MAP05)"},
-            {"lump": "MAP06", "name": "Launch Control (MAP06)"},
-            {"lump": "MAP07", "name": "En Route (MAP07)"},
-            {"lump": "MAP08", "name": "Hangar (MAP08)"},
-            {"lump": "MAP09", "name": "Cargo Bay (MAP09)"},
-            {"lump": "MAP10", "name": "Entryway (MAP10)"},
-            {"lump": "MAP11", "name": "Command Control (MAP11)"}
-        ],
-        [
-            {"lump": "MAP12", "name": "Power Station (MAP12)"},
-            {"lump": "MAP13", "name": "Ruins (MAP13)"},
-            {"lump": "MAP14", "name": "Engineering (MAP14)"},
-            {"lump": "MAP15", "name": "Subsidiary Power (MAP15)"},
-            {"lump": "MAP16", "name": "Living Quarters (MAP16)"},
-            {"lump": "MAP17", "name": "Promenade (MAP17)"},
-            {"lump": "MAP18", "name": "Relay Station (MAP18)"},
-            {"lump": "MAP19", "name": "Waste Processing (MAP19)"},
-            {"lump": "MAP20", "name": "Reactor (MAP20)"}
-        ],
-        [
-            {"lump": "MAP21", "name": "Maintenance (MAP21)"},
-            {"lump": "MAP22", "name": "Specimen Storage (MAP22)"},
-            {"lump": "MAP23", "name": "Dispensary Alpha (MAP23)"},
-            {"lump": "MAP24", "name": "Sub-Laboratory (MAP24)"},
-            {"lump": "MAP25", "name": "Main Laboratory (MAP25)"},
-            {"lump": "MAP26", "name": "Main Laboratory II (MAP26)"},
-            {"lump": "MAP27", "name": "Dispensary Beta (MAP27)"},
-            {"lump": "MAP28", "name": "Unknown (MAP28)"},
-            {"lump": "MAP29", "name": "Self-Destruct (MAP29)"},
-            {"lump": "MAP30", "name": "Boss (MAP30)"}
-        ],
-        [
-            {"lump": "MAP31", "name": "Secret (MAP31)"},
-            {"lump": "MAP32", "name": "Super-Secret (MAP32)"}
-        ]
+    "episodes": [
+        {
+            "name": "Spaceflight to Station Daro", "maps": [
+                {"lump": "MAP01", "name": "Barracks (MAP01)"},
+                {"lump": "MAP02", "name": "Outskirts (MAP02)"},
+                {"lump": "MAP03", "name": "Downtown (MAP03)"},
+                {"lump": "MAP04", "name": "Industrial Zone (MAP04)"},
+                {"lump": "MAP05", "name": "Depot (MAP05)"},
+                {"lump": "MAP06", "name": "Launch Control (MAP06)"},
+                {"lump": "MAP07", "name": "En Route (MAP07)"},
+                {"lump": "MAP08", "name": "Hangar (MAP08)"},
+                {"lump": "MAP09", "name": "Cargo Bay (MAP09)"},
+                {"lump": "MAP10", "name": "Entryway (MAP10)"},
+                {"lump": "MAP11", "name": "Command Control (MAP11)"}
+            ]
+        },
+        {
+            "name": "Dark Side of the Moon", "maps": [
+                {"lump": "MAP12", "name": "Power Station (MAP12)"},
+                {"lump": "MAP13", "name": "Ruins (MAP13)"},
+                {"lump": "MAP14", "name": "Engineering (MAP14)"},
+                {"lump": "MAP15", "name": "Subsidiary Power (MAP15)"},
+                {"lump": "MAP16", "name": "Living Quarters (MAP16)"},
+                {"lump": "MAP17", "name": "Promenade (MAP17)"},
+                {"lump": "MAP18", "name": "Relay Station (MAP18)"},
+                {"lump": "MAP19", "name": "Waste Processing (MAP19)"},
+                {"lump": "MAP20", "name": "Reactor (MAP20)"}
+            ]
+        },
+        {
+            "name": "Station Daro Laboratories", "maps": [
+                {"lump": "MAP21", "name": "Maintenance (MAP21)"},
+                {"lump": "MAP22", "name": "Specimen Storage (MAP22)"},
+                {"lump": "MAP23", "name": "Dispensary Alpha (MAP23)"},
+                {"lump": "MAP24", "name": "Sub-Laboratory (MAP24)"},
+                {"lump": "MAP25", "name": "Main Laboratory (MAP25)"},
+                {"lump": "MAP26", "name": "Main Laboratory II (MAP26)"},
+                {"lump": "MAP27", "name": "Dispensary Beta (MAP27)"},
+                {"lump": "MAP28", "name": "Unknown (MAP28)"},
+                {"lump": "MAP29", "name": "Self-Destruct (MAP29)"},
+                {"lump": "MAP30", "name": "Boss (MAP30)"}
+            ]
+        },
+        {
+            "name": "An Abrupt Change to the Floorplan (Secret Levels)", "minor": true, "default": false, "maps": [
+                {"lump": "MAP31", "name": "Secret (MAP31)"},
+                {"lump": "MAP32", "name": "Super-Secret (MAP32)"}
+            ]
+        }
     ],
+
+    "world_info": {
+        "description":[
+            "STRAIN is a 32-level PWAD for Doom II, released in 1997 by the Alpha Dog Alliance."
+        ],
+        "hooks":{
+            "generate_early":[
+                "# Place Maintenance's yellow key early if soloing with insufficient tricks",
+                "if self.solo_episode(3) and self.options.trick_difficulty.value < 1:",
+                "    self.multiworld.early_items[self.player]['Maintenance (MAP21) - Yellow keycard'] = 1"
+            ]
+        },
+        "world_options":[
+            {"name": "Difficulty", "preset": "Doom"},
+            {"name": "Start with Maps" },
+            {"name": "Invis as Trap" },
+            {"name": "Capacity Upgrades" },
+            {"name": "Custom Ammo Capacity" }
+        ],
+        "filler_item_weight":{
+            "Armor": 39,
+            "Mega Armor": 23,
+            "Berserk": 11,
+            "Invulnerability": 10,
+            "Partial invisibility": 18,
+            "Supercharge": 26,
+            "Megasphere": 7
+        }
+    },
+
     "game_info":{
+        "pausepic": "TITLEPIC",
+        "goalmenuflat": "MOON1",
         "ammo": [
             {"name": "Bullets", "max": 200},
             {"name": "Shells", "max": 50},
@@ -72,40 +111,80 @@
             {"name": "Chainsaw"},
             {"name": "Super shotgun", "ammo_type": "Shells", "starting_ammo": 30}
         ],
+        "obituaries": {
+            "SOURCE_DOOMEDNUM_3004":         "%YOU% was killed by a zombieman.",
+            "SOURCE_DOOMEDNUM_9":            "%YOU% was shot by a sergeant.",
+            "SOURCE_DOOMEDNUM_3001,MELEE":   "%YOU% was scratched by an imp.",
+            "SOURCE_DOOMEDNUM_3001,MISSILE": "%YOU% was burned by an imp.",
+            "SOURCE_DOOMEDNUM_68,MELEE":     "%YOU% was slashed by a class 2 imp.",
+            "SOURCE_DOOMEDNUM_68,MISSILE":   "%YOU% was charred by a class 2 imp.",
+            "SOURCE_DOOMEDNUM_65":           "%YOU% was mowed down by a subverted guard.",
+            "SOURCE_DOOMEDNUM_3002":         "%YOU% was bit by a skinless demon.",
+            "SOURCE_DOOMEDNUM_71,MELEE":     "%YOU% was zapped by a holobot.",
+            "SOURCE_DOOMEDNUM_71,MISSILE":   "%YOU% couldn't run from a holobot's missile.",
+            "SOURCE_DOOMEDNUM_66,MELEE":     "%YOU% was shocked by an invis-holobot.",
+            "SOURCE_DOOMEDNUM_66,MISSILE":   "%YOU% was nailed by an invis-holobot's missile.",
+            "SOURCE_DOOMEDNUM_3006,MELEE":   "%YOU% was spooked by a doppelganger.",
+            "SOURCE_DOOMEDNUM_3006,MISSILE": "%YOU% was torched by a doppelganger.",
+            "SOURCE_DOOMEDNUM_3005,MELEE":   "%YOU% got too close to a cacodemon.",
+            "SOURCE_DOOMEDNUM_3005,MISSILE": "%YOU% was smitten by a cacodemon.",
+            "SOURCE_DOOMEDNUM_58,MELEE":     "%YOU% couldn't hide from a BFG trooper.",
+            "SOURCE_DOOMEDNUM_58,MISSILE":   "%YOU% was vaporized by a BFG trooper.",
+            "SOURCE_DOOMEDNUM_7":            "%YOU% was perforated by a polydrone.",
+            "SOURCE_DOOMEDNUM_7,POSTHUMOUS": "%YOU% was cooked by a polydrone's remains.",
+            "INFLICTOR_DOOMEDNUM_7,SUICIDE": "%YOU% was cooked by a polydrone's remains.",
+            "SOURCE_DOOMEDNUM_69,MELEE":     "%YOU% was gutted by a Hell Knight.",
+            "SOURCE_DOOMEDNUM_69,MISSILE":   "%YOU% was splayed by a Hell Knight.",
+            "SOURCE_DOOMEDNUM_3003,MELEE":   "%YOU% was ripped open by a Baron of Hell.",
+            "SOURCE_DOOMEDNUM_3003,MISSILE": "%YOU% was bruised by a Baron of Hell.",
+            "SOURCE_DOOMEDNUM_64":           "%YOU% was incinerated by an archvile.",
+            "SOURCE_DOOMEDNUM_16,MISSILE":   "%YOU% rode a Minister of Hate's rocket.",
+            "SOURCE_DOOMEDNUM_16,SPLASH":    "%YOU% almost dodged a Minister of Hate's rocket.",
+            "SOURCE_DOOMEDNUM_67,MELEE":     "%YOU% was ripped apart by a Demon Lord.",
+            "SOURCE_DOOMEDNUM_67,MISSILE":   "%YOU% was fried by a Demon Lord.",
+            "INFLICTOR_DOOMEDNUM_2035":      "%YOU% stood in the wrong place.",
+            "SUICIDE":                          "%YOU% suicided.",
+            "SUICIDE,INFLICTOR_DOOMEDNUM_2035": "%YOU% blew themself up.",
+            "SUICIDE,INFLICTOR_MOBJTYPE_33":    "%YOU% should have stood back.",
+            "SUICIDE,INFLICTOR_MOBJTYPE_35":    "%YOU% couldn't control their own power.",
+            "SUICIDE,TELEFRAG":                 "%YOU% was killed by the power of voodoo.",
+            "SOURCE_MOBJTYPE_0,POSTHUMOUS":     "%YOU% committed suicide with extra steps.",
+            "TELEFRAG":                      "%YOU% was telefragged.",
+            "CRUSHER":                       "%YOU% was crushed.",
+            "FLOOR_NUKAGE1":                 "%YOU% mutated.",
+            "FLOOR_NUKAGE2":                 "%YOU% mutated.",
+            "FLOOR_NUKAGE3":                 "%YOU% mutated.",
+            "FLOOR_LAVA1":                   "%YOU% melted.",
+            "FLOOR_LAVA2":                   "%YOU% melted.",
+            "FLOOR_LAVA3":                   "%YOU% melted.",
+            "FLOOR_LAVA4":                   "%YOU% melted.",
+            "FLOOR_RROCK05":                 "%YOU% melted.",
+            "FLOOR_RROCK06":                 "%YOU% melted.",
+            "FLOOR_RROCK07":                 "%YOU% melted.",
+            "FLOOR_RROCK08":                 "%YOU% melted.",
+            "FLOOR_SLIME01":                 "%YOU% wasted away.",
+            "FLOOR_SLIME02":                 "%YOU% wasted away.",
+            "FLOOR_SLIME03":                 "%YOU% wasted away.",
+            "FLOOR_SLIME04":                 "%YOU% wasted away.",
+            "FLOOR_SLIME05":                 "%YOU% wasted away.",
+            "FLOOR_SLIME06":                 "%YOU% wasted away.",
+            "FLOOR_SLIME07":                 "%YOU% wasted away.",
+            "FLOOR_SLIME08":                 "%YOU% wasted away.",
+            "FLOOR_SLIME09":                 "%YOU% melted.",
+            "FLOOR_SLIME10":                 "%YOU% melted.",
+            "FLOOR_SLIME11":                 "%YOU% melted.",
+            "FLOOR_SLIME12":                 "%YOU% melted.",
+            "FLOOR_MOON4":                   "%YOU% asphyxiated in space!",
+            "CRUSHER,FLOOR_RROCK04,CEILING_MFLR8_2": "%YOU% flipped the wrong switch."
+        },
         "monsters": {
-            "small": [
-                {"doomednum":3004, "health":20, "radius":20, "height":56, "frequency": 290}, // Zombieman
-                {"doomednum":   9, "health":30, "radius":20, "height":56, "frequency": 483}, // Sergeant - Shotgunner
-                {"doomednum":3001, "health":60, "radius":20, "height":56, "frequency":1223}, // Imp
-                {"doomednum":  68, "health":60, "radius":20, "height":56, "frequency":   0}, // Class II Imp
-                {"doomednum":  65, "health":70, "radius":20, "height":56, "frequency": 273}  // Commando - Chaingunner
-            ],
-            "medium": [
-                {"doomednum":3002, "health":217, "radius":30, "height":56, "frequency":  0}, // Skinless Demon
-                {"doomednum":  71, "health":200, "radius":31, "height":56, "frequency":  0}, // Holobot
-                {"doomednum":  66, "health":200, "radius":31, "height":56, "frequency":  0}, // Invisible Holobot
-                {"doomednum":3006, "health":100, "radius":16, "height":48, "frequency":  0}, // Doppelganger
-                {"doomednum":3005, "health":400, "radius":31, "height":56, "frequency":188}, // Cacodemon
-                {"doomednum":  58, "health": 20, "radius":20, "height":56, "frequency":  0}  // BFG Trooper
-            ],
-            "big": [
-                {"doomednum":   7, "health": 160, "radius":18, "height":30, "frequency": 0}, // Polydrone
-                {"doomednum":  69, "health": 500, "radius":24, "height":64, "frequency":75}, // Hell Knight
-                {"doomednum":3003, "health":1000, "radius":24, "height":64, "frequency":31}, // Baron of Hell
-                {"doomednum":  64, "health": 700, "radius":20, "height":56, "frequency":17}, // Arch-Vile
-                {"doomednum":  16, "health": 300, "radius":20, "height":55, "frequency": 0}  // Minister of Hate
-            ],
-            "boss": [
-                {"doomednum":  67, "health":1400, "radius":24, "height":64, "frequency":0}  // Demon Lord
-            ]
-        },
-        "pickups": {
-            "small": [2015, 2014], // Armor and Health bonuses
-            "medium": [2011, 2008, 2007, 2047, 2010], // Stimpack, shells, clip, cell, rocket
-            "big": [2048, 2046, 2049, 17, 2012] // Bullets, rockets, shell box, cell pack, medikit
-        },
-
-        "pausepic": "TITLEPIC"
+            // Zombieman, Shotgunner, Imp, Class II Imp, Chaingunner
+            "small": [3004, 9, 3001, 68, 65],
+            // Skinless Demon, Holobot, Invis. Holobot, Doppelganger, Cacodemon, BFG Zombieman
+            "medium": [3002, 71, 66, 3006, 3005, 58],
+            // Polydrone, Hell Knight, Baron of Hell, Arch-Vile, Minister of Hate, Demon Lord
+            "big": [7, 69, 3003, 64, 16, 67]
+        }
     },
     "map_tweaks":{
         // Outskirts (MAP02)
@@ -154,21 +233,37 @@
         // Entryway (MAP10)
         "MAP10":{
             "sectors":{
-                // Do *not* require the red key to return to start
-                "92":{"tag":0},
-                "93":{"tag":0},
-                "94":{"tag":0},
-                "95":{"tag":0},
-                "101":{"tag":0}
+                // Require the red key to progress past the start
+                "9":{"ceiling":0},
+                "10":{"ceiling":0},
+                "11":{"ceiling":0},
+                "12":{"ceiling":0},
+
+                // Pre-open the switch that we're making red key required
+                "357":{"ceiling":176}
             },
             "linedefs":{
-                // Do *not* require the red key to return to start
-                "678":{"special":31},
+                // Remove the now redundant trigger to open the switch at the start
+                "1506":{"special":0},
+
+                // Make that switch red key required
+                "1507":{"special":134},
 
                 // Do *not* require the blue key to get out of the central star
                 // We cannot make this a two-way keydoor because the linedefs on the other side are oriented wrong
                 "940":{"special":31},
                 "944":{"special":31}
+            },
+            "sidedefs":{
+                // Mark the switch we're changing to require the red key.
+                "2284":{"middle":"DOORRED2"},
+                "2286":{"middle":"DOORRED2"},
+                "2290":{"middle":"DOORRED2","x":8},
+                "2291":{"middle":"DOORRED2","x":8},
+
+                // Remove the blue key appearance from the bars at the central star
+                "1419":{"upper":"BORDER2"},
+                "1427":{"upper":"BORDER2"}
             }
         },
 
@@ -197,13 +292,9 @@
         // Promenade (MAP17)
         "MAP17":{
             "linedefs":{
-                // Gauntlet Hallway hackery
-                // Keep the switch open for the first door so it can be opened again
-                "780": {"special": 0},
-                "797": {"special": 115},
-
-                // These triggers to close doors behind you have no other recourse if respawns are on
-                // so they need to be disabled
+                // Gauntlet Hallway hackery - remove the door close triggers.
+                "2414": {"special": 0},
+                "2415": {"special": 0},
                 "2417": {"special": 0},
                 "2418": {"special": 0}
             }
@@ -238,8 +329,8 @@
         // Specimen Storage (MAP22)
         "MAP22":{
             "linedefs":{
-                // Two-way key lock the boss rush room door
-                "700":{"special":26},
+                // Remove the kinda pointless blue key self-lock.
+                "706":{"special":1},
 
                 // Lower the bookshelf blocking the danger room if approached from behind
                 // (due to having the blue key earlier than intended)
@@ -450,11 +541,14 @@
         "82": "Super Shotgun",
         "83": "Megasphere"
     },
+
     "extra_connection_requirements": [
-        {"doom_type": -1, "name": "deathlogic", "sprite": "STFKILL3" },
-        {"doom_type": -2, "name": "pro", "sprite": "STFGOD0" }
+        {"doom_type": -1, "name": "deathlogic",    "sprite": "STFGOD0" },
+        {"doom_type": -3, "name": "trick_basic",   "sprite": "STFKILL1"},
+        {"doom_type": -2, "name": "trick_pro",     "sprite": "STFKILL3"},
+        {"doom_type": -4, "name": "trick_extreme", "sprite": "STFKILL4"}
     ],
-    "progressions": [
+    "progression": [
         {"doom_type": 2001, "name": "Sawed-off shotgun", "group": ["Weapons"], "sprite": "SGN3A0"},
         {"doom_type": 2003, "name": "Rocket launcher",   "group": ["Weapons"], "sprite": "LAUNA0"},
         {"doom_type": 2004, "name": "NFG",               "group": ["Weapons"], "sprite": "FFGLA3A7"},
@@ -463,31 +557,31 @@
         {"doom_type": 2006, "name": "Psychic blaster",   "group": ["Weapons"], "sprite": "PSYGA0"},
         {"doom_type": 82,   "name": "Super shotgun",     "group": ["Weapons"], "sprite": "SGN2A0"}
     ],
-    "fillers": [
-        {"doom_type": 2018, "name": "Armor",                 "group": ["Powerups"], "sprite": "ARM1A0"},
-        {"doom_type": 2019, "name": "Mega Armor",            "group": ["Powerups"], "sprite": "ARM3A0"},
-        {"doom_type": 2023, "name": "Berserk",               "group": ["Powerups"], "sprite": "PSTRA0"},
-        {"doom_type": 2022, "name": "Invulnerability",       "group": ["Powerups"], "sprite": "PINVA0"},
-        {"doom_type": 2024, "name": "Partial invisibility",  "group": ["Powerups"], "sprite": "PINSA0"},
-        {"doom_type": 2013, "name": "Supercharge",           "group": ["Powerups"], "sprite": "SOULA0"},
-        {"doom_type": 83,   "name": "Megasphere",            "group": ["Powerups"], "sprite": "MEGAD0"},
-        {"doom_type": 2012, "name": "Medikit",               "group": [],           "sprite": "MEDIA0"},
-        {"doom_type": 2048, "name": "Box of bullets",        "group": ["Ammos"],    "sprite": "AMMOA0"},
-        {"doom_type": 2046, "name": "Box of rockets",        "group": ["Ammos"],    "sprite": "BROKA0"},
-        {"doom_type": 2049, "name": "Box of shotgun shells", "group": ["Ammos"],    "sprite": "SBOXA0"},
-        {"doom_type": 17,   "name": "Battery",               "group": ["Ammos"],    "sprite": "BATPA0"}
-    ],
-    "unique_progressions": [
-    ],
-    "unique_fillers": [
-        {"doom_type": 2026, "name": "Computer area map", "group": ["Computer area maps", "%MAP% Map"], "sprite": "PMAPA0"}
-    ],
-    "capacity_upgrades": [
+    "useful": [
         {"doom_type": 8,     "name": "Backpack",         "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
-        {"doom_type": 65001, "name": "Bullet capacity",  "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
-        {"doom_type": 65002, "name": "Shell capacity",   "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
-        {"doom_type": 65003, "name": "Battery capacity", "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
-        {"doom_type": 65004, "name": "Rocket capacity",  "group": ["Capacity upgrades"], "sprite": "BPAKA0"}
+        {"doom_type": 65001, "name": "Bullet capacity",  "group": ["Capacity upgrades"], "sprite": "BPAKA0", "count": 0},
+        {"doom_type": 65002, "name": "Shell capacity",   "group": ["Capacity upgrades"], "sprite": "BPAKA0", "count": 0},
+        {"doom_type": 65003, "name": "Battery capacity", "group": ["Capacity upgrades"], "sprite": "BPAKA0", "count": 0},
+        {"doom_type": 65004, "name": "Rocket capacity",  "group": ["Capacity upgrades"], "sprite": "BPAKA0", "count": 0}
+    ],
+    "filler": [
+        {"doom_type": 2018, "name": "Armor",                     "group": ["Powerups"],      "sprite": "ARM1A0"},
+        {"doom_type": 2019, "name": "Mega Armor",                "group": ["Powerups"],      "sprite": "ARM3A0"},
+        {"doom_type": 2023, "name": "Berserk",                   "group": ["Powerups"],      "sprite": "PSTRA0"},
+        {"doom_type": 2022, "name": "Invulnerability",           "group": ["Powerups"],      "sprite": "PINVA0"},
+        {"doom_type": 2024, "name": "Partial invisibility",      "group": ["Powerups"],      "sprite": "PINSA0"},
+        {"doom_type": 2013, "name": "Supercharge",               "group": ["Powerups"],      "sprite": "SOULA0"},
+        {"doom_type": 83,   "name": "Megasphere",                "group": ["Powerups"],      "sprite": "MEGAD0"},
+        {"doom_type": 2012, "name": "Medikit",                   "group": ["Junk"],          "sprite": "MEDIA0"},
+        {"doom_type": 2048, "name": "Box of bullets",            "group": ["Junk", "Ammos"], "sprite": "AMMOA0"},
+        {"doom_type": 2046, "name": "Box of rockets",            "group": ["Junk", "Ammos"], "sprite": "BROKA0"},
+        {"doom_type": 2049, "name": "Box of shotgun shells",     "group": ["Junk", "Ammos"], "sprite": "SBOXA0"},
+        {"doom_type": 17,   "name": "Battery",                   "group": ["Junk", "Ammos"], "sprite": "BATPA0"},
+        {"doom_type": 2025, "name": "Radiation shielding suit",  "group": ["Powerups"],      "sprite": "SUITA0", "count": 0},
+        {"doom_type": 2045, "name": "Light amplification visor", "group": ["Powerups"],      "sprite": "PVISA0", "count": 0}
+    ],
+    "unique_filler": [
+        {"doom_type": 2026, "name": "Computer area map", "group": ["Computer area maps", "%MAP% Map"], "sprite": "PMAPA0"}
     ],
     "keys": [
         {"doom_type": 5,  "name": "Blue keycard",     "group": ["Keys", "%MAP% Keys", "%MAP% Blue"],   "key": 0, "use_skull": false, "region_name": "Blue",   "color": [0, 0, 1], "sprite": "BKEYB0"},
@@ -496,7 +590,5 @@
         {"doom_type": 39, "name": "Yellow skull key", "group": ["Keys", "%MAP% Keys", "%MAP% Yellow"], "key": 1, "use_skull": true,  "region_name": "Yellow", "color": [1, 1, 0], "sprite": "YSKUB0"},
         {"doom_type": 13, "name": "Red keycard",      "group": ["Keys", "%MAP% Keys", "%MAP% Red"],    "key": 2, "use_skull": false, "region_name": "Red",    "color": [1, 0, 0], "sprite": "RKEYB0"},
         {"doom_type": 38, "name": "Red skull key",    "group": ["Keys", "%MAP% Keys", "%MAP% Red"],    "key": 2, "use_skull": true,  "region_name": "Red",    "color": [1, 0, 0], "sprite": "RSKUB0"}
-    ],
-    "loc_remap": {},
-    "item_remap": {}
+    ]
 }

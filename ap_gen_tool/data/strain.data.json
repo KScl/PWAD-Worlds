@@ -308,8 +308,8 @@
          "ep" : 0,
          "exit_rules" : {
             "connections" : [],
-            "x" : 5588,
-            "y" : 1109
+            "x" : 6076,
+            "y" : 72
          },
          "locations" : [
             {
@@ -462,11 +462,16 @@
                      },
                      {
                         "requirements_and" : [ 38 ],
-                        "requirements_or" : [ 2001, 82, 2002, 2005 ],
+                        "requirements_or" : [],
                         "target_region" : 2
+                     },
+                     {
+                        "requirements_and" : [ -3 ],
+                        "requirements_or" : [],
+                        "target_region" : 3
                      }
                   ],
-                  "x" : 5586,
+                  "x" : 6067,
                   "y" : 2815
                },
                "sectors" : [
@@ -670,20 +675,52 @@
                   "connections" : [
                      {
                         "requirements_and" : [],
-                        "requirements_or" : [],
-                        "target_region" : 1
-                     },
+                        "requirements_or" : [ 82, 2002, 2005, 2001 ],
+                        "target_region" : 4
+                     }
+                  ],
+                  "x" : 5065,
+                  "y" : 1800
+               },
+               "sectors" : [ 120, 354 ],
+               "tint" : [ 1, 0.38725489377975464, 0.38725489377975464, 1 ]
+            },
+            {
+               "name" : "Ignore Red",
+               "rules" : {
+                  "connections" : [
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [ 82, 2002, 2005, 2001 ],
+                        "target_region" : 4
+                     }
+                  ],
+                  "x" : 7046,
+                  "y" : 1805
+               },
+               "sectors" : [],
+               "tint" : [ 0, 0.91176462173461914, 1, 1 ]
+            },
+            {
+               "name" : "End",
+               "rules" : {
+                  "connections" : [
                      {
                         "requirements_and" : [],
                         "requirements_or" : [],
                         "target_region" : -2
+                     },
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [],
+                        "target_region" : 1
                      }
                   ],
-                  "x" : 5586,
-                  "y" : 1733
+                  "x" : 6064,
+                  "y" : 802
                },
-               "sectors" : [ 120, 223, 354 ],
-               "tint" : [ 1, 0.38725489377975464, 0.38725489377975464, 1 ]
+               "sectors" : [ 223 ],
+               "tint" : [ 0.50490200519561768, 0.36877647042274475, 0.36877647042274475, 1 ]
             }
          ],
          "world_rules" : {
@@ -2373,8 +2410,8 @@
          "ep" : 0,
          "exit_rules" : {
             "connections" : [],
-            "x" : 1616,
-            "y" : -3893
+            "x" : -3689,
+            "y" : -3892
          },
          "locations" : [
             {
@@ -2532,7 +2569,7 @@
                "rules" : {
                   "connections" : [
                      {
-                        "requirements_and" : [ 5 ],
+                        "requirements_and" : [],
                         "requirements_or" : [],
                         "target_region" : 0
                      }
@@ -2580,6 +2617,11 @@
                         "requirements_and" : [ 2001 ],
                         "requirements_or" : [ 82, 2002 ],
                         "target_region" : 0
+                     },
+                     {
+                        "requirements_and" : [ -4 ],
+                        "requirements_or" : [],
+                        "target_region" : 4
                      }
                   ],
                   "x" : -2317,
@@ -2610,14 +2652,14 @@
                "rules" : {
                   "connections" : [
                      {
-                        "requirements_and" : [],
-                        "requirements_or" : [],
-                        "target_region" : -2
-                     },
-                     {
                         "requirements_and" : [ 6 ],
                         "requirements_or" : [],
                         "target_region" : 0
+                     },
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [],
+                        "target_region" : 4
                      }
                   ],
                   "x" : 240,
@@ -2678,6 +2720,22 @@
                   161
                ],
                "tint" : [ 0.98471742868423462, 1, 0.48039215803146362, 1 ]
+            },
+            {
+               "name" : "Ending",
+               "rules" : {
+                  "connections" : [
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [],
+                        "target_region" : -2
+                     }
+                  ],
+                  "x" : -2315,
+                  "y" : -3894
+               },
+               "sectors" : [],
+               "tint" : [ 0, 1, 0.088235139846801758, 1 ]
             }
          ],
          "world_rules" : {
@@ -3729,8 +3787,8 @@
          "ep" : 0,
          "exit_rules" : {
             "connections" : [],
-            "x" : -2482,
-            "y" : -1447
+            "x" : -3250,
+            "y" : -1034
          },
          "locations" : [
             {
@@ -3834,34 +3892,17 @@
                         "target_region" : -1
                      },
                      {
-                        "requirements_and" : [ 2002 ],
-                        "requirements_or" : [ 82, 2004, 2003 ],
-                        "target_region" : 1
-                     },
-                     {
-                        "requirements_and" : [ 82, 40 ],
-                        "requirements_or" : [ 2004, 2003 ],
-                        "target_region" : 2
-                     },
-                     {
-                        "requirements_and" : [ -2 ],
-                        "requirements_or" : [],
-                        "target_region" : 3
+                        "requirements_and" : [ 38, 82 ],
+                        "requirements_or" : [ 2002, 2001, 2003 ],
+                        "target_region" : 4
                      }
                   ],
-                  "x" : -3316,
-                  "y" : 310
+                  "x" : -4847,
+                  "y" : 588
                },
                "sectors" : [
                   0,
                   1,
-                  2,
-                  3,
-                  4,
-                  13,
-                  14,
-                  15,
-                  16,
                   17,
                   18,
                   19,
@@ -3872,8 +3913,6 @@
                   24,
                   25,
                   26,
-                  27,
-                  28,
                   29,
                   30,
                   31,
@@ -3881,125 +3920,17 @@
                   33,
                   34,
                   35,
-                  36,
-                  37,
-                  38,
-                  39,
-                  40,
-                  41,
-                  42,
-                  43,
-                  44,
-                  45,
-                  46,
-                  47,
-                  49,
-                  50,
-                  51,
-                  52,
-                  53,
-                  54,
-                  55,
-                  56,
-                  57,
-                  58,
-                  59,
-                  60,
-                  61,
-                  62,
-                  63,
-                  64,
-                  65,
-                  66,
-                  67,
-                  68,
-                  69,
-                  70,
-                  71,
                   72,
                   73,
                   74,
                   75,
-                  76,
-                  77,
-                  78,
-                  79,
-                  80,
-                  81,
-                  82,
-                  83,
-                  84,
-                  85,
-                  86,
-                  88,
-                  90,
                   92,
                   93,
                   94,
                   95,
                   98,
                   101,
-                  121,
-                  122,
-                  123,
-                  124,
-                  125,
-                  126,
-                  127,
-                  128,
-                  129,
-                  130,
-                  132,
                   136,
-                  149,
-                  150,
-                  151,
-                  152,
-                  153,
-                  154,
-                  155,
-                  156,
-                  157,
-                  158,
-                  159,
-                  160,
-                  161,
-                  162,
-                  163,
-                  164,
-                  165,
-                  166,
-                  167,
-                  168,
-                  169,
-                  170,
-                  187,
-                  188,
-                  189,
-                  190,
-                  191,
-                  201,
-                  202,
-                  203,
-                  204,
-                  205,
-                  210,
-                  211,
-                  213,
-                  214,
-                  215,
-                  216,
-                  223,
-                  224,
-                  225,
-                  226,
-                  227,
-                  235,
-                  238,
-                  239,
-                  240,
-                  260,
-                  261,
                   280,
                   283,
                   284,
@@ -4013,29 +3944,6 @@
                   292,
                   293,
                   294,
-                  295,
-                  296,
-                  297,
-                  298,
-                  299,
-                  300,
-                  301,
-                  303,
-                  304,
-                  305,
-                  306,
-                  307,
-                  308,
-                  309,
-                  310,
-                  311,
-                  312,
-                  313,
-                  314,
-                  315,
-                  316,
-                  317,
-                  318,
                   319,
                   320,
                   321,
@@ -4044,13 +3952,8 @@
                   324,
                   325,
                   326,
-                  337,
-                  338,
                   339,
-                  344,
                   347,
-                  348,
-                  349,
                   357,
                   358
                ],
@@ -4063,14 +3966,13 @@
                      {
                         "requirements_and" : [],
                         "requirements_or" : [],
-                        "target_region" : 0
+                        "target_region" : 4
                      }
                   ],
-                  "x" : -4883,
-                  "y" : 307
+                  "x" : -3255,
+                  "y" : 1446
                },
                "sectors" : [
-                  48,
                   87,
                   89,
                   105,
@@ -4135,16 +4037,16 @@
                      {
                         "requirements_and" : [],
                         "requirements_or" : [],
-                        "target_region" : 0
+                        "target_region" : -2
                      },
                      {
                         "requirements_and" : [],
                         "requirements_or" : [],
-                        "target_region" : -2
+                        "target_region" : 4
                      }
                   ],
-                  "x" : -2489,
-                  "y" : -801
+                  "x" : -3258,
+                  "y" : -400
                },
                "sectors" : [
                   91,
@@ -4201,6 +4103,7 @@
                   330,
                   331,
                   332,
+                  334,
                   335,
                   336,
                   345,
@@ -4220,28 +4123,202 @@
                "rules" : {
                   "connections" : [
                      {
-                        "requirements_and" : [ 82 ],
-                        "requirements_or" : [ 2003, 2004 ],
+                        "requirements_and" : [],
+                        "requirements_or" : [],
                         "target_region" : 2
                      }
                   ],
-                  "x" : -4139,
-                  "y" : -810
+                  "x" : -4734,
+                  "y" : -392
                },
                "sectors" : [],
                "tint" : [ 0.14705884456634521, 1, 0, 1 ]
+            },
+            {
+               "name" : "Red",
+               "rules" : {
+                  "connections" : [
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [],
+                        "target_region" : 0
+                     },
+                     {
+                        "requirements_and" : [ 40 ],
+                        "requirements_or" : [],
+                        "target_region" : 2
+                     },
+                     {
+                        "requirements_and" : [ -4 ],
+                        "requirements_or" : [],
+                        "target_region" : 3
+                     },
+                     {
+                        "requirements_and" : [ 2001 ],
+                        "requirements_or" : [ 2003, 2004, 2002 ],
+                        "target_region" : 1
+                     }
+                  ],
+                  "x" : -3254,
+                  "y" : 589
+               },
+               "sectors" : [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  13,
+                  14,
+                  15,
+                  16,
+                  27,
+                  28,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64,
+                  65,
+                  66,
+                  67,
+                  68,
+                  69,
+                  70,
+                  71,
+                  76,
+                  77,
+                  78,
+                  79,
+                  80,
+                  81,
+                  82,
+                  83,
+                  84,
+                  85,
+                  86,
+                  88,
+                  90,
+                  121,
+                  122,
+                  123,
+                  124,
+                  125,
+                  126,
+                  127,
+                  128,
+                  129,
+                  130,
+                  132,
+                  152,
+                  153,
+                  154,
+                  155,
+                  156,
+                  157,
+                  158,
+                  159,
+                  160,
+                  161,
+                  162,
+                  163,
+                  164,
+                  165,
+                  166,
+                  167,
+                  168,
+                  169,
+                  170,
+                  187,
+                  188,
+                  189,
+                  190,
+                  191,
+                  201,
+                  202,
+                  203,
+                  204,
+                  205,
+                  210,
+                  211,
+                  213,
+                  214,
+                  215,
+                  216,
+                  223,
+                  224,
+                  225,
+                  226,
+                  227,
+                  235,
+                  238,
+                  239,
+                  240,
+                  260,
+                  261,
+                  295,
+                  296,
+                  297,
+                  298,
+                  299,
+                  300,
+                  301,
+                  303,
+                  304,
+                  305,
+                  306,
+                  307,
+                  308,
+                  309,
+                  310,
+                  311,
+                  312,
+                  313,
+                  314,
+                  315,
+                  316,
+                  317,
+                  318,
+                  333,
+                  337,
+                  338,
+                  344,
+                  348,
+                  349
+               ],
+               "tint" : [ 1, 0.23529410362243652, 0.23529410362243652, 1 ]
             }
          ],
          "world_rules" : {
             "connections" : [
                {
-                  "requirements_and" : [ 2001, 2005 ],
-                  "requirements_or" : [ 2002, 82 ],
+                  "requirements_and" : [],
+                  "requirements_or" : [ 2002, 82, 2001, 2005 ],
                   "target_region" : 0
                }
             ],
-            "x" : -3321,
-            "y" : 1174
+            "x" : -4847,
+            "y" : 1518
          }
       },
       {
@@ -4990,8 +5067,8 @@
                         "target_region" : -1
                      },
                      {
-                        "requirements_and" : [ 2001 ],
-                        "requirements_or" : [],
+                        "requirements_and" : [],
+                        "requirements_or" : [ 2001, 82, 2005 ],
                         "target_region" : 1
                      }
                   ],
@@ -5045,6 +5122,11 @@
                         "requirements_and" : [ 5 ],
                         "requirements_or" : [ 2003, 2004 ],
                         "target_region" : 6
+                     },
+                     {
+                        "requirements_and" : [ -3 ],
+                        "requirements_or" : [ 2002, 82 ],
+                        "target_region" : 8
                      }
                   ],
                   "x" : -1487,
@@ -5143,8 +5225,8 @@
                         "target_region" : 5
                      }
                   ],
-                  "x" : -3004,
-                  "y" : 239
+                  "x" : -2966,
+                  "y" : -293
                },
                "sectors" : [
                   74,
@@ -5196,8 +5278,8 @@
                         "target_region" : 1
                      }
                   ],
-                  "x" : -3010,
-                  "y" : 999
+                  "x" : -2962,
+                  "y" : 1339
                },
                "sectors" : [
                   80,
@@ -5276,8 +5358,8 @@
                         "target_region" : 5
                      }
                   ],
-                  "x" : -2999,
-                  "y" : -1200
+                  "x" : -4482,
+                  "y" : 562
                },
                "sectors" : [ 34, 35, 201, 206, 207 ],
                "tint" : [ 0.9550173282623291, 1, 0.49019604921340942, 1 ]
@@ -5297,8 +5379,8 @@
                         "target_region" : 4
                      }
                   ],
-                  "x" : -3001,
-                  "y" : -450
+                  "x" : -4488,
+                  "y" : -291
                },
                "sectors" : [ 196, 197, 198, 202, 204, 208, 217, 218, 219 ],
                "tint" : [ 0.37831598520278931, 1, 0.2450980544090271, 1 ]
@@ -5318,8 +5400,8 @@
                         "target_region" : 7
                      }
                   ],
-                  "x" : -1491,
-                  "y" : -575
+                  "x" : -1495,
+                  "y" : -292
                },
                "sectors" : [
                   0,
@@ -5391,6 +5473,22 @@
                   233
                ],
                "tint" : [ 1, 0.44607841968536377, 0.44607841968536377, 1 ]
+            },
+            {
+               "name" : "Drop In",
+               "rules" : {
+                  "connections" : [
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [ 2003, 2004 ],
+                        "target_region" : 4
+                     }
+                  ],
+                  "x" : -2995,
+                  "y" : 562
+               },
+               "sectors" : [],
+               "tint" : [ 0.53194683790206909, 0.85784316062927246, 0.20605054497718811, 1 ]
             }
          ],
          "world_rules" : {
@@ -6701,7 +6799,7 @@
                         "target_region" : 2
                      },
                      {
-                        "requirements_and" : [ -2 ],
+                        "requirements_and" : [ -4 ],
                         "requirements_or" : [],
                         "target_region" : 4
                      }
@@ -7191,8 +7289,8 @@
          "ep" : 1,
          "exit_rules" : {
             "connections" : [],
-            "x" : -568,
-            "y" : 5017
+            "x" : -691,
+            "y" : 4944
          },
          "locations" : [
             {
@@ -7200,7 +7298,7 @@
                "death_logic" : false,
                "description" : "",
                "index" : 0,
-               "name" : "East Water",
+               "name" : "East Lake",
                "unreachable" : false
             },
             {
@@ -7208,7 +7306,7 @@
                "death_logic" : false,
                "description" : "",
                "index" : 1,
-               "name" : "Alcoves Around Start",
+               "name" : "West Lake",
                "unreachable" : false
             },
             {
@@ -7256,7 +7354,7 @@
                "death_logic" : false,
                "description" : "",
                "index" : 168,
-               "name" : "West Water",
+               "name" : "West Lake",
                "unreachable" : false
             },
             {
@@ -7264,7 +7362,7 @@
                "death_logic" : false,
                "description" : "",
                "index" : 199,
-               "name" : "East Water, Lookout Point",
+               "name" : "East Lake, Balcony",
                "unreachable" : false
             },
             {
@@ -7280,7 +7378,7 @@
                "death_logic" : false,
                "description" : "",
                "index" : 243,
-               "name" : "East Water, Balancing on Rails",
+               "name" : "East Lake, Balancing on Rails",
                "unreachable" : false
             },
             {
@@ -7288,7 +7386,7 @@
                "death_logic" : false,
                "description" : "",
                "index" : 295,
-               "name" : "East Water, Revealed Area",
+               "name" : "East Lake, Revealed Area",
                "unreachable" : false
             }
          ],
@@ -7305,7 +7403,7 @@
                      },
                      {
                         "requirements_and" : [ 38 ],
-                        "requirements_or" : [ 2004, 2003 ],
+                        "requirements_or" : [ 2004, 2003, 2006 ],
                         "target_region" : 1
                      },
                      {
@@ -7314,9 +7412,19 @@
                         "target_region" : 2
                      },
                      {
-                        "requirements_and" : [ 39, 2004 ],
-                        "requirements_or" : [],
+                        "requirements_and" : [ 39 ],
+                        "requirements_or" : [ 2004, 2006 ],
                         "target_region" : 3
+                     },
+                     {
+                        "requirements_and" : [ -2 ],
+                        "requirements_or" : [],
+                        "target_region" : 4
+                     },
+                     {
+                        "requirements_and" : [ -4, 2003 ],
+                        "requirements_or" : [],
+                        "target_region" : 5
                      }
                   ],
                   "x" : 736,
@@ -7472,8 +7580,8 @@
                         "target_region" : -2
                      }
                   ],
-                  "x" : 737,
-                  "y" : 5022
+                  "x" : 734,
+                  "y" : 4942
                },
                "sectors" : [ 42, 58, 119, 218, 219, 269, 270, 275, 295, 296, 297 ],
                "tint" : [ 1, 0.40686273574829102, 0.40686273574829102, 1 ]
@@ -7486,10 +7594,15 @@
                         "requirements_and" : [],
                         "requirements_or" : [],
                         "target_region" : 0
+                     },
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [],
+                        "target_region" : 4
                      }
                   ],
-                  "x" : 741,
-                  "y" : 3283
+                  "x" : 2288,
+                  "y" : 4036
                },
                "sectors" : [
                   2,
@@ -7513,7 +7626,6 @@
                   81,
                   85,
                   95,
-                  99,
                   102,
                   138,
                   139,
@@ -7521,7 +7633,6 @@
                   141,
                   142,
                   143,
-                  144,
                   145,
                   146,
                   147,
@@ -7605,8 +7716,8 @@
                         "target_region" : 0
                      }
                   ],
-                  "x" : 2338,
-                  "y" : 4025
+                  "x" : 737,
+                  "y" : 3179
                },
                "sectors" : [
                   31,
@@ -7630,13 +7741,45 @@
                   129
                ],
                "tint" : [ 0.98514991998672485, 1, 0.4950980544090271, 1 ]
+            },
+            {
+               "name" : "Grabbable Blue",
+               "rules" : {
+                  "connections" : [
+                     {
+                        "requirements_and" : [ 40 ],
+                        "requirements_or" : [],
+                        "target_region" : 2
+                     }
+                  ],
+                  "x" : 2289,
+                  "y" : 3153
+               },
+               "sectors" : [ 99, 144 ],
+               "tint" : [ 0.13725489377975464, 0.84775072336196899, 1, 1 ]
+            },
+            {
+               "name" : "Bridge RJ",
+               "rules" : {
+                  "connections" : [
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [],
+                        "target_region" : 2
+                     }
+                  ],
+                  "x" : 2288,
+                  "y" : 4936
+               },
+               "sectors" : [],
+               "tint" : [ 0, 1, 0.41176462173461914, 1 ]
             }
          ],
          "world_rules" : {
             "connections" : [
                {
-                  "requirements_and" : [ 2001, 82, 2002, 2005 ],
-                  "requirements_or" : [],
+                  "requirements_and" : [ 2001, 82, 2005 ],
+                  "requirements_or" : [ 2002, 2004 ],
                   "target_region" : 0
                }
             ],
@@ -9970,7 +10113,7 @@
                         "target_region" : -2
                      },
                      {
-                        "requirements_and" : [ -2 ],
+                        "requirements_and" : [ -3 ],
                         "requirements_or" : [],
                         "target_region" : 1
                      },
@@ -10728,7 +10871,7 @@
                         "target_region" : 2
                      },
                      {
-                        "requirements_and" : [ 6, 40 ],
+                        "requirements_and" : [ 6 ],
                         "requirements_or" : [],
                         "target_region" : 4
                      },
@@ -10920,11 +11063,11 @@
                "tint" : [ 0.48140138387680054, 0.46568626165390015, 1, 1 ]
             },
             {
-               "name" : "Yellow and Blue",
+               "name" : "Yellow",
                "rules" : {
                   "connections" : [
                      {
-                        "requirements_and" : [ 40, 6 ],
+                        "requirements_and" : [ 6 ],
                         "requirements_or" : [],
                         "target_region" : 1
                      }
@@ -10968,7 +11111,7 @@
                   170,
                   171
                ],
-               "tint" : [ 0.46078431606292725, 1, 0.76211065053939819, 1 ]
+               "tint" : [ 0.95905423164367676, 1, 0.30392158031463623, 1 ]
             },
             {
                "name" : "Danger SR40",
@@ -11005,8 +11148,8 @@
          "ep" : 2,
          "exit_rules" : {
             "connections" : [],
-            "x" : -5235,
-            "y" : 49
+            "x" : -6753,
+            "y" : 3230
          },
          "locations" : [
             {
@@ -11266,7 +11409,7 @@
                "unreachable" : false
             },
             {
-               "check_sanity" : true,
+               "check_sanity" : false,
                "death_logic" : false,
                "description" : "",
                "index" : 408,
@@ -11274,7 +11417,7 @@
                "unreachable" : false
             },
             {
-               "check_sanity" : true,
+               "check_sanity" : false,
                "death_logic" : false,
                "description" : "",
                "index" : 409,
@@ -11282,7 +11425,7 @@
                "unreachable" : false
             },
             {
-               "check_sanity" : true,
+               "check_sanity" : false,
                "death_logic" : false,
                "description" : "",
                "index" : 410,
@@ -11290,7 +11433,7 @@
                "unreachable" : false
             },
             {
-               "check_sanity" : true,
+               "check_sanity" : false,
                "death_logic" : false,
                "description" : "",
                "index" : 411,
@@ -11298,7 +11441,7 @@
                "unreachable" : false
             },
             {
-               "check_sanity" : true,
+               "check_sanity" : false,
                "death_logic" : false,
                "description" : "",
                "index" : 412,
@@ -11306,7 +11449,7 @@
                "unreachable" : false
             },
             {
-               "check_sanity" : true,
+               "check_sanity" : false,
                "death_logic" : false,
                "description" : "",
                "index" : 413,
@@ -11329,7 +11472,7 @@
                "rules" : {
                   "connections" : [
                      {
-                        "requirements_and" : [ 82, 2004, 2005, 2002, 2001 ],
+                        "requirements_and" : [ 82, 2004, 2002, 2001 ],
                         "requirements_or" : [ 2003, 2006 ],
                         "target_region" : 1
                      },
@@ -11363,10 +11506,25 @@
                         "requirements_and" : [ 5 ],
                         "requirements_or" : [],
                         "target_region" : 3
+                     },
+                     {
+                        "requirements_and" : [ 6 ],
+                        "requirements_or" : [],
+                        "target_region" : 6
+                     },
+                     {
+                        "requirements_and" : [ -2 ],
+                        "requirements_or" : [],
+                        "target_region" : 7
+                     },
+                     {
+                        "requirements_and" : [ -2 ],
+                        "requirements_or" : [],
+                        "target_region" : 8
                      }
                   ],
-                  "x" : -3764,
-                  "y" : 1327
+                  "x" : -3709,
+                  "y" : 1321
                },
                "sectors" : [
                   0,
@@ -11406,7 +11564,6 @@
                   102,
                   103,
                   104,
-                  106,
                   107,
                   108,
                   111,
@@ -11452,7 +11609,7 @@
                "tint" : [ 1, 1, 1, 1 ]
             },
             {
-               "name" : "Yellow",
+               "name" : "Yellow Southeast",
                "rules" : {
                   "connections" : [
                      {
@@ -11466,17 +11623,16 @@
                         "target_region" : 4
                      },
                      {
-                        "requirements_and" : [ -2 ],
+                        "requirements_and" : [ 6 ],
                         "requirements_or" : [],
-                        "target_region" : 5
+                        "target_region" : 9
                      }
                   ],
-                  "x" : -3767,
-                  "y" : 639
+                  "x" : -5257,
+                  "y" : 2268
                },
                "sectors" : [
                   2,
-                  3,
                   17,
                   18,
                   19,
@@ -11489,10 +11645,6 @@
                   27,
                   28,
                   29,
-                  30,
-                  31,
-                  32,
-                  33,
                   34,
                   39,
                   40,
@@ -11502,81 +11654,19 @@
                   44,
                   45,
                   46,
-                  64,
-                  109,
-                  110,
-                  119,
-                  120,
+                  106,
                   121,
-                  122,
-                  123,
-                  124,
-                  125,
                   126,
-                  127,
-                  132,
-                  133,
                   134,
-                  136,
                   137,
                   139,
                   140,
                   141,
-                  145,
                   155,
                   172,
                   173,
                   174,
-                  182,
-                  186,
-                  187,
-                  208,
-                  209,
-                  210,
-                  211,
-                  216,
-                  217,
-                  218,
-                  219,
-                  220,
-                  223,
-                  224,
-                  225,
-                  226,
-                  228,
-                  239,
-                  240,
-                  246,
-                  247,
-                  254,
-                  255,
-                  256,
-                  257,
-                  258,
-                  259,
-                  260,
-                  261,
-                  262,
-                  263,
-                  264,
-                  265,
-                  266,
-                  267,
-                  268,
-                  269,
-                  270,
-                  271,
-                  272,
-                  273,
-                  274,
-                  275,
-                  292,
-                  293,
-                  294,
-                  295,
-                  296,
-                  297,
-                  298
+                  182
                ],
                "tint" : [ 0.98341983556747437, 1, 0.43627452850341797, 1 ]
             },
@@ -11590,8 +11680,8 @@
                         "target_region" : 1
                      }
                   ],
-                  "x" : -5231,
-                  "y" : 1325
+                  "x" : -6766,
+                  "y" : 1319
                },
                "sectors" : [ 190, 193, 194, 195, 200, 248, 249 ],
                "tint" : [ 0.38235294818878174, 0.43685126304626465, 1, 1 ]
@@ -11609,10 +11699,15 @@
                         "requirements_and" : [],
                         "requirements_or" : [],
                         "target_region" : -2
+                     },
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [],
+                        "target_region" : 9
                      }
                   ],
-                  "x" : -5218,
-                  "y" : 641
+                  "x" : -5256,
+                  "y" : 3232
                },
                "sectors" : [
                   55,
@@ -11664,11 +11759,11 @@
                      {
                         "requirements_and" : [],
                         "requirements_or" : [],
-                        "target_region" : 2
+                        "target_region" : 6
                      }
                   ],
-                  "x" : -3766,
-                  "y" : -60
+                  "x" : -5238,
+                  "y" : -566
                },
                "sectors" : [
                   277,
@@ -11688,6 +11783,150 @@
                   291
                ],
                "tint" : [ 0, 1, 0.11764693260192871, 1 ]
+            },
+            {
+               "name" : "Yellow Southwest",
+               "rules" : {
+                  "connections" : [
+                     {
+                        "requirements_and" : [ -2 ],
+                        "requirements_or" : [],
+                        "target_region" : 5
+                     },
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [],
+                        "target_region" : 1
+                     }
+                  ],
+                  "x" : -5240,
+                  "y" : 423
+               },
+               "sectors" : [
+                  3,
+                  64,
+                  109,
+                  110,
+                  136,
+                  145,
+                  254,
+                  255,
+                  256,
+                  257,
+                  258,
+                  259,
+                  260,
+                  261,
+                  262,
+                  263,
+                  264,
+                  265,
+                  266,
+                  267,
+                  268,
+                  269,
+                  270,
+                  271,
+                  272,
+                  273,
+                  274,
+                  275,
+                  292,
+                  293,
+                  294,
+                  295,
+                  296,
+                  297,
+                  298
+               ],
+               "tint" : [ 0.76463806629180908, 0.90196079015731812, 0.12379853427410126, 1 ]
+            },
+            {
+               "name" : "SW Jump",
+               "rules" : {
+                  "connections" : [
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [],
+                        "target_region" : 6
+                     }
+                  ],
+                  "x" : -3712,
+                  "y" : 414
+               },
+               "sectors" : [],
+               "tint" : [ 0, 1, 0.58823513984680176, 1 ]
+            },
+            {
+               "name" : "SE Jump",
+               "rules" : {
+                  "connections" : [
+                     {
+                        "requirements_and" : [ 13 ],
+                        "requirements_or" : [],
+                        "target_region" : 4
+                     },
+                     {
+                        "requirements_and" : [ -1 ],
+                        "requirements_or" : [],
+                        "target_region" : 2
+                     }
+                  ],
+                  "x" : -3705,
+                  "y" : 2274
+               },
+               "sectors" : [],
+               "tint" : [ 0.55882358551025391, 1, 0, 1 ]
+            },
+            {
+               "name" : "SE Extensions",
+               "rules" : {
+                  "connections" : [
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [],
+                        "target_region" : 2
+                     }
+                  ],
+                  "x" : -6751,
+                  "y" : 2268
+               },
+               "sectors" : [
+                  30,
+                  31,
+                  32,
+                  33,
+                  119,
+                  120,
+                  122,
+                  123,
+                  124,
+                  125,
+                  127,
+                  132,
+                  133,
+                  186,
+                  187,
+                  208,
+                  209,
+                  210,
+                  211,
+                  216,
+                  217,
+                  218,
+                  219,
+                  220,
+                  223,
+                  224,
+                  225,
+                  226,
+                  228,
+                  239,
+                  240,
+                  246,
+                  247
+               ],
+               "tint" : [ 1, 0.67647057771682739, 0, 1 ]
             }
          ],
          "world_rules" : {
@@ -12597,11 +12836,6 @@
                "rules" : {
                   "connections" : [
                      {
-                        "requirements_and" : [],
-                        "requirements_or" : [],
-                        "target_region" : -1
-                     },
-                     {
                         "requirements_and" : [ 5, 2003, 2006, 2002 ],
                         "requirements_or" : [],
                         "target_region" : 1
@@ -12612,24 +12846,15 @@
                         "target_region" : 2
                      },
                      {
-                        "requirements_and" : [ 5 ],
+                        "requirements_and" : [],
                         "requirements_or" : [],
-                        "target_region" : 4
+                        "target_region" : 5
                      }
                   ],
                   "x" : -1132,
                   "y" : -1459
                },
                "sectors" : [
-                  0,
-                  1,
-                  30,
-                  31,
-                  32,
-                  33,
-                  137,
-                  138,
-                  139,
                   140,
                   141,
                   142,
@@ -12643,16 +12868,6 @@
                   150,
                   151,
                   152,
-                  153,
-                  154,
-                  155,
-                  156,
-                  157,
-                  158,
-                  159,
-                  160,
-                  161,
-                  162,
                   163,
                   164,
                   165,
@@ -12702,44 +12917,6 @@
                   210,
                   289,
                   290,
-                  303,
-                  304,
-                  305,
-                  306,
-                  307,
-                  308,
-                  309,
-                  310,
-                  311,
-                  312,
-                  313,
-                  314,
-                  315,
-                  316,
-                  317,
-                  319,
-                  320,
-                  321,
-                  322,
-                  323,
-                  324,
-                  325,
-                  326,
-                  327,
-                  328,
-                  329,
-                  330,
-                  331,
-                  332,
-                  333,
-                  345,
-                  349,
-                  356,
-                  357,
-                  358,
-                  359,
-                  360,
-                  361,
                   362,
                   378,
                   379,
@@ -12769,16 +12946,6 @@
                   440,
                   441,
                   442,
-                  557,
-                  558,
-                  559,
-                  560,
-                  561,
-                  562,
-                  563,
-                  564,
-                  565,
-                  566,
                   567,
                   568,
                   569,
@@ -12825,25 +12992,10 @@
                   615,
                   616,
                   617,
-                  624,
-                  625,
-                  626,
-                  627,
                   630,
                   631,
-                  632,
-                  633,
-                  634,
-                  635,
-                  636,
-                  646,
-                  687,
-                  688,
                   689,
-                  690,
-                  693,
-                  694,
-                  697
+                  690
                ],
                "tint" : [ 1, 1, 1, 1 ]
             },
@@ -13109,7 +13261,6 @@
                   54,
                   55,
                   78,
-                  129,
                   131,
                   132,
                   133,
@@ -13278,11 +13429,11 @@
                      {
                         "requirements_and" : [ 5 ],
                         "requirements_or" : [],
-                        "target_region" : 0
+                        "target_region" : 5
                      }
                   ],
-                  "x" : 388,
-                  "y" : -706
+                  "x" : -4722,
+                  "y" : -1464
                },
                "sectors" : [
                   640,
@@ -13322,18 +13473,133 @@
                   676
                ],
                "tint" : [ 0.45588237047195435, 0.79195511341094971, 1, 1 ]
+            },
+            {
+               "name" : "Start",
+               "rules" : {
+                  "connections" : [
+                     {
+                        "requirements_and" : [ 2001, 82, 2004, 2005 ],
+                        "requirements_or" : [ 2003, 2006 ],
+                        "target_region" : 0
+                     },
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [],
+                        "target_region" : -1
+                     },
+                     {
+                        "requirements_and" : [ 5 ],
+                        "requirements_or" : [],
+                        "target_region" : 4
+                     }
+                  ],
+                  "x" : -3062,
+                  "y" : -1456
+               },
+               "sectors" : [
+                  0,
+                  1,
+                  30,
+                  31,
+                  32,
+                  33,
+                  129,
+                  137,
+                  138,
+                  139,
+                  153,
+                  154,
+                  155,
+                  156,
+                  157,
+                  158,
+                  159,
+                  160,
+                  161,
+                  162,
+                  303,
+                  304,
+                  305,
+                  306,
+                  307,
+                  308,
+                  309,
+                  310,
+                  311,
+                  312,
+                  313,
+                  314,
+                  315,
+                  316,
+                  317,
+                  319,
+                  320,
+                  321,
+                  322,
+                  323,
+                  324,
+                  325,
+                  326,
+                  327,
+                  328,
+                  329,
+                  330,
+                  331,
+                  332,
+                  333,
+                  334,
+                  336,
+                  338,
+                  345,
+                  346,
+                  347,
+                  349,
+                  356,
+                  357,
+                  358,
+                  359,
+                  360,
+                  361,
+                  557,
+                  558,
+                  559,
+                  560,
+                  561,
+                  562,
+                  563,
+                  564,
+                  565,
+                  566,
+                  624,
+                  625,
+                  626,
+                  627,
+                  632,
+                  633,
+                  634,
+                  635,
+                  636,
+                  646,
+                  687,
+                  688,
+                  693,
+                  694,
+                  697
+               ],
+               "tint" : [ 0, 1, 0.97058796882629395, 1 ]
             }
          ],
          "world_rules" : {
             "connections" : [
                {
-                  "requirements_and" : [ 2001, 82, 2004, 2005 ],
-                  "requirements_or" : [ 2003, 2006 ],
-                  "target_region" : 0
+                  "requirements_and" : [],
+                  "requirements_or" : [],
+                  "target_region" : 5
                }
             ],
-            "x" : -1130,
-            "y" : -378
+            "x" : -3065,
+            "y" : -2129
          }
       },
       {
@@ -13680,7 +13946,7 @@
          "world_rules" : {
             "connections" : [
                {
-                  "requirements_and" : [ 2001, 82, 2004, 2002 ],
+                  "requirements_and" : [ 82, 2004, 2002 ],
                   "requirements_or" : [ 2003, 2006 ],
                   "target_region" : 0
                }
@@ -13736,7 +14002,7 @@
                "death_logic" : false,
                "description" : "",
                "index" : 79,
-               "name" : "Baron Trap",
+               "name" : "Red Corridors, Baron Trap",
                "unreachable" : false
             },
             {
@@ -13760,7 +14026,7 @@
                "death_logic" : false,
                "description" : "",
                "index" : 163,
-               "name" : "Touhou Room",
+               "name" : "Red Corridors",
                "unreachable" : false
             },
             {
@@ -16677,6 +16943,11 @@
                         "requirements_and" : [],
                         "requirements_or" : [],
                         "target_region" : -2
+                     },
+                     {
+                        "requirements_and" : [ -2 ],
+                        "requirements_or" : [],
+                        "target_region" : 2
                      }
                   ],
                   "x" : 1660,
@@ -16827,15 +17098,17 @@
                         "requirements_and" : [],
                         "requirements_or" : [],
                         "target_region" : 0
+                     },
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [],
+                        "target_region" : 2
                      }
                   ],
                   "x" : 3135,
                   "y" : 262
                },
                "sectors" : [
-                  22,
-                  23,
-                  24,
                   69,
                   70,
                   71,
@@ -16882,6 +17155,22 @@
                   218
                ],
                "tint" : [ 1, 0.49019604921340942, 0.49019604921340942, 1 ]
+            },
+            {
+               "name" : "Early Collect",
+               "rules" : {
+                  "connections" : [
+                     {
+                        "requirements_and" : [ 13 ],
+                        "requirements_or" : [],
+                        "target_region" : 1
+                     }
+                  ],
+                  "x" : 3135,
+                  "y" : 1104
+               },
+               "sectors" : [ 22, 23, 24 ],
+               "tint" : [ 0.35294115543365479, 0.98096901178359985, 1, 1 ]
             }
          ],
          "world_rules" : {

@@ -1,58 +1,96 @@
 {
-    "name": "Doom II - Zone 300",
-    "world": "pwad-zone300",
-    "codename": "zone300",
-    "classname": "DOOM2Zone300",
+    "full_name": "Zone 300",
+    "short_name": "zone300",
+    "ap_name": "DOOM II - Zone 300",
+    "ap_world_name": "pwad_zone300",
+
 	"iwad": "DOOM2.WAD",
-	"pwad": "zone300.wad",
-    "load_order": ["DOOM2.WAD", "zone300.wad", "APDOOM.WAD", "APZ300.WAD"],
-    "item_ids": 360000,
-    "loc_ids": 361000,
+    "required_wads": "zone300.wad",
+    "included_wads": "data/wads/Zone300_ExtraAPData.wad",
     "settings": {},
 
-    "map_info": [
-        [
-            {"lump": "MAP01", "name": "The Spaceport (MAP01)"},
-            {"lump": "MAP02", "name": "Control Facility (MAP02)"},
-            {"lump": "MAP03", "name": "The Alleyway (MAP03)"},
-            {"lump": "MAP04", "name": "Canyon Hub (MAP04)"},
-            {"lump": "MAP05", "name": "Skybase 300 (MAP05)"},
-            {"lump": "MAP06", "name": "Whispering Corridor (MAP06)"},
-            {"lump": "MAP07", "name": "Heavyweight (MAP07)"},
-            {"lump": "MAP08", "name": "Waste Disposal Plant (MAP08)"},
-            {"lump": "MAP09", "name": "Nuclear Power Station (MAP09)"},
-            {"lump": "MAP10", "name": "Cargo Bay (MAP10)"}
-        ],
-        [
-            {"lump": "MAP11", "name": "Simbattle (MAP11)"},
-            {"lump": "MAP12", "name": "Villa of Pain (MAP12)"},
-            {"lump": "MAP13", "name": "Dark Crypt (MAP13)"},
-            {"lump": "MAP14", "name": "The Circle (MAP14)"},
-            {"lump": "MAP15", "name": "Trouble Town (MAP15)"},
-            {"lump": "MAP16", "name": "Bruiser Fortress (MAP16)"},
-            {"lump": "MAP17", "name": "Constriction (MAP17)"},
-            {"lump": "MAP18", "name": "Zombie Hideout (MAP18)"},
-            {"lump": "MAP19", "name": "The Invasion (MAP19)"},
-            {"lump": "MAP20", "name": "Death Row (MAP20)"}
-        ],
-        [
-            {"lump": "MAP21", "name": "Blood Lust (MAP21)"},
-            {"lump": "MAP22", "name": "Firestorm Tomb (MAP22)"},
-            {"lump": "MAP23", "name": "Dungeon of Inferno (MAP23)"},
-            {"lump": "MAP24", "name": "Cavern of the Evil Spirit (MAP24)"},
-            {"lump": "MAP25", "name": "Hellucination (MAP25)"},
-            {"lump": "MAP26", "name": "Valley of Brimstone (MAP26)"},
-            {"lump": "MAP27", "name": "Dissect (MAP27)"},
-            {"lump": "MAP28", "name": "Unholy Demise (MAP28)"},
-            {"lump": "MAP29", "name": "Den of Torture (MAP29)"},
-            {"lump": "MAP30", "name": "Eternal Core (MAP30)"}
-        ],
-        [
-            {"lump": "MAP31", "name": "Creepy (MAP31)"},
-            {"lump": "MAP32", "name": "Condemnation (MAP32)"},
-            {"lump": "MAP33", "name": "Zerstorung (MAP33)"}
-        ]
+    "episodes": [
+        {
+            "maps": [
+                {"lump": "MAP01", "name": "The Spaceport (MAP01)"},
+                {"lump": "MAP02", "name": "Control Facility (MAP02)"},
+                {"lump": "MAP03", "name": "The Alleyway (MAP03)"},
+                {"lump": "MAP04", "name": "Canyon Hub (MAP04)"},
+                {"lump": "MAP05", "name": "Skybase 300 (MAP05)"},
+                {"lump": "MAP06", "name": "Whispering Corridor (MAP06)"},
+                {"lump": "MAP07", "name": "Heavyweight (MAP07)"},
+                {"lump": "MAP08", "name": "Waste Disposal Plant (MAP08)"},
+                {"lump": "MAP09", "name": "Nuclear Power Station (MAP09)"},
+                {"lump": "MAP10", "name": "Cargo Bay (MAP10)"}
+            ]
+        },
+        {
+            "maps": [
+                {"lump": "MAP11", "name": "Simbattle (MAP11)"},
+                {"lump": "MAP12", "name": "Villa of Pain (MAP12)"},
+                {"lump": "MAP13", "name": "Dark Crypt (MAP13)"},
+                {"lump": "MAP14", "name": "The Circle (MAP14)"},
+                {"lump": "MAP15", "name": "Trouble Town (MAP15)"},
+                {"lump": "MAP16", "name": "Bruiser Fortress (MAP16)"},
+                {"lump": "MAP17", "name": "Constriction (MAP17)"},
+                {"lump": "MAP18", "name": "Zombie Hideout (MAP18)"},
+                {"lump": "MAP19", "name": "The Invasion (MAP19)"},
+                {"lump": "MAP20", "name": "Death Row (MAP20)"}
+            ]
+        },
+        {
+            "maps": [
+                {"lump": "MAP21", "name": "Blood Lust (MAP21)"},
+                {"lump": "MAP22", "name": "Firestorm Tomb (MAP22)"},
+                {"lump": "MAP23", "name": "Dungeon of Inferno (MAP23)"},
+                {"lump": "MAP24", "name": "Cavern of the Evil Spirit (MAP24)"},
+                {"lump": "MAP25", "name": "Hellucination (MAP25)"},
+                {"lump": "MAP26", "name": "Valley of Brimstone (MAP26)"},
+                {"lump": "MAP27", "name": "Dissect (MAP27)"},
+                {"lump": "MAP28", "name": "Unholy Demise (MAP28)"},
+                {"lump": "MAP29", "name": "Den of Torture (MAP29)"},
+                {"lump": "MAP30", "name": "Eternal Core (MAP30)"}
+            ]
+        },
+        {
+            "name": "Secret Levels", "minor": true, "default": false, "maps": [
+                {"lump": "MAP31", "name": "Creepy (MAP31)"},
+                {"lump": "MAP32", "name": "Condemnation (MAP32)"},
+                {"lump": "MAP33", "name": "Zerstorung (MAP33)"}
+            ]
+        }
     ],
+
+    "world_info":{
+        "description":[
+            "Zone 300 is a 33-level PWAD for Doom II, released in 2013 by Paul Corfiatis.",
+            "With the exception of MAP32 and MAP33, every map has at most 300 linedefs, resulting in short and concise maps."
+        ],
+        "hooks":{
+            "generate_early":[
+                "# Simbattle has one location from the start. It MUST be the Super Shotgun if soloing.",
+                "if self.solo_episode(2):",
+                "    self.multiworld.early_items[self.player]['Super Shotgun'] = 1"
+            ]
+        },
+        "world_options":[
+            {"name": "Difficulty", "preset": "Doom"},
+            {"name": "Start with Maps"},
+            {"name": "Invis as Trap"},
+            {"name": "Capacity Upgrades"},
+            {"name": "Custom Ammo Capacity"}
+        ],
+        "filler_item_weight":{
+            "Armor": 12,
+            "Mega Armor": 16,
+            "Berserk": 10,
+            "Invulnerability": 10,
+            "Partial invisibility": 8,
+            "Supercharge": 20,
+            "Megasphere": 12
+        }
+    },
+
 
     "game_info":{
         "ammo": [
@@ -73,37 +111,22 @@
             {"name": "Super shotgun", "ammo_type": "Shells"}
         ],
         "monsters": {
-            "small": [
-                {"doomednum":3004, "health":20, "radius":20, "height":56, "frequency": 290}, // Zombieman
-                {"doomednum":   9, "health":30, "radius":20, "height":56, "frequency": 483}, // Sergeant - Shotgunner
-                {"doomednum":3001, "health":60, "radius":20, "height":56, "frequency":1223}, // Imp
-                {"doomednum":  84, "health":50, "radius":20, "height":56, "frequency": 156}, // Wolfenstein SS
-                {"doomednum":  65, "health":70, "radius":20, "height":56, "frequency": 273}  // Commando - Chaingunner
-            ],
-            "medium": [
-                {"doomednum":3002, "health":150, "radius":30, "height":56, "frequency":331}, // Demon
-                {"doomednum":  58, "health":150, "radius":30, "height":56, "frequency":175}, // Spectre
-                {"doomednum":3006, "health":100, "radius":16, "height":56, "frequency":197}, // Lost soul
-                {"doomednum":3005, "health":400, "radius":31, "height":56, "frequency":188}, // Cacodemon
-                {"doomednum":  71, "health":400, "radius":31, "height":56, "frequency": 64}, // Pain Elemental
-                {"doomednum":  67, "health":600, "radius":48, "height":64, "frequency": 68}, // Mancubus
-                {"doomednum":  68, "health":500, "radius":64, "height":64, "frequency": 65}, // Arachnotron
-                {"doomednum":  66, "health":300, "radius":20, "height":56, "frequency": 90}  // Revenant
-            ],
-            "big": [
-                {"doomednum":3003, "health":1000, "radius":24, "height":64, "frequency":31}, // Baron of Hell
-                {"doomednum":  64, "health": 700, "radius":20, "height":56, "frequency":17}, // Arch-Vile
-                {"doomednum":  69, "health": 500, "radius":24, "height":64, "frequency":75}  // Hell Knight
-            ],
-            "boss": [
-                {"doomednum":16, "health":4000, "radius": 40, "height":110, "frequency":12}, // Cyberdemon
-                {"doomednum": 7, "health":3000, "radius":128, "height":100, "frequency": 6}  // Spider Mastermind
-            ]
+            // Zombieman, Shotgunner, Imp, Wolfenstein SS, Chaingunner
+            "small": [3004, 9, 3001, 84, 65],
+            // Demon, Spectre, Lost soul, Cacodemon, Pain Elemental, Mancubus, Arachnotron, Revenant
+            "medium": [3002, 58, 3006, 3005, 71, 67, 68, 66],
+            // Baron of Hell, Arch-Vile, Hell Knight
+            "big": [3003, 64, 69],
+            // Cyberdemon, Spider Mastermind
+            "boss": [16, 7]
         },
         "pickups": {
-            "mini": [2015, 2014], // Armor and Health bonuses
-            "small": [2011, 2008, 2007, 2047, 2010], // Stimpack, shells, clip, cell, rocket
-            "big": [2048, 2046, 2049, 17, 2012] // Bullets, rockets, shell box, cell pack, medikit
+            // Armor bonus, Health bonus
+            "small": [2015, 2014],
+            // Stimpack, shells, clip, cell, rocket
+            "medium": [2011, 2008, 2007, 2047, 2010],
+            // Bullets, rockets, shell box, cell pack, medikit
+            "big": [2048, 2046, 2049, 17, 2012]
         },
 
         "pausepic": "INTERPIC"
@@ -229,10 +252,12 @@
     },
 
     "extra_connection_requirements": [
-        {"doom_type": -1, "name": "deathlogic", "sprite": "STFDEAD0"},
-        {"doom_type": -2, "name": "pro",        "sprite": "STFGOD0"}
+        {"doom_type": -1, "name": "deathlogic",    "sprite": "STFDEAD0"},
+        {"doom_type": -3, "name": "trick_basic",   "sprite": "STFKILL1"},
+        {"doom_type": -2, "name": "trick_pro",     "sprite": "STFKILL3"},
+        {"doom_type": -4, "name": "trick_extreme", "sprite": "STFKILL4"}
     ],
-    "progressions": [
+    "progression": [
         {"doom_type": 2001, "name": "Shotgun",         "group": ["Weapons"], "sprite": "SHOTA0"},
         {"doom_type": 2003, "name": "Rocket launcher", "group": ["Weapons"], "sprite": "LAUNA0"},
         {"doom_type": 2004, "name": "Plasma gun",      "group": ["Weapons"], "sprite": "PLASA0"},
@@ -241,31 +266,31 @@
         {"doom_type": 2006, "name": "BFG9000",         "group": ["Weapons"], "sprite": "BFUGA0"},
         {"doom_type": 82,   "name": "Super Shotgun",   "group": ["Weapons"], "sprite": "SGN2A0"}
     ],
-    "fillers": [
-        {"doom_type": 2018, "name": "Armor",                 "group": ["Powerups"], "sprite": "ARM1A0"},
-        {"doom_type": 2019, "name": "Mega Armor",            "group": ["Powerups"], "sprite": "ARM2A0"},
-        {"doom_type": 2023, "name": "Berserk",               "group": ["Powerups"], "sprite": "PSTRA0"},
-        {"doom_type": 2022, "name": "Invulnerability",       "group": ["Powerups"], "sprite": "PINVA0"},
-        {"doom_type": 2024, "name": "Partial invisibility",  "group": ["Powerups"], "sprite": "PINSA0"},
-        {"doom_type": 2013, "name": "Supercharge",           "group": ["Powerups"], "sprite": "SOULA0"},
-        {"doom_type": 83,   "name": "Megasphere",            "group": ["Powerups"], "sprite": "MEGAD0"},
-        {"doom_type": 2012, "name": "Medikit",               "group": [],           "sprite": "MEDIA0"},
-        {"doom_type": 2048, "name": "Box of bullets",        "group": ["Ammos"],    "sprite": "AMMOA0"},
-        {"doom_type": 2046, "name": "Box of rockets",        "group": ["Ammos"],    "sprite": "BROKA0"},
-        {"doom_type": 2049, "name": "Box of shotgun shells", "group": ["Ammos"],    "sprite": "SBOXA0"},
-        {"doom_type": 17,   "name": "Energy cell pack",      "group": ["Ammos"],    "sprite": "CELPA0"}
-    ],
-    "unique_progressions": [
-    ],
-    "unique_fillers": [
-        {"doom_type": 2026, "name": "Computer area map", "group": ["Computer area maps", "%MAP% Map"], "sprite": "PMAPA0"}
-    ],
-    "capacity_upgrades": [
+    "useful": [
         {"doom_type": 8,     "name": "Backpack",             "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
-        {"doom_type": 65001, "name": "Bullet capacity",      "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
-        {"doom_type": 65002, "name": "Shell capacity",       "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
-        {"doom_type": 65003, "name": "Energy cell capacity", "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
-        {"doom_type": 65004, "name": "Rocket capacity",      "group": ["Capacity upgrades"], "sprite": "BPAKA0"}
+        {"doom_type": 65001, "name": "Bullet capacity",      "group": ["Capacity upgrades"], "sprite": "BPAKA0", "count": 0},
+        {"doom_type": 65002, "name": "Shell capacity",       "group": ["Capacity upgrades"], "sprite": "BPAKA0", "count": 0},
+        {"doom_type": 65003, "name": "Energy cell capacity", "group": ["Capacity upgrades"], "sprite": "BPAKA0", "count": 0},
+        {"doom_type": 65004, "name": "Rocket capacity",      "group": ["Capacity upgrades"], "sprite": "BPAKA0", "count": 0}
+    ],
+    "filler": [
+        {"doom_type": 2018, "name": "Armor",                     "group": ["Powerups"],      "sprite": "ARM1A0"},
+        {"doom_type": 2019, "name": "Mega Armor",                "group": ["Powerups"],      "sprite": "ARM2A0"},
+        {"doom_type": 2023, "name": "Berserk",                   "group": ["Powerups"],      "sprite": "PSTRA0"},
+        {"doom_type": 2022, "name": "Invulnerability",           "group": ["Powerups"],      "sprite": "PINVA0"},
+        {"doom_type": 2024, "name": "Partial invisibility",      "group": ["Powerups"],      "sprite": "PINSA0"},
+        {"doom_type": 2013, "name": "Supercharge",               "group": ["Powerups"],      "sprite": "SOULA0"},
+        {"doom_type": 83,   "name": "Megasphere",                "group": ["Powerups"],      "sprite": "MEGAD0"},
+        {"doom_type": 2012, "name": "Medikit",                   "group": ["Junk"],          "sprite": "MEDIA0"},
+        {"doom_type": 2048, "name": "Box of bullets",            "group": ["Junk", "Ammos"], "sprite": "AMMOA0"},
+        {"doom_type": 2046, "name": "Box of rockets",            "group": ["Junk", "Ammos"], "sprite": "BROKA0"},
+        {"doom_type": 2049, "name": "Box of shotgun shells",     "group": ["Junk", "Ammos"], "sprite": "SBOXA0"},
+        {"doom_type": 17,   "name": "Energy cell pack",          "group": ["Junk", "Ammos"], "sprite": "CELPA0"},
+        {"doom_type": 2025, "name": "Radiation shielding suit",  "group": ["Powerups"],      "sprite": "SUITA0", "count": 0},
+        {"doom_type": 2045, "name": "Light amplification visor", "group": ["Powerups"],      "sprite": "PVISA0", "count": 0}
+    ],
+    "unique_filler": [
+        {"doom_type": 2026, "name": "Computer area map", "group": ["Computer area maps", "%MAP% Map"], "sprite": "PMAPA0"}
     ],
     "keys": [
         {"doom_type": 5,  "name": "Blue keycard",     "group": ["Keys", "%MAP% Keys", "%MAP% Blue"],   "key": 0, "use_skull": false, "region_name": "Blue",   "color": [0, 0, 1], "sprite": "BKEYB0"},
@@ -274,7 +299,5 @@
         {"doom_type": 39, "name": "Yellow skull key", "group": ["Keys", "%MAP% Keys", "%MAP% Yellow"], "key": 1, "use_skull": true,  "region_name": "Yellow", "color": [1, 1, 0], "sprite": "YSKUB0"},
         {"doom_type": 13, "name": "Red keycard",      "group": ["Keys", "%MAP% Keys", "%MAP% Red"],    "key": 2, "use_skull": false, "region_name": "Red",    "color": [1, 0, 0], "sprite": "RKEYB0"},
         {"doom_type": 38, "name": "Red skull key",    "group": ["Keys", "%MAP% Keys", "%MAP% Red"],    "key": 2, "use_skull": true,  "region_name": "Red",    "color": [1, 0, 0], "sprite": "RSKUB0"}
-    ],
-    "loc_remap": {},
-    "item_remap": {}
+    ]
 }

@@ -1,47 +1,97 @@
 {
-    "name": "HacX",
-    "world": "hacx",
-    "codename": "hacx",
-    "classname": "HacX",
+    "full_name": "HacX: Twitch 'n Kill",
+    "short_name": "hacx",
+    "ap_name": "HacX",
+    "ap_world_name": "hacx",
+    "ap_class_name": "HacX",
+
     "iwad": "HACX.WAD",
-    "load_order": ["HACX.WAD", "APHACX.WAD"],
-    "item_ids": 364000,
-    "loc_ids": 365000,
     "settings":{
         "extended_names": true
     },
 
-    "map_info": [
-        [
-            {"lump": "MAP01", "name": "GenEmp Corp. (MAP01)"},
-            {"lump": "MAP02", "name": "Tunnel Town (MAP02)"},
-            {"lump": "MAP03", "name": "Lava Annex (MAP03)"},
-            {"lump": "MAP04", "name": "Alcatraz (MAP04)"},
-            {"lump": "MAP05", "name": "Cyber Circus (MAP05)"}
-        ],
-        [
-            {"lump": "MAP06", "name": "Digi-Ota (MAP06)"},
-            {"lump": "MAP07", "name": "The Great Wall (MAP07)"},
-            {"lump": "MAP08", "name": "Garden of Delight (MAP08)"},
-            {"lump": "MAP09", "name": "Hidden Fortress (MAP09)"},
-            {"lump": "MAP10", "name": "Anarchist Dream (MAP10)"}
-        ],
-        [
-            {"lump": "MAP11", "name": "Notus Us! (MAP11)"},
-            {"lump": "MAP12", "name": "Gothik Gauntlet (MAP12)"},
-            {"lump": "MAP13", "name": "The Sewers (MAP13)"},
-            {"lump": "MAP14", "name": "'Trode Wars (MAP14)"},
-            {"lump": "MAP15", "name": "Twilight of EnKs (MAP15)"}
-        ],
-        [
-            {"lump": "MAP31", "name": "Desiccant Room (MAP31)"},
-            {"lump": "MAP16", "name": "Protean Cybex (MAP16)"},
-            {"lump": "MAP17", "name": "River of Blood (MAP17)"},
-            {"lump": "MAP18", "name": "Bizarro (MAP18)"},
-            {"lump": "MAP19", "name": "The War Rooms (MAP19)"},
-            {"lump": "MAP20", "name": "Intruder Alert! (MAP20)"}
-        ]
+    "episodes": [
+        {
+            "name": "New York", "maps": [
+                {"lump": "MAP01", "name": "GenEmp Corp. (MAP01)"},
+                {"lump": "MAP02", "name": "Tunnel Town (MAP02)"},
+                {"lump": "MAP03", "name": "Lava Annex (MAP03)"},
+                {"lump": "MAP04", "name": "Alcatraz (MAP04)"},
+                {"lump": "MAP05", "name": "Cyber Circus (MAP05)"}
+            ]
+        },
+        {
+            "name": "Hong Kong", "maps": [
+                {"lump": "MAP06", "name": "Digi-Ota (MAP06)"},
+                {"lump": "MAP07", "name": "The Great Wall (MAP07)"},
+                {"lump": "MAP08", "name": "Garden of Delight (MAP08)"},
+                {"lump": "MAP09", "name": "Hidden Fortress (MAP09)"},
+                {"lump": "MAP10", "name": "Anarchist Dream (MAP10)"}
+            ]
+        },
+        {
+            "name": "Paris", "boss_level": 4, "maps": [
+                {"lump": "MAP11", "name": "Notus Us! (MAP11)"},
+                {"lump": "MAP12", "name": "Gothik Gauntlet (MAP12)"},
+                {"lump": "MAP13", "name": "The Sewers (MAP13)"},
+                {"lump": "MAP14", "name": "'Trode Wars (MAP14)"},
+                {"lump": "MAP15", "name": "Twilight of EnKs (MAP15)"}
+            ]
+        },
+        {
+            "name": "Washington, D.C.", "default": false, "maps": [
+                {"lump": "MAP31", "name": "Desiccant Room (MAP31)"},
+                {"lump": "MAP16", "name": "Protean Cybex (MAP16)"},
+                {"lump": "MAP17", "name": "River of Blood (MAP17)"},
+                {"lump": "MAP18", "name": "Bizarro (MAP18)"},
+                {"lump": "MAP19", "name": "The War Rooms (MAP19)"},
+                {"lump": "MAP20", "name": "Intruder Alert! (MAP20)"}
+            ]
+        }
     ],
+
+    "world_info": {
+        "description":[
+            "HacX: Twitch n' Kill is a commercially released total conversion of Doom II, released by Banjo Software in 1997."
+        ],
+        "world_options":[
+            {
+                "name": "Difficulty", 
+                "skill_5_warning": "Are you sure? You can't handle this skill, hacker!",
+                "list":[
+                    {"full_name": "Please don't shoot!", "aliases": ["itytd", "pds"]},
+                    {"full_name": "Arrgh, I need health!", "aliases": ["hntr", "ainh"]},
+                    {"full_name": "Let's rip them apart!", "aliases": ["hmp", "lrta"]},
+                    {"full_name": "I am immportal", "aliases": ["uv", "iai"]},
+                    {"full_name": "Insanity!", "option_name": "insanity", "aliases": ["nm"]}
+                ]
+            },
+            {"name": "Start with Maps" },
+            {"name": "Invis as Trap" },
+            {"name": "Capacity Upgrades" },
+            {"name": "Custom Ammo Capacity" }
+        ],
+        "hooks":{
+            "generate_early":[
+                "# HacX has ... multiple restrictive solo starts.",
+                "if self.solo_episode(2):",
+                "    early_weapon = self.random.choice(['Tazer', 'Cryogun', 'Uzi'])",
+                "    self.multiworld.early_items[self.player][early_weapon] = 1",
+                "elif self.solo_episode(4):",
+                "    self.multiworld.early_items[self.player]['Desiccant Room (MAP31) - Keycard'] = 1",
+                "    self.starting_levels.append('Protean Cybex (MAP16)')"
+            ]
+        },
+        "filler_item_weight":{
+            "Kevlar vest": 15,
+            "Super kevlar vest": 15,
+            "Centrophenoxine": 15,
+            "007Microtel": 10,
+            "EnK blinder": 10,
+            "Body armor": 6,
+            "Force field": 6
+        }
+    },
 
     "game_info": {
         "ammo": [
@@ -347,10 +397,12 @@
     },
 
     "extra_connection_requirements": [
-        {"doom_type": -1, "name": "deathlogic", "sprite": "STFDEAD0"},
-        {"doom_type": -2, "name": "pro",        "sprite": "STFGOD0"}
+        {"doom_type": -1, "name": "deathlogic",    "sprite": "STFDEAD0"},
+        {"doom_type": -3, "name": "trick_basic",   "sprite": "STFKILL1"},
+        {"doom_type": -2, "name": "trick_pro",     "sprite": "STFKILL3"},
+        {"doom_type": -4, "name": "trick_extreme", "sprite": "STFKILL4"}
     ],
-    "progressions": [
+    "progression": [
         {"doom_type": 2001, "name": "Tazer",         "group": ["Weapons"], "sprite": "SHOTA0"},
         {"doom_type": 2003, "name": "Photon 'zooka", "group": ["Weapons"], "sprite": "LAUNA0"},
         {"doom_type": 2004, "name": "Stick",         "group": ["Weapons"], "sprite": "PLASA0"},
@@ -359,31 +411,31 @@
         {"doom_type": 2006, "name": "Nuker",         "group": ["Weapons"], "sprite": "BFUGA0"},
         {"doom_type": 82,   "name": "Cryogun",       "group": ["Weapons"], "sprite": "SGN2A0"}
     ],
-    "fillers": [
-        {"doom_type": 2018, "name": "Kevlar vest",        "group": ["Powerups"], "sprite": "ARM1A0"},
-        {"doom_type": 2019, "name": "Super kevlar vest",  "group": ["Powerups"], "sprite": "ARM2A0"},
-        {"doom_type": 2023, "name": "007Microtel",        "group": ["Powerups"], "sprite": "PSTRA0"},
-        {"doom_type": 2022, "name": "Force field",        "group": ["Powerups"], "sprite": "PINVA0"},
-        {"doom_type": 2024, "name": "EnK blinder",        "group": ["Powerups"], "sprite": "PINSA0"},
-        {"doom_type": 2013, "name": "Centrophenoxine",    "group": ["Powerups"], "sprite": "SOULD0"},
-        {"doom_type": 83,   "name": "Body armor",         "group": ["Powerups"], "sprite": "MEGAC0"},
-        {"doom_type": 2012, "name": "Hypo",               "group": [],           "sprite": "MEDIA0"},
-        {"doom_type": 2048, "name": "Case of rounds",     "group": ["Ammos"],    "sprite": "AMMOA0"},
-        {"doom_type": 2046, "name": "Case of torpedoes",  "group": ["Ammos"],    "sprite": "BROKA0"},
-        {"doom_type": 2049, "name": "Case of cartridges", "group": ["Ammos"],    "sprite": "SBOXA0"},
-        {"doom_type": 17,   "name": "Molecule tank",      "group": ["Ammos"],    "sprite": "CELPA0"}
-    ],
-    "unique_progressions": [
-    ],
-    "unique_fillers": [
-        {"doom_type": 2026, "name": "SI array", "group": ["SI arrays", "%MAP% Map", "%MAP% SI"], "sprite": "PMAPA0"}
-    ],
-    "capacity_upgrades": [
+    "useful": [
         {"doom_type": 8,     "name": "Valise",             "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
-        {"doom_type": 65001, "name": "Round capacity",     "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
-        {"doom_type": 65002, "name": "Cartridge capacity", "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
-        {"doom_type": 65003, "name": "Molecule capacity",  "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
-        {"doom_type": 65004, "name": "Torpedo capacity",   "group": ["Capacity upgrades"], "sprite": "BPAKA0"}
+        {"doom_type": 65001, "name": "Round capacity",     "group": ["Capacity upgrades"], "sprite": "BPAKA0", "count": 0},
+        {"doom_type": 65002, "name": "Cartridge capacity", "group": ["Capacity upgrades"], "sprite": "BPAKA0", "count": 0},
+        {"doom_type": 65003, "name": "Molecule capacity",  "group": ["Capacity upgrades"], "sprite": "BPAKA0", "count": 0},
+        {"doom_type": 65004, "name": "Torpedo capacity",   "group": ["Capacity upgrades"], "sprite": "BPAKA0", "count": 0}
+    ],
+    "filler": [
+        {"doom_type": 2018, "name": "Kevlar vest",         "group": ["Powerups"],      "sprite": "ARM1A0"},
+        {"doom_type": 2019, "name": "Super kevlar vest",   "group": ["Powerups"],      "sprite": "ARM2A0"},
+        {"doom_type": 2023, "name": "007Microtel",         "group": ["Powerups"],      "sprite": "PSTRA0"},
+        {"doom_type": 2022, "name": "Force field",         "group": ["Powerups"],      "sprite": "PINVA0"},
+        {"doom_type": 2024, "name": "EnK blinder",         "group": ["Powerups"],      "sprite": "PINSA0"},
+        {"doom_type": 2013, "name": "Centrophenoxine",     "group": ["Powerups"],      "sprite": "SOULD0"},
+        {"doom_type": 83,   "name": "Body armor",          "group": ["Powerups"],      "sprite": "MEGAC0"},
+        {"doom_type": 2012, "name": "Hypo",                "group": ["Junk"],          "sprite": "MEDIA0"},
+        {"doom_type": 2048, "name": "Case of rounds",      "group": ["Junk", "Ammos"], "sprite": "AMMOA0"},
+        {"doom_type": 2046, "name": "Case of torpedoes",   "group": ["Junk", "Ammos"], "sprite": "BROKA0"},
+        {"doom_type": 2049, "name": "Case of cartridges",  "group": ["Junk", "Ammos"], "sprite": "SBOXA0"},
+        {"doom_type": 17,   "name": "Molecule tank",       "group": ["Junk", "Ammos"], "sprite": "CELPA0"},
+        {"doom_type": 2025, "name": "Vulcan rubber boots", "group": ["Powerups"],      "sprite": "SUITA0", "count": 0},
+        {"doom_type": 2045, "name": "Infrared visor",      "group": ["Powerups"],      "sprite": "PVISA0", "count": 0}
+    ],
+    "unique_filler": [
+        {"doom_type": 2026, "name": "SI array", "group": ["SI arrays", "%MAP% Map", "%MAP% SI"], "sprite": "PMAPA0"}
     ],
     "keys": [
         {"doom_type": 5,  "name": "Keycard",      "group": ["Keys", "%MAP% Keys", "%MAP% Keycard"],  "key": 0, "use_skull": false, "region_name": "Blue",   "color": [0, 0, 1], "sprite": "BKEYA0"},
@@ -392,7 +444,5 @@
         {"doom_type": 40, "name": "Blue Z-key",   "group": ["Keys", "%MAP% Keys", "%MAP% Blue"],     "key": 0, "use_skull": true,  "region_name": "Blue",   "color": [0, 0, 1], "sprite": "BSKUB0"},
         {"doom_type": 39, "name": "Yellow Z-key", "group": ["Keys", "%MAP% Keys", "%MAP% Yellow"],   "key": 1, "use_skull": true,  "region_name": "Yellow", "color": [1, 1, 0], "sprite": "YSKUB0"},
         {"doom_type": 38, "name": "Red Z-key",    "group": ["Keys", "%MAP% Keys", "%MAP% Red"],      "key": 2, "use_skull": true,  "region_name": "Red",    "color": [1, 0, 0], "sprite": "RSKUB0"}
-    ],
-    "loc_remap": {},
-    "item_remap": {}
+    ]
 }

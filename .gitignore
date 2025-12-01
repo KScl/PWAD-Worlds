@@ -4,11 +4,24 @@ __pycache__
 *.bak
 wip/
 
+# Exclude games and data for games that are part of core
+# (these are included in the ap_gen_tool repository)
+ap_gen_tool/games/chex_quest.json
+ap_gen_tool/data/chex.data.json
+
+ap_gen_tool/games/doom.json
+ap_gen_tool/data/doom.data.json
+
+ap_gen_tool/games/doom2.json
+ap_gen_tool/data/doom2.data.json
+
+ap_gen_tool/games/heretic.json
+ap_gen_tool/data/heretic.data.json
+
 # Exclude most things in the ap_gen_tool folder that aren't data
 
 # Copyrighted WADs
-ap_gen_tool/*.wad
-ap_gen_tool/*.WAD
+ap_gen_tool/wads/
 
 # Builds of ap_gen_tool
 ap_gen_tool/*.exe
@@ -16,5 +29,5 @@ ap_gen_tool/ap_gen_tool
 
 # Other data
 ap_gen_tool/*.ini
-ap_gen_tool/output/
-ap_gen_tool/assets/
+ap_gen_tool/output
+ap_gen_tool/assets
