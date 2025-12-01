@@ -6,7 +6,7 @@
 
 	"iwad": "DOOM2.WAD",
     "required_wads": "zone300.wad",
-    "included_wads": "data/wads/Zone300_ExtraAPData.wad",
+    "included_wads": "extra_wads/zone_300/Zone300_ExtraAPData.wad",
     "settings": {},
 
     "episodes": [

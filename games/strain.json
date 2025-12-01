@@ -6,7 +6,7 @@
 
     "iwad": "DOOM2.WAD",
     "required_wads": ["STRAIN.WAD", "STRAIN.DEH"],
-    "included_wads": "data/wads/STRAIN_ExtraAPData.wad",
+    "included_wads": "extra_wads/strain/STRAIN_ExtraAPData.wad",
     "settings":{
         "extended_names": true
     },

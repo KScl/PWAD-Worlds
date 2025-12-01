@@ -6,6 +6,7 @@
     "ap_class_name": "HacX",
 
     "iwad": "HACX.WAD",
+    "included_wads": "extra_wads/hacx/ArchipelagoHacX.wad",
     "settings":{
         "extended_names": true
     },
