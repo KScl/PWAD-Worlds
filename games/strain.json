@@ -180,18 +180,15 @@
         "monsters": {
             // Zombieman, Shotgunner, Imp, Class II Imp, Chaingunner
             "small": [3004, 9, 3001, 68, 65],
-            // Skinless Demon, Holobot, Invis. Holobot, Doppelganger, Cacodemon, BFG Zombieman
-            "medium": [3002, 71, 66, 3006, 3005, 58],
-            // Polydrone, Hell Knight, Baron of Hell, Arch-Vile, Minister of Hate, Demon Lord
-            "big": [7, 69, 3003, 64, 16, 67]
+            // Skinless Demon, Holobot, Invis. Holobot, Doppelganger, Cacodemon, Polydrone, BFG Zombieman
+            "medium": [3002, 71, 66, 3006, 3005, 7, 58],
+            // Hell Knight, Baron of Hell, Arch-Vile, Minister of Hate, Demon Lord
+            "big": [69, 3003, 64, 16, 67]
         }
     },
     "map_tweaks":{
         // Outskirts (MAP02)
         "MAP02":{
-            // Move the hub out of the start room, so it's always accessible.
-            "hub":{"x":-320,"y":-2304},
-
             "sidedefs":{
                 // Mark the switch we're changing to require the blue key.
                 "1329":{"middle":"DOORBLU"},
@@ -206,7 +203,16 @@
             },
             "sectors":{
                 // Open the backup key from the start.
-                "393":{"ceiling":44}
+                "393":{"ceiling":44},
+
+                // Slightly raise the starting room so we can re-enter it.
+                "121":{"floor":-32,"ceiling":32},
+                "122":{"floor":-32,"ceiling":32},
+                "123":{"floor":-32,"ceiling":-32},
+                "233":{"floor":-20,"ceiling":28},
+                "234":{"floor":-32,"ceiling":40},
+                "235":{"floor":-20,"ceiling":28},
+                "265":{"floor":-24}
             },
             "things":{
                 // Move the backup blue key item out a bit, to make it easier to grab
@@ -272,6 +278,19 @@
             "linedefs":{
                 // Allow opening the bar that locks you in the vile trap, from behind
                 "1520":{"special":118}
+            }
+        },
+
+        // Subsidiary Power (MAP15)
+        "MAP15":{
+            // Open the door back from the eastern room ASAP to prevent multiple possible softlocks
+            "linedefs":{
+                "508":{"special":2,"tag":690},
+                "576":{"special":74}
+            },
+            "sectors":{
+                "80":{"tag":690},
+                "118":{"tag":690}
             }
         },
 
