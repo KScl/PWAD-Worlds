@@ -1,0 +1,288 @@
+{
+    "full_name": "Chex Quest Trilogy",
+    "short_name": "chex3",
+    "ap_name": "Chex Quest Trilogy",
+    "ap_world_name": "chexquest3",
+    "classname": "ChexQuest3",
+    "authors": "Kaito Sinclaire",
+
+    "iwad": "chex3v.wad",
+    "included_wads": "extra_wads/chex3/Chex3_Extras.wad",
+    "settings": {},
+
+    "episodes": [
+        {
+            "name": "Chex Quest 1", "maps": [
+                {"lump": "E1M9", "name": "Landing Zone (CQ1M1)"},
+                {"lump": "E1M4", "name": "Storage Facility (CQ1M2)"},
+                {"lump": "E1M5", "name": "Laboratory (CQ1M3)"},
+                {"lump": "E1M6", "name": "Arboretum (CQ1M4)"},
+                {"lump": "E1M7", "name": "Caverns of Bazoik (CQ1M5)"}
+            ]
+        },
+        {
+            "name": "Chex Quest 2", "maps": [
+                {"lump": "E2M1", "name": "Spaceport (CQ2M1)"},
+                {"lump": "E2M9", "name": "Cinema (CQ2M2)"},
+                {"lump": "E2M6", "name": "Chex Museum (CQ2M3)"},
+                {"lump": "E2M7", "name": "City Streets (CQ2M4)"},
+                {"lump": "E2M8", "name": "Sewer System (CQ2M5)"}
+            ]
+        },
+        {
+            "name": "Chex Quest 3", "maps": [
+                {"lump": "E3M1", "name": "Central Command (CQ3M1)"},
+                {"lump": "E3M2", "name": "United Cereals (CQ3M2)"},
+                {"lump": "E3M9", "name": "Villa Chex (CQ3M3)"},
+                {"lump": "E3M7", "name": "Provincial Park (CQ3M4)"},
+                {"lump": "E3M8", "name": "Meteor Spaceship (CQ3M5)"}
+            ]
+        }
+    ],
+
+    "world_info":{
+        "world_options":[
+            {
+                "name": "Difficulty",
+                "skill_5_warning": "Careful, this will be tough. Do you wish to continue?",
+                "list":[
+                    {"full_name": "Easy does it", "description":"Damage taken is halved. Zorch received from pickups is doubled.", "aliases": ["itytd"]},
+                    {"full_name": "Not so sticky", "description":"Lesser number or strength of Flemoids, and more pickups.", "aliases": ["hntr"]},
+                    {"full_name": "Gobs of goo", "description":"The default skill. Balanced Flemoids and pickups.", "aliases": ["hmp"]},
+                    {"full_name": "Extreme ooze", "description":"Greater number or strength of Flemoids, and less pickups.", "aliases": ["uv"]},
+                    {"full_name": "Super slimey!", "description":"Flemoids are faster and more aggressive.", "option_name": "super slimey", "aliases": ["nm"]}
+                ]
+            },
+            {"name": "Start with Maps" },
+            {"name": "Capacity Upgrades" },
+            {"name": "Custom Ammo Capacity" }
+        ],
+        "item_pool_ratio":{
+            "1": {"helpful": 33},
+            "2": {"helpful": 27},
+            "3": {"helpful": 22},
+            "4": {"helpful": 18},
+            "5": {"helpful": 18}
+        },
+        "helpful_item_weight":{
+            "Supercharge breakfast": 10,
+            "Chex armor": 10,
+            "Super Chex armor": 7
+        }
+    },
+
+    "game_info":{
+        "pausepic": "INTERPIC",
+        "ammo": [
+            {"name": "Mini Zorch", "max": 200},
+            {"name": "Large Zorch", "max": 50},
+            {"name": "Phasing Zorch", "max": 300},
+            {"name": "Zorch Propulsor", "max": 50}
+        ],
+        "weapons": [
+            {"name": "Bootspoon"},
+            {"name": "Mini Zorcher", "ammo_type": "Mini Zorch", "starting_ammo": 50},
+            {"name": "Large Zorcher", "ammo_type": "Large Zorch", "starting_ammo": 30},
+            {"name": "Rapid Zorcher", "ammo_type": "Mini Zorch"},
+            {"name": "Zorch Propulsor", "ammo_type": "Zorch Propulsor", "starting_ammo": 10},
+            {"name": "Phasing Zorcher", "ammo_type": "Phasing Zorch", "starting_ammo": 150},
+            {"name": "LAZ Device", "ammo_type": "Phasing Zorch", "starting_ammo": 150},
+            {"name": "Super Bootspork"},
+            {"name": "Super Large Zorcher", "ammo_type": "Large Zorch", "starting_ammo": 30}
+        ],
+        "monsters": {
+            "small": [3004, 9],
+            "medium": [9057, 3001, 58, 9050],
+            "big": [3005, 3002, 3006],
+            "boss": [3003, 6969, 7, 16]
+        },
+        "pickups": {
+            "small": [2015, 2014],
+            "medium": [2011, 2008, 2007, 2047, 2010],
+            "big": [2048, 2046, 2049, 17]
+        },
+        "obituaries": {
+            "GENERIC":                       "%YOU% was slimed.",
+            "SOURCE_DOOMEDNUM_3004":         "%YOU% was boogered by a Commonus.",
+            "SOURCE_DOOMEDNUM_9":            "%YOU% was boogered by a Bipedicus.",
+            "SOURCE_DOOMEDNUM_9057":         "%YOU% was slimed by a Quadrumpus.",
+            "SOURCE_DOOMEDNUM_3001":         "%YOU% was slimed by an Armored Bipedicus.",
+            "SOURCE_DOOMEDNUM_58":           "%YOU% was gooed by a Cycloptis.",
+            "SOURCE_DOOMEDNUM_9050":         "%YOU% was gooed by a Larva.",
+            "SOURCE_DOOMEDNUM_3005":         "%YOU% was slimed by a Super Cycloptis.",
+            "SOURCE_DOOMEDNUM_3002":         "%YOU% was trampled by a Stridicus.",
+            "SOURCE_DOOMEDNUM_3006":         "%YOU% was splattered by a Flem Mine.",
+            "SOURCE_DOOMEDNUM_3003":         "%YOU% was defeated by a Maximus.",
+            "SOURCE_DOOMEDNUM_6969":         "%YOU% was defeated by the Flembrane.",
+            "SOURCE_DOOMEDNUM_7":            "%YOU% was defeated by the Flembomination.",
+            "SOURCE_DOOMEDNUM_16":           "%YOU% was defeated by Lord Snotfolus.",
+            "TELEFRAG":                      "%YOU% was scrambled.",
+            "SOURCE_MOBJTYPE_0,POSTHUMOUS":  "%YOU% zorched themself.",
+            "SUICIDE":                       "%YOU% zorched themself.",
+            "SUICIDE,TELEFRAG":              "%YOU% scrambled themself.",
+            "SUICIDE,INFLICTOR_MOBJTYPE_33": "%YOU% sent themself to another dimension.",
+            "INFLICTOR_DOOMEDNUM_2035":      "%YOU% was hit by inter-dimensional slime.",
+            "ENVIRONMENT":                   "%YOU% sunk into some slime."
+        }
+    },
+
+    "map_tweaks": {
+        // Spaceport (E2M1 / CQ2M1)
+        "E2M1":{
+            // This map has no normal exit.
+            "metadata": { "allow_secret_exits": true }
+        },
+
+        // Chex Museum (E2M6 / CQ2M3)
+        "E2M6":{
+            "linedefs":{
+                // Need to be able to escape from the blue section after teleporting from yellow.
+                "300": {"upper": "BIGDOOR1", "special": 1}
+            }
+        },
+
+        // Sewer System (E2M8 / CQ2M5)
+        "E2M8":{
+            "things":{
+                // A voodoo doll is used to end the level; make it behave silently and discard the items it would pick up.
+                "0": {"voodoo_ignore_damage": true, "voodoo_ignore_items": true},
+                "201": {"dont_randomize": true},
+                "202": {"dont_randomize": true},
+                "203": {"dont_randomize": true},
+                "204": {"dont_randomize": true},
+                "210": {"dont_randomize": true}
+            }
+        },
+
+        // United Cereals (E3M2 / CQ3M2)
+        "E3M2":{
+            // This map has no normal exit.
+            "metadata": { "allow_secret_exits": true }
+        },
+
+        // Meteor Spaceship (E3M8 / CQ3M5)
+        "E3M8":{
+            "linedefs":{
+                // We need to be able to leave Lord Snotfolus's lair.
+                "949": {"special": 1}
+            }
+        }
+    },
+
+    "level_select":{
+        "defaults":{
+            "base":{
+                "x": 40,
+                "cursor": {"graphic": "M_SKULL1", "x": -32, "y": -10},
+                "map_name": {"display": "individual", "x": 10, "y": -5},
+                "keys": {"use_checkmark":true, "use_custom_gfx": true, "relative_to": "map-name-right", "x": 5, "y": 2, "spacing_x": 11},
+                "checks": {"relative_to": "keys-last", "x": 8, "y": 2}
+            }
+        },
+        "episodes":[
+            {
+                "background_image": "WIMAP0",
+                "patches": [ {"graphic": "M_CHEX1", "x": 10, "y": 10} ],
+                "maps":[
+                    { "y": 108, "map_name": {"graphic": "WILV08"} },
+                    { "y": 126, "map_name": {"graphic": "WILV03"} },
+                    { "y": 144, "map_name": {"graphic": "WILV04"} },
+                    { "y": 162, "map_name": {"graphic": "WILV05"} },
+                    { "y": 180, "map_name": {"graphic": "WILV06"} }
+                ]
+            },
+            {
+                "background_image": "WIMAP3",
+                "patches": [ {"graphic": "M_CHEX2", "x": 10, "y": 10} ],
+                "maps":[
+                    { "y": 108, "map_name": {"graphic": "WILV10"} },
+                    { "y": 126, "map_name": {"graphic": "WILV18"} },
+                    { "y": 144, "map_name": {"graphic": "WILV15"} },
+                    { "y": 162, "map_name": {"graphic": "WILV16"} },
+                    { "y": 180, "map_name": {"graphic": "WILV17"} }
+                ]
+            },
+            {
+                "background_image": "WIMAP2",
+                "patches": [ {"graphic": "M_CHEX3", "x": 10, "y": 10} ],
+                "maps":[
+                    { "y": 108, "map_name": {"graphic": "WILV20"} },
+                    { "y": 126, "map_name": {"graphic": "WILV21"} },
+                    { "y": 144, "map_name": {"graphic": "WILV28"} },
+                    { "y": 162, "map_name": {"graphic": "WILV26"} },
+                    { "y": 180, "map_name": {"graphic": "WILV27"} }
+                ]
+            }
+        ]
+    },
+
+    "location_doom_types": {
+        "5": "Blue key",
+        "6": "Yellow key",
+        "13": "Red key",
+        "40": "Blue flemkey",
+        "39": "Yellow flemkey",
+        "38": "Red flemkey",
+        "8": "Zorchpak",
+        "2001": "Large zorcher",
+        "2002": "Rapid zorcher",
+        "2003": "Zorch propulsor",
+        "2004": "Phasing zorcher",
+        "2005": "Super bootspork",
+        "2006": "LAZ device",
+        "2012": "Bowl of vegetables",
+        "2013": "Supercharge breakfast",
+        "2018": "Chex armor",
+        "2019": "Super Chex armor",
+        "2026": "Computer area map"
+    },
+
+    "items": {
+        "extra_connection_requirements": [
+            {"doom_type": -1, "name": "deathlogic",    "sprite": "STFDEAD0"},
+            {"doom_type": -3, "name": "trick_basic",   "sprite": "STFKILL1"},
+            {"doom_type": -2, "name": "trick_pro",     "sprite": "STFKILL3"},
+            {"doom_type": -4, "name": "trick_extreme", "sprite": "STFKILL4"}
+        ],
+        "progression": [
+            {"doom_type": 2001, "name": "Large Zorcher",       "group": ["Weapons"], "sprite": "SHOTA0"},
+            {"doom_type": 2003, "name": "Zorch Propulsor",     "group": ["Weapons"], "sprite": "LAUNA0"},
+            {"doom_type": 2004, "name": "Phasing Zorcher",     "group": ["Weapons"], "sprite": "PLASA0"},
+            {"doom_type": 2005, "name": "Super Bootspork",     "group": ["Weapons"], "sprite": "CSAWA0"},
+            {"doom_type": 2002, "name": "Rapid Zorcher",       "group": ["Weapons"], "sprite": "MGUNA0"},
+            {"doom_type": 2006, "name": "LAZ Device",          "group": ["Weapons"], "sprite": "BFUGA0"},
+            {"doom_type": 82,   "name": "Super Large Zorcher", "group": ["Weapons"], "sprite": "SGN2A0", "count": 0}
+        ],
+        "useful": [
+            {"doom_type": 8,     "name": "Zorchpak",                 "group": ["Capacity upgrades"], "sprite": "BPAKA0"},
+            {"doom_type": 65000, "name": "Zorch recharge",           "group": ["Ammos"],             "sprite": "BPAKA0", "count": 0, "buyable": true},
+            {"doom_type": 65001, "name": "Mini Zorch capacity",      "group": ["Capacity upgrades"], "sprite": "BPAKA0", "count": 0},
+            {"doom_type": 65002, "name": "Large Zorch capacity",     "group": ["Capacity upgrades"], "sprite": "BPAKA0", "count": 0},
+            {"doom_type": 65003, "name": "Phasing Zorch capacity",   "group": ["Capacity upgrades"], "sprite": "BPAKA0", "count": 0},
+            {"doom_type": 65004, "name": "Zorch Propulsor capacity", "group": ["Capacity upgrades"], "sprite": "BPAKA0", "count": 0}
+        ],
+        "filler": [
+            {"doom_type": 2018, "name": "Chex armor",            "group": ["Powerups"],      "sprite": "ARM1A0", "buyable": true},
+            {"doom_type": 2019, "name": "Super Chex armor",      "group": ["Powerups"],      "sprite": "ARM2A0", "buyable": true},
+            {"doom_type": 2013, "name": "Supercharge breakfast", "group": ["Powerups"],      "sprite": "SOULA0", "buyable": true},
+            {"doom_type": 2011, "name": "Bowl of fruit",         "group": ["Junk"],          "sprite": "STIMA0"},
+            {"doom_type": 2012, "name": "Bowl of vegetables",    "group": ["Junk"],          "sprite": "MEDIA0"},
+            {"doom_type": 2048, "name": "Mini Zorch pack",       "group": ["Junk", "Ammos"], "sprite": "AMMOA0"},
+            {"doom_type": 2046, "name": "Zorch Propulsor pack",  "group": ["Junk", "Ammos"], "sprite": "BROKA0"},
+            {"doom_type": 2049, "name": "Large Zorcher pack",    "group": ["Junk", "Ammos"], "sprite": "SBOXA0"},
+            {"doom_type": 17,   "name": "Phasing Zorcher pack",  "group": ["Junk", "Ammos"], "sprite": "CELPA0"},
+            {"doom_type": 2025, "name": "Slimeproof suit",       "group": ["Powerups"],      "sprite": "SUITA0", "count": 0, "buyable": true}
+        ],
+        "unique_filler": [
+            {"doom_type": 2026, "name": "Computer area map", "group": ["Computer area maps", "%MAP% Map"], "sprite": "PMAPA0"}
+        ],
+        "keys": [
+            {"doom_type": 5,  "name": "Blue key",       "group": ["Keys", "%MAP% Keys", "%MAP% Blue"],   "key": 0, "use_skull": false, "region_name": "Blue",   "color": [0, 0, 1], "sprite": "BKEYB0"},
+            {"doom_type": 6,  "name": "Yellow key",     "group": ["Keys", "%MAP% Keys", "%MAP% Yellow"], "key": 1, "use_skull": false, "region_name": "Yellow", "color": [1, 1, 0], "sprite": "YKEYB0"},
+            {"doom_type": 13, "name": "Red key",        "group": ["Keys", "%MAP% Keys", "%MAP% Red"],    "key": 2, "use_skull": false, "region_name": "Red",    "color": [1, 0, 0], "sprite": "RKEYB0"},
+            {"doom_type": 40, "name": "Blue flemkey",   "group": ["Keys", "%MAP% Keys", "%MAP% Blue"],   "key": 0, "use_skull": true,  "region_name": "Blue",   "color": [0, 0, 1], "sprite": "BSKUB0"},
+            {"doom_type": 39, "name": "Yellow flemkey", "group": ["Keys", "%MAP% Keys", "%MAP% Yellow"], "key": 1, "use_skull": true,  "region_name": "Yellow", "color": [1, 1, 0], "sprite": "YSKUB0"},
+            {"doom_type": 38, "name": "Red flemkey",    "group": ["Keys", "%MAP% Keys", "%MAP% Red"],    "key": 2, "use_skull": true,  "region_name": "Red",    "color": [1, 0, 0], "sprite": "RSKUB0"}
+        ]
+    }
+}
