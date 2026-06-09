@@ -2,7 +2,7 @@
     "full_name": "Zone 300",
     "short_name": "zone300",
     "ap_name": "DOOM II - Zone 300",
-    "ap_world_name": "pwad_zone300",
+    "ap_world_name": "doom2_zone300",
 
 	"iwad": "DOOM2.WAD",
     "required_wads": "zone300.wad",
@@ -122,30 +122,5 @@
             // Move the hub so it doesn't get propped up on the ledge when the secret lift moves.
             "hub":{"x":-312, "y":504}
         }
-    },
-
-    "location_doom_types": {
-        "5": "Blue keycard",
-        "40": "Blue skull key",
-        "6": "Yellow keycard",
-        "39": "Yellow skull key",
-        "13": "Red keycard",
-        "38": "Red skull key",
-        "2018": "Armor",
-        "8": "Backpack",
-        "2019": "Mega Armor",
-        "2023": "Berserk",
-        "2022": "Invulnerability",
-        "2024": "Partial invisibility",
-        "2013": "Supercharge",
-        "2006": "BFG9000",
-        "2002": "Chaingun",
-        "2005": "Chainsaw",
-        "2004": "Plasma gun",
-        "2003": "Rocket launcher",
-        "2001": "Shotgun",
-        "2026": "Computer area map",
-        "82": "Super Shotgun",
-        "83": "Megasphere"
     }
 }
