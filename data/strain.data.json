@@ -9108,8 +9108,8 @@
          "ep" : 1,
          "exit_rules" : {
             "connections" : [],
-            "x" : 4403,
-            "y" : -1929
+            "x" : 4492,
+            "y" : -1632
          },
          "locations" : [
             {
@@ -9469,15 +9469,10 @@
                         "requirements_and" : [ 6 ],
                         "requirements_or" : [],
                         "target_region" : 0
-                     },
-                     {
-                        "requirements_and" : [ 5, 2003 ],
-                        "requirements_or" : [],
-                        "target_region" : 3
                      }
                   ],
-                  "x" : 3082,
-                  "y" : -1628
+                  "x" : 127,
+                  "y" : -1627
                },
                "sectors" : [
                   285,
@@ -9575,10 +9570,20 @@
                         "requirements_and" : [ 5 ],
                         "requirements_or" : [],
                         "target_region" : 0
+                     },
+                     {
+                        "requirements_and" : [ 6, 82 ],
+                        "requirements_or" : [],
+                        "target_region" : 3
+                     },
+                     {
+                        "requirements_and" : [ -4, 82 ],
+                        "requirements_or" : [],
+                        "target_region" : 5
                      }
                   ],
-                  "x" : 1619,
-                  "y" : -2490
+                  "x" : 1615,
+                  "y" : -2482
                },
                "sectors" : [
                   190,
@@ -9646,22 +9651,22 @@
                "tint" : [ 0.47058820724487305, 0.53287184238433838, 1, 1 ]
             },
             {
-               "name" : "Blue from Yellow",
+               "name" : "Outdoors",
                "rules" : {
                   "connections" : [
-                     {
-                        "requirements_and" : [],
-                        "requirements_or" : [],
-                        "target_region" : 1
-                     },
                      {
                         "requirements_and" : [ 13 ],
                         "requirements_or" : [],
                         "target_region" : 4
+                     },
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [],
+                        "target_region" : 2
                      }
                   ],
-                  "x" : 3074,
-                  "y" : -2502
+                  "x" : 3061,
+                  "y" : -2489
                },
                "sectors" : [
                   49,
@@ -9714,11 +9719,32 @@
                         "target_region" : 3
                      }
                   ],
-                  "x" : 4404,
-                  "y" : -2503
+                  "x" : 4490,
+                  "y" : -2495
                },
                "sectors" : [ 0, 99, 100, 101, 102, 103, 186, 187, 188, 274, 275, 276, 277 ],
                "tint" : [ 1, 0.47549021244049072, 0.47549021244049072, 1 ]
+            },
+            {
+               "name" : "Guideless Glides",
+               "rules" : {
+                  "connections" : [
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [],
+                        "target_region" : 3
+                     },
+                     {
+                        "requirements_and" : [],
+                        "requirements_or" : [],
+                        "target_region" : 4
+                     }
+                  ],
+                  "x" : 3057,
+                  "y" : -1632
+               },
+               "sectors" : [],
+               "tint" : [ 0, 0.97058844566345215, 1, 1 ]
             }
          ],
          "world_rules" : {
