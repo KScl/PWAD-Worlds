@@ -54,9 +54,25 @@
                 ]
             },
             {"name": "Start with Maps" },
+            {
+                "name": "Custom Option",
+                "type": "Toggle",
+                "display_name": "Add Super Large Zorcher",
+                "description":[
+                    "If enabled, the Super Large Zorcher will be added to be item pool,",
+                    "even though it is not normally obtainable."
+                ]
+            },
             {"name": "Capacity Upgrades" },
             {"name": "Custom Ammo Capacity" }
         ],
+        "hooks":{
+            "create_items":[
+                "if self.options.add_super_large_zorcher.value:",
+                "    slz_items = list(self.matching_items(doom_type=82).values())",
+                "    itempool += [i.name for i in slz_items]"
+            ]
+        },
         "item_pool_ratio":{
             "1": {"helpful": 33},
             "2": {"helpful": 27},
